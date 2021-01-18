@@ -1,4 +1,4 @@
-# Assignments-written-in-LaTex-Fall-2020-present
+# Assignments written in LaTex: Fall-2020-present
 Class assignments in LaTex. Started LaTex in Fall 2020.
 
 ### Fall 2020:
