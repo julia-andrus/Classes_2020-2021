@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{soul, color}
+\usepackage{ulem} %stricking text
+\title{Hw\_2: Ch 6: Ex 32, 34, Ch 7: Ex 2, 6, 16, and 20} 
+\author{Julia Andrus}
+\date{}
+ 
+ \begin{document}
+\maketitle
+
+\title{\textbf{Chp 6: 32, 34}}
+
+\vspace{2mm}
+
+\textbf{32a)} Let $X_{1},...X_{n}$ be a random sample from a uniform distribution on $[0,\theta]$. Then the mle of       $\theta$ is $\hat{\theta}=Y=\max(X_{i})$. Use the fact that $Y \le y$ iff each $X_{i} \le y$ to the derivative the cdf of Y. Then show that the pdf of $Y=\max(X_{i})$ is: 
+
+ $$f_{y}(y)=
+\begin{cases}
+ \frac{ny^{n-1}}{\theta^{n}} & 0\le y \le \theta \\
+ 0 & \text{otherwise} 
+\end{cases}$$ 
+
+cdf:
+
+$$F_{Y}(y)=P(Y \le y)=P(max(X_{i}) \le y$$
+
+all the $X_{i}$ are small, if max is small:
+
+$$=P(X_{1} \le y *....X_{n} \le y)$$
+
+they are independent:
+$$=P(X_{1} \le y) *....(X_{n} \le y)$$
+
+cdf of uniform distribution on $[0,\theta]$:
+
+$$=(\frac{y}{0})^{n},  0\le y \le \theta$$
+
+Now taking the derivative:
+
+$$\frac{d}{df_{Y}}=
+\begin{cases}
+ \frac{ny^{n-1}}{\theta^{n}} & 0\le y \le \theta \\
+ 0 & \text{otherwise} 
+\end{cases}$$ 
+
+
+%%%%%%%%%%%%%%
+\newpage
+
+
+\textbf{32b)} Use the result of part (a) to show that mle is biased but that (n + 1)max$(X_{i})/n$ is unbiased.
+
+For the estimator $(E(y)=\theta)$ to be unbiased, then: 
+
+$$E(Y)=\int_{0}^{\theta} y * \frac{ny^n-1}{\theta^n} dy$$
+$$=\frac{n}{\theta^n}\frac{y^n+1}{n+1}|_{0}^{\theta}$$
+$$=\frac{n}{n+1}\theta$$
+
+As you can see that $E(Y) \neq \theta$, and $\therefore$ the estimator is biased.
+
+\vspace{3mm}
+
+To show that (n + 1)max$(X_{i})/n$ is unbiased:
+
+Let $\tilde{Y}=\frac{n+1}{n}$, then
+
+$$E(\tilde{Y})=E\frac{(n+1)}{n}$$
+Using result from (a):
+$$=E(Y)\frac{n+1}{n}$$
+$$=\theta \frac{n}{n+1}\frac{n+1}{n}$$
+
+Cancel:
+$$=\theta$$
+
+This shows that $\tilde{Y}$ is \hl{unbiased}.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+hello
+
+
+\textbf{34)}
+
+\end{document}
