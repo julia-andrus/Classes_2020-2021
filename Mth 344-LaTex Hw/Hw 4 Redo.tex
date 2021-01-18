@@ -1,0 +1,316 @@
+\documentclass{article}
+
+\usepackage{amssymb, amsmath, amsfonts}
+
+\usepackage{color, soul}
+
+\title{Hw 4 Redo}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\textbf{1)} 
+We know that:
+
+Redo: 1 , 4, 6, 9, 10
+
+\medskip
+
+
+$f=(\begin{smallmatrix} 
+1 & 2 & 3 & 4 & 5 & 6 \\ 
+6 & 1 & 3 & 5 & 4 &2
+\end{smallmatrix}) $
+				$ \mapsto f^-1=(\begin{smallmatrix} 
+				1 & 2 & 3 & 4 & 5 & 6 \\ 
+				2 & 6 & 3 & 5 & 4 &1
+				\end{smallmatrix}) $ 			
+
+\bigskip
+ 
+
+%\smallskip
+
+$ g=(\begin{smallmatrix} 
+1 & 2 & 3 & 4 & 5 & 6 \\									
+2 & 3 & 1 & 6 & 5 & 4
+\end{smallmatrix}) $
+				$ \mapsto g^-1=(\begin{smallmatrix} 
+				1 & 2 & 3 & 4 & 5 & 6 \\									
+				3 & 1 & 2 & 6 & 5 & 4
+				\end{smallmatrix}) $
+					
+	
+\bigskip
+
+	
+
+
+
+$h=(\begin{smallmatrix} 
+1 & 2 & 3 & 4 & 5 & 6 \\
+3 & 1 & 6 & 4 & 5 & 2
+\end{smallmatrix}\ )$
+					$\mapsto h^-1=(\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 \\
+					2 & 6 & 1 & 4 & 5 & 3
+					\end{smallmatrix})$	
+
+\bigskip
+
+\hspace{.2in}\textbf{a)} $g \circ h^{-1}$
+
+\medskip
+
+$g  \circ  h^{-1}=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 & 6 \\	
+3 & 4 & 2 & 6 & 5 & 1
+\end{smallmatrix})$
+
+\medskip
+
+	Check: \begin{center}
+				$g(h^{-1}(1))=g(2)=3 $ \\
+				
+				$g(h^{-1}(2))=g(6)=4 $ \\
+									          $\cdot$ \\
+									          $\cdot$ \\
+									          $\cdot $\\
+				$g(h^{-1}(6))=g(3)=1 $					
+				
+				\end{center}
+\medskip
+
+\hspace{.2in}\textbf{b)}
+
+$h \circ g^-1 \circ f^-1=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 & 6 \\	
+3 & 4 & 1 & 5 & 2 & 6
+\end{smallmatrix})$
+
+\medskip
+
+Check: \begin{center}
+				$h(g^-1(f^-1(1)))=h(g^-1(2)) =h(1)=3 $ \\
+				
+				$h(g^-1(f^-1(2)))=h(g^-1(6))=h(4)=4 $ \\
+									          $\cdot$ \\
+									          $\cdot$ \\
+									          $\cdot $\\
+				$h(g^-1(f^-1(6)))=h(g^-1(1))=h(3)=6 $					
+				
+				\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+\textbf{4} We have have:
+
+\medskip
+
+$f=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 \\
+2 & 1 & 3 & 4 & 5
+\end{smallmatrix})$
+
+\medskip
+
+$g=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 \\
+1 & 2 & 4 & 5 & 3
+\end{smallmatrix})$
+
+\medskip
+
+$h=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 \\
+1 & 2 & 3 & 4 & 5
+\end{smallmatrix})=g^{2}$
+
+\medskip
+
+$l=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 \\
+2 & 1 & 5 & 3 & 4
+\end{smallmatrix})$
+
+\medskip
+
+
+$f \circ g=(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 \\
+2 & 1 & 4 & 5 & 3
+\end{smallmatrix})=k$
+
+\begin{table}[ht]
+	\begin{tabular}{|c| |c| |c| |c| |c| c| |c|}
+
+	\hline
+	$\circ$ & $\epsilon$ & f & g & h & k & l \\
+	
+	\hline
+	$\epsilon$ & \hl{$\epsilon$} & f & g & h & k & l \\
+	
+	\hline
+	f & f & \hl{$\epsilon$} & k & l & g & h \\
+	
+	\hline
+	g & g & k & h & \hl{$\epsilon$} & l & f \\
+	
+	\hline
+	h & h & l & \hl{$\epsilon$} & g & f & k \\
+	
+	\hline
+	k & k & g & l & f & h & \hl{$\epsilon$} \\
+	
+	\hline
+	l & l & h & f & k & \hl{$\epsilon$} & g 
+	
+	\end{tabular}
+\end{table}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{6)} We know that it is in $S_9$, so: 
+
+\bigskip
+
+
+\hspace{.3in}\textbf{a)}
+$(145)(37)(682)$             $\mapsto (\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+					4 & 6 & 7 & 5 & 1 & 8 & 3 & 2 & 9
+					\end{smallmatrix})$ 
+					
+					\bigskip
+					
+\hspace{.3in}\textbf{b)}
+$(17)(628)(9354)$             $\mapsto (\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+					7 & 8  & 5 & 9 & 4  & 2 & 1 & 6 & 3
+					\end{smallmatrix})$ 
+					
+					\bigskip
+
+\hspace{.3in}\textbf{c)}
+$(71825)(36)(49)$             $\mapsto (\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+					 8& 5 & 6 & 9 & 7 & 3 & 1 & 2 & 4
+					\end{smallmatrix})$ 
+					
+					 \bigskip
+\hspace{.3in}\textbf{d)}
+$(12)(347)$            		 $\mapsto (\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+					2 & 1 & 4 & 7 & 5 & 6 & 3 & 8 & 9
+					\end{smallmatrix})$ 
+					
+					 \bigskip
+
+\hspace{.3in}\textbf{e)}
+$(147)(1678)(74132)$     $\mapsto (\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+					3 & 8 & 2 & 6 & 5 & 1 & 7 & 4 & 9
+					\end{smallmatrix})$ 
+					
+					\bigskip
+					
+					
+					
+\hspace{.3in}\textbf{f)}
+$(6148)(2345)(12493)$   $\mapsto (\begin{smallmatrix}
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+					3 & 5 & 4 & 9 & 2 & 1 & 7 & 6 & 8
+					\end{smallmatrix})$
+					
+					
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+
+
+\textbf{9)} Even or Odd?
+
+
+\medskip
+
+\hspace{.2in}\textbf{a}
+$(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
+7 & 4 & 1 & 5 & 6 & 2 & 3 & 8 &
+\end{smallmatrix})$
+
+\medskip
+
+We have to put this into disjoint cycles:
+
+\begin{center}
+$(\begin{smallmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
+7 & 4 & 1 & 5 & 6 & 2 & 3 & 8 &
+\end{smallmatrix})$		$\mapsto(173)(2456)$.
+\end{center}
+
+\medskip
+
+Now we can put the disjoint cycles to product of transpositions which will help us decide if it is even or odd:
+
+\medskip
+$(173)(2456)$		$\mapsto(13)(17)(26)(25)(24)$   $\longrightarrow$ this is Odd
+
+
+\medskip
+\bigskip
+
+
+\hspace{.2in}\textbf{b} \hspace{.1in} $(71864)$		$\mapsto(74)(76)(78)(71)$	$\longrightarrow$  Even
+
+\medskip
+
+\hspace{.2in}\textbf{c} \hspace{.1in} $(12)(76)(345)$	 $\mapsto(12)(76)(35)(34)$ 		$\longrightarrow$ Even
+
+\medskip
+
+\hspace{.2in}\textbf{d} \hspace{.1in}  $(1276)(3241)(7812)$ 		$\mapsto (16)(17)(12)(31)(34)(32)(72)(71)(78)$		$\longrightarrow$ Odd
+
+\medskip
+
+\hspace{.2in}\textbf{e} \hspace{.1in} $(123)(2345)(1357)$  	$\mapsto (13)(12)(25)(24)(23)(17)(15)(13)$ $\longrightarrow$ Even
+
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+\textbf{10a)} We learned in lecture that every permutations has a (unique) expression as a product os disjoint cycles. 
+Transposition means $(a_1, a_2, a_3,......a_k)=(a_1a_k)(a_1a_k-1).....$. When we are given any permutations, we can turn those permutations into a product of transpositions.
+
+\bigskip
+
+\textbf{b)}
+
+Assume that the set $T_1=\{(12),(13), . . . (1n)\} $ generates  $Sn.$
+
+ Let a,b $\in$ \{2,3....,n\}
+ then with the definition of transpositions: $$(ab)=(1a)(1b)(1a)....$$
+ which it follows that (ab) $\in$  $<T_1>$.
+ 
+ $<T_1>=S_n$, because we proved in the previous problem that transpositions in $S_n$ generates $S_n$.
+ 
+
+
+
+
+
+					   
+\end{document}
