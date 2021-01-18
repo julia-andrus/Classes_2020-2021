@@ -1,0 +1,348 @@
+\documentclass{article}
+
+\usepackage{amssymb, amsmath, amsfonts}
+
+\usepackage{color, soul}
+
+\title {Hw 7}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{1)}  We're given:  
+
+\medskip
+
+$\beta=(132)$
+
+\medskip
+
+$\alpha=(23)$
+
+\medskip
+
+
+$\gamma=(12)$
+
+\medskip
+
+$\delta=(123)$
+
+\medskip
+
+$\kappa=(13)$
+
+\medskip
+
+$H=H_{\epsilon}=\{\epsilon, \alpha \}$ where we have the $\epsilon$ is the identity and $\alpha=(23)$.
+
+\medskip
+
+$H=H_{\epsilon}=\{\epsilon, \alpha\}$
+
+
+\medskip
+
+\hspace{.11in} $=H_{\alpha}=\{\epsilon \circ \alpha, \alpha \circ \alpha \}$
+
+\hspace{.48in} $=\{ \alpha, \epsilon \}$
+
+\medskip
+
+$H_{\beta}=\{\epsilon \circ \beta, \alpha \circ \beta \}$
+
+\hspace{.18in} $=\{\beta, \gamma\}$
+
+\medskip 
+
+$H_{\gamma}=\{\epsilon \circ \gamma, \alpha \circ \gamma \}$
+
+\hspace{.18in} $=\{\gamma, \beta\}$
+
+\medskip
+
+$H_{\delta}=\{\epsilon \circ \delta, \alpha \circ \delta \}$
+
+\hspace{.18in} $=\{\delta, \kappa\}$
+
+\medskip
+
+$H_{\kappa}=\{\epsilon \circ \kappa, \alpha \circ \kappa \}$
+
+\hspace{.18in} $=\{\kappa, \delta\}$
+
+\medskip
+
+With all this, we can say that 
+
+\medskip
+
+$H=H_{\epsilon}=H_{\alpha}=\{\epsilon, \alpha\}$
+
+\medskip
+
+$H_{\beta}=H_{\gamma}=\{\beta, \gamma\}$
+
+\medskip
+
+$H_{\delta}=H_{\kappa}=\{\delta, \kappa\}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{2)} We have $G=\mathbb{Z}_{15}$ and going to list cosets of $H=<5>$. We know that $\mathbb{Z}_{15}=\{1, 2, 3,.......14\}$ and $<\mathbb{Z} ,+>$.
+
+\medskip
+
+The cosets of H is H=H+0, H+1, H+2, H+3, H+4. Note that H+the numbers=the numbers+H is abelian. 
+
+\medskip
+
+Let's check:
+
+\medskip
+
+$H=\{0, 5, 10\}$
+
+\medskip
+
+$H+1=\{0+1, 5+1, 10+1\}=\{1, 6, 11\}$
+
+\medskip
+
+$H+2=\{2, 7, 12\}$
+
+\medskip
+
+$H+3=\{3, 8, 13\}$
+
+\medskip
+
+$H+4=\{4, 9, 14\}$
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{3)} Describing the cosets of subgrp $<3>$ in $\mathbb{Z}$. 
+
+\medskip
+
+First, we know that Z contains the negative and positive integers ad zero. With that idea, then $H=<3>=\{........-9,-6,-3,0,3,6,9.....\}$.
+Lets try out some numbers:
+
+\medskip
+
+$H+1=\{.....-9+1, -6+1, -3+1, 0+1, 3+1, 6+1, 9+1.......\}$
+
+\hspace{.4in}$=\{......-8, -7, -2, 1, 4, 7, 10....\}$
+
+\medskip
+
+$H+2=\{......-7, -4, -1, 2,  5, 8, 11....\}$
+
+\medskip
+
+As you can see, the elements show are either subtracted from 3 or added by 3.  If we did H+3, it would equal to H.
+
+Check:
+
+\medskip
+
+$H+3=\{......-6, -3, 0, 3,  6,....\}$
+
+
+\medskip
+
+
+We can easily say that our subgroup H contains the elements of the group:
+
+\medskip
+
+$H=\{3n : n \in \mathbb{Z} \}$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{4)} Prove that $x^{n}=e$ for every x $\in$ G. First, note that the Lagrange's theorem says that H $\leq$ G and G is finite, where $|H|/|G|$.
+
+\medskip 
+
+Suppose H $\leq G, let H=<x^{m}>$ where m is the smallest positive integer and $G=<x>$ for x $\in G$.
+
+\medskip
+
+We have $x^{n}=e$, then by Division Algorithm
+
+\medskip
+
+$$n=mq+r$$
+
+$$e=x^{n}=x^{mq+r}=x^{mq}x^{r}=(x^{m})^{q}x^{r}=x^{r}$$
+
+
+Note that r=0 because m is the smallest positive integer s.t. $x^{m}=e$ and $r < m.$ 
+
+\medskip
+
+So 
+
+$$n=mq+0$$
+$$n=mq$$
+
+
+so $$m|n \mapsto |H|/|G|$$
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{5)}  Note that Homomorphism means that $f(ab)=f(a)f(b)$for all a,b $\in$ G. This idea is like isomorphism, excluding 1-1 and onto. 
+
+\medskip
+
+Since $D(\mathbb{R}$ is the additive group then let f,g $\in \mathbb{R}$ then 
+
+\medskip
+
+$\phi(f)=f'$
+
+\medskip
+
+$\phi(f+g)'=(f+g)'$
+
+\medskip
+
+
+ \hspace{.6in}$=(f)'+(g)'$
+ 
+ \medskip
+
+ 
+ \hspace{.6in}$=\phi(f')+\phi(g')$
+ 
+ \medskip
+
+Note that definition of kernel of f: kern f=$\{g \in G | f(g)=e_{H} \}$, so basically any element that would equal to 0. The kern($\phi$) would equal to any constant numbers in f and g because any constant numbers of derivatives is equal to 0. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{6)}  Proof: Let A,B $\in$ G and G be the multiplicative group of all $2X2$ matrices over $\mathbb{R}$.
+
+\medskip
+
+We are given f(A)=det(A), then
+
+\medskip
+
+$f(A)=det(A)$
+
+
+$f(AB)=det(AB)$
+
+
+\hspace{.45in}$=det(A)det(B)$
+
+
+\hspace{.45in}$=f(A)f(B) \surd$
+
+\medskip
+
+The kern(f) would equal to a zero in det(A) or in det(B) would give us zero when det(A) and det(B) are multiplied together.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{7)} Proof: Let a,b $\in$ G
+
+\medskip
+
+then (note: we're in the idea of composition)
+
+\medskip
+
+$g \circ f (ab)=g(f(ab))$
+
+\medskip
+
+\hspace{.55in}$=g(f(a)f(b))$
+
+\medskip
+
+\hspace{.55in}$=g(f(a))g(f(b))$
+
+\medskip
+
+\hspace{.55in}$=(g\circ f)(a)(g\circ f)(b) \surd$
+
+\medskip
+
+\medskip
+
+
+The kernel of g $\circ$ f would equal to some number in g $\circ$ some number in f that will give us the identity. 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{8)} To prove that f(K) is a subgroup of H, we have to check if f(K) passes three test: non-empty, closure, and inverse.
+
+\medskip
+
+ 
+1) non-empty: since K is any subgroup of G (K$\leq G)$, there's an identity $(f(e_{G})=e_{H} )$, then f(K) is non-empty. 
+
+\medskip
+
+2) closure: Fix any x,y $\in$ K. Then f(x)=$e_{H}$=f(y).
+
+so 
+
+\medskip
+
+$f(x)=f(x)$
+
+
+$f(xy)=f(x)f(y)$
+
+
+\hspace{.35in} $=e_{H}e_{H}$
+
+
+\hspace{.35in} $=e_{H}$
+
+\medskip
+
+Yes, x,y $\in$ K.
+
+\medskip
+
+3) inverse: fix any x $\in$ K, so f(x)=$e_{H}$
+
+\medskip
+
+then 
+
+$$f(x^{-1})=f(x)^{-1}=e_{H}^{-1}=e_{H}$$
+
+\medskip
+
+$\therefore$  f(K) is a subgroup of H.
+
+
+\end{document}
