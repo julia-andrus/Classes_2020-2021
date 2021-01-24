@@ -23,11 +23,24 @@ Class assignments in LaTex. Started LaTex in Fall 2020.
 
 * R code to be added very soon
 
+*Same Data data, but in 3 different languages: LaTex, R and Python
+
 #### STAT 461_Intro to Math Stat I
 * Assignments written in LaTex
 
   * Pdf of the LaTex-assigments provided to show my result of work
 
 * R code to be added very soon
+
+*Same Data data, but in 3 different languages: LaTex, R and Python
+
+#### Econ 314-Private and Public Investment: 
+
+*Exploration in R more with Econ class
+  *graphs, cash flow charts, and other types of data visulization
+
+ 
+
+
 
 
