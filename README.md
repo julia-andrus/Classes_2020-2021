@@ -36,8 +36,8 @@ Class assignments in LaTex. Started LaTex in Fall 2020.
 
 #### Econ 314-Private and Public Investment: 
 
-*Exploration in R more with Econ class
-  *graphs, cash flow charts, and other types of data visulization
+* Exploration in R more with Econ class (to be added soon)
+  * graphs, cash flow charts, and other types of data visulization
 
  
 
