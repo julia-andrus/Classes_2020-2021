@@ -1,0 +1,654 @@
+ \documentclass{article}
+\usepackage{ amsmath, amssymb, soul, color, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{soul, color}
+\usepackage{ulem}
+\usepackage[linguistics]{forest}
+
+\title{STAT 452\_Hw 4}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% %Chapter 8: Ex 10, 18(a)-(b), 26, 30, 40, 48(a and b), 8.74Use R to do Ex 23
+
+\textbf{10)} A regular type of laminate is being currently used by a manufacture of circuit bonds. A special laminate has been developed to reduce warpage. the regular laminate will be used on one sample of specimens and the special laminate on another sample. The manufacturer will then switch to the special laminate only if it can be demonstrated that the true average amount of warpage for that laminate is less than for the regular laminate. \textbf{State the relevant hypotheses, and describe the type I and type II errors in the context of this situation}.
+
+\vspace{2mm}
+
+Notes:
+\vspace{2mm}
+
+We are given that there are two types of laminate: regular and special. There are pair of hypotheses that needs to be mention in this problem: null hypotheses $(H_{0})$ and the alternative hypotheses $(H-{a})$. The null hypotheses is the initial claim assumed to be true and the alternative hypotheses is the contradictory of null hypotheses. With these two hypotheses, comes with the idea of test hypotheses: deciding whether the $H_{0}$ should be rejected.
+
+\vspace{2mm}
+
+$H_{0}$ is the initial claim: Regular laminate
+\vspace{2mm}
+$H_{a}$ is the contradictory of $H_{0}$: Special laminate
+
+\vspace{2mm}
+
+So, let  
+
+\vspace{2mm}
+$H_{0}$: Regular Laminate=Special Laminate
+
+\vspace{2mm}
+
+$H_{a}$: Regular Laminate $>$ Special Laminate 
+
+\vspace{2mm}
+
+For the type errors, there are two types of errors: Type I Error and Type II Error. Type I Error consists
+of rejecting $H_{0}$ when it is true.  Type II Error involves of not rejecting $H_{0}$ when it is false.
+
+\vspace{2mm}
+
+For this problem:
+
+\vspace{2mm}
+
+Type I Error will occur when Regular Laminate = Special Laminate 
+
+
+\vspace{2mm}
+
+Type II will Error will occur if Regular Laminate $>$ Special Laminate.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% %18(a)-(b), 26, 30, 40, 48(a and b), 8.74Use R to do Ex 23
+\newpage
+\textbf{18a)} Drying time for a test specimen is normally distributed with $\sigma$=9. The hypotheses $H_{0}$: $\mu$=75 versus $H_{a}$: $\mu<$75 are to be tested using a random sample of n=25 observations. \textbf{How many standard deviations (of $\overline{X}$) below the null value is $\overline{x}$=72.3}?
+
+\vspace{2mm}
+
+We are given: 
+
+\vspace{2mm}
+
+$$H_{0}: \mu=75$$
+$$H_{a}: \mu<75$$
+$$n=25$$ 
+$$\overline{x}=72.3$$
+$$\sigma=9$$
+
+To find the numbers of standard deviations, we have to use this formula:
+
+\vspace{2mm}
+
+$$\sigma_{\overline{x}}=\frac{\sigma}{\sqrt{n}}$$
+$$=\frac{9}{\sqrt{25}}$$
+$$=1.8$$
+
+Now we need us this formula to find our answer: $Z=\frac{(\overline{x}-\mu_{0})}{\sigma_{\overline{x}}}$
+
+\vspace{2mm}
+
+$$=\frac{72.3-75)}{1.8}$$
+$$=-1.5$$
+
+\vspace{2mm}
+
+\hl{Answer:} 72.3 is 1.5 standard deviations below.
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{18b)} If $\overline{x}=72.3$, what is the conclusion using a $\alpha=.002$?
+
+\vspace{2mm}
+
+First we have to use the Test Statistics: $Z=\frac{(\overline{x}-\mu_{0})}{\sigma_{\overline{x}}}$
+
+$$=\frac{(72.3-75)}{1.8}=-1.5$$
+
+\vspace{2mm}
+
+Now we have to use the P-value formula: $P(Z \le z \text{when} H_{0} \text{is true})$, where z area under standard normal curve to left of $Z=\phi(z)$
+
+\vspace{2mm}
+
+So,
+
+$$\text{P-value}=1(1-\phi(1.5))=1(1-0.0668072)$$
+For $\phi(1.5)$, we can use Table A.3 or we can use R: pnorm(1.5)
+$$=0.9331928$$
+
+\vspace{2mm}
+
+\hl{Answer:} Since our p-value=0.9331928 $>$ $\alpha=0.002$, the $ H_{0}$ can not be rejected. Because of this, the data does not give strong support to the claim that the true average trying time is less than 75. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\vspace{5mm}
+\textbf{18c)}  For the test procedure with a $\alpha=0.002$, what is $\beta(70)$?
+
+\vspace{2mm}
+
+For this problem, we have to use a formula for $\beta$, the prob. of a type II error:
+\vspace{2mm}
+
+$$\beta(\mu^{'})=P(H_{0} \text{is not rejected when}  \mu=\mu^{'})$$
+$$=P(\overline{X}<\mu_{0}+z_{\alpha} * \frac{\sigma}{\sqrt{n}} \text{when} \mu=\mu^{'})$$
+$$=P(\frac{\overline{X}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}}<z_{\alpha}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}}  \text{when} \mu=\mu^{'})$$
+$$=\phi(z_{\alpha}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})$$
+
+One more thing we need to note before we start solving: 
+
+\vspace{2mm}
+
+Type II Error Prob. $\beta(\mu^{'})$ for a Level $\alpha$ Test:
+
+\vspace{2mm}
+
+$H_{a}: \mu > \mu_{0}$:
+\vspace{2mm}
+$$=\phi(z_{\alpha}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})$$
+
+$H_{a}: \mu < \mu_{0}$:
+\vspace{2mm}
+$$=1-\phi(-z_{\alpha}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})$$
+
+$H_{a}: \mu \ne \mu_{0}$:
+\vspace{2mm}
+$$=\phi(z_{\frac{\alpha}{2}}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})-\phi(-z_{\frac{\alpha}{2}}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})$$
+
+Okay, now we can start solving:
+
+$$=1-\phi(-z_{\alpha}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})$$
+$$=1-\phi(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})$$
+$$=1-\phi(-2.88+2.78)$$
+$$=1-\phi(-.10)$$
+using the table A.3
+$$=1-.4602$$
+$$=0.5398$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.5398
+
+\vspace{5mm}
+%%%%%%%%%%%%%%%%%%
+\textbf{18d)} Test procedure $\alpha=0.002$ is used, what n is necessary to ensure that $\beta(70)=0.01$?
+
+\vspace{2mm}
+
+The rules for finding n is 
+
+\vspace{2mm}
+
+$n=[\frac{\sigma(z_{\alpha}+z_{\beta})}{\mu_{0}-\mu_{'}}]^{2}$ for one tailed (upper/lower) test.
+
+\vspace{2mm}
+
+$n=[\frac{\sigma(z_{\frac{\alpha}{2}+z_{\beta})}}{\mu_{0}-\mu_{'}}]^{2}$ for 2 tailed test (an approx. solution).
+
+\vspace{2mm}
+
+We know that $\beta(\mu^{'})=\beta$, where $\beta{70}=0.01$. So
+
+\vspace{2mm}
+
+$$\beta(70)=1-\phi(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})$$
+$$0.01=1-\phi(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})$$
+$$\phi(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})=1-0.01$$
+$$\phi(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})=0.99$$
+
+$z_{0.01}=z_{1-\alpha}=z_{.99}=2.33$
+
+$$\phi(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})=\phi(2.33)$$
+$$(-2.88+\frac{75-70}{\frac{9}{\sqrt{25}}})=2.33$$
+$$\frac{5}{\frac{9}{\sqrt{25}}}=5.21$$
+$$=\frac{9}{\sqrt{25}}=\frac{5}{5.21}$$
+$\frac{5}{5.21}=0.959692$
+$$\frac{9}{0.959692}=\sqrt{n}$$
+$$(9.378)^{2}=(\sqrt{n}^{2})$$
+$$87.94884=n$$
+Round to nearest whole \#
+$$88=n$$
+
+\vspace{2mm}
+
+\hl{Answer:} n=88
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%
+\textbf{18e)} 0.01 test is used n=100, what is the prob. of type I error when $\mu=76$.
+
+\vspace{2mm}
+
+n=100
+ 
+$\mu^{'}=76$
+
+\vspace{2mm}
+
+\hl{Answer:} The prob. of type error I would be 0. Because of 
+
+$$=\phi(z_{\alpha}+\frac{\mu_{0}-\mu^{'}}{\frac{\sigma}{\sqrt{n}}})$$
+
+$$\phi(2.33+\frac{75-76}{\frac{9}{\sqrt{100}}})$$
+$$\phi(2.33-1.11)$$
+$$\phi(1.2189)$$
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% 26, 30, 40, 48(a and b), 8.74Use R to do Ex 23
+\newpage
+\textbf{26)} The recommended daily dietary allowance for zinc among males older than age 50 years is 15 mg/day. Intake for a sample of males age 65–74 years: $n=115, \overline{x}$=11.3, and $s= 6.43$. Does this data indicate that average daily zinc intake in the population of all males ages 65–74 falls below the recommended allowance?
+
+\vspace{3mm}
+
+We know that:
+
+\vspace{2mm}
+
+$$n=115$$
+$$ \overline{x}=11.3$$
+$$s= 6.43$$
+$$H_{0}: \mu=15$$
+$$H_{a}: \mu<15$$
+
+Using the z statistic: $z=\frac{\overline{x}-\mu_{0}}{\frac{s}{\sqrt{n}}}$
+
+\vspace{2mm}
+
+$$=\frac{11.3-15}{\frac{6.43}{\sqrt{115}}}$$
+$$=-6.17$$
+
+Because -6.17 is not found on the table:
+
+\vspace{2mm}
+
+P-value=$P(Z \le -6.17) < P(Z \le -2.49)=0.002$
+
+\vspace{2mm}
+
+\hl{Answer:} P-value is going to be smaller than the significance level and thus we reject the $H_{0}$ and conclude that it is likely the average daily zinc intake in the population of all males ages 65–74 falls below the recommended 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% 30, 40, 48(a and b), 8.74Use R to do Ex 23
+\newpage
+\textbf{30)} A sample of n sludge specimens is selected and the pH of each one is determined. The \textbf{one-sample t test} will then be used to see if there is compelling evidence for concluding that \textbf{true average pH is less than 7.0}. What conclusion is appropriate in each of the following situations?
+
+\vspace{3mm}
+
+First, we need to identify our $H_{0}$ and $H_{a}$:   $H_{0}$: $\mu$ =7.0 and $H_{a}$: $\mu$<7.0. Now that we have identified those, we can start solving.
+
+\vspace{3mm}
+
+\textbf{a)} n=6, t=-2.3, $\alpha=.05$
+
+\vspace{2mm}
+
+First we need our df=n-1 $=>$ 6-1=5df. Now that we have our df and t, we can look in the appendix and look for Table A.8. Where t=-2.3 and v(v=n-1)=5, I got .035. 
+
+\hl{Answer:} Since $0.035<0.05$, reject $H_{0}$. 
+
+\vspace{3mm}
+
+\textbf{b)} n=15, t=-3.1,$\alpha=.01$
+
+\vspace{2mm}
+
+Same process as before: df=n-1 $=>$ 15-1=14df. Now that we have our df and t, we can look in the appendix and look for Table A.8. Where t=-3.1 and v(v=n-1)=14, I got 0.004. 
+
+\hl{Answer:} Since $0.004<0.01$, then reject $H_{0}$, meaning we are able to reject at a significance level $(\alpha)$ of 0.01. 
+
+\vspace{2mm}
+
+\textbf{c)} n=12, t=-1.3, $\alpha=.05$
+
+\vspace{2mm}
+
+Df=n-1 $=>$ 12-1=11df. Now that we have our df and t, we can look in the appendix and look for Table A.8. Where t=-1.3 and v(v=n-1)=11, I got 0.110. 
+
+\hl{Answer:} Since $0.110>0.05$, then $H_{0}$ can not be rejected, meaning we are not able to reject at a significance level $(\alpha)$ of 0.05. 
+
+
+\vspace{3mm}
+
+\textbf{d)} n=6, t=0.7, $\alpha=.05$ 
+
+\vspace{2mm}
+
+Df=n-1 $=>$ 6-1=5df. Now that we have our df and t, we can look in the appendix and look for Table A.8. Where t=0.7 and v(v=n-1)=5, I got 0.258. 
+
+\hl{Answer:} Since $0.258>0.05$, then $H_{0}$ can not rejected, meaning we are not able to reject at a significance level $(\alpha)$ of 0.05. 
+
+\vspace{3mm}
+
+\textbf{e)} n=6, $\overline{x}=6.68, \frac{s}{\sqrt{n}}=.0820$
+
+\vspace{2mm}
+
+Now for this we have to find t:
+
+\vspace{2mm}
+
+$$t=\frac{(\overline{x}-\mu_{0})}{ \frac{s}{\sqrt{n}}}$$
+$$t=\frac{(6.68-7.0)}{.820}$$
+$$t=-3.9$$
+
+\vspace{3mm}
+
+Now that we have t=-3.9 and df=5, our p-value is 0.006. 
+
+
+\hl{Answer:} Since $0.006<0.05$, then reject $H_{0}$, meaning we are not able to reject at a significance level $(\alpha)$ of 0.05.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% 40, 48(a and b), 8.74Use R to do Ex 23
+\newpage
+\textbf{40)} Sample of 10 specimens with 2\% fiber content, the sample mean tensile strength (MPa) was 51.3 and the sample sd=1.2. Suppose the true average strength for 0\% fibers is know to be 48 Mpa. Does the data provide compelling evidence for concluding that true average strength for the WSF/cellulose composite \textbf{exceeds this value}?
+
+\vspace{2mm}
+
+We are given that 
+
+\vspace{2mm}
+
+n=10, w 2\% content
+
+\vspace{2mm}
+
+\textbf{true average strength for 0\% fibers is know to be 48 Mpa}
+
+\vspace{2mm}
+
+$\overline{x}=51.3$
+
+\vspace{2mm}
+
+$\sigma=1.2$
+
+\vspace{2mm}
+
+Setting up the test hypothesis: 
+
+\vspace{2mm}
+
+$H_{0}: \mu= 48$ 
+
+\vspace{2mm}
+
+$H_{a}: \mu > 48$
+
+We are going to have to use test statistics=$\frac{\overline{x}-\mu}{\frac{s}{\sqrt{10}}}$
+
+\vspace{2mm}
+
+$$=\frac{51.3-48}{\frac{1.2}{10}}$$
+$$=\frac{3.3}{.38}$$
+$$=8.6962$$
+
+\vspace{2mm}
+
+Assume $\alpha=0.05$
+Now, $t_{\alpha,n-1}=t_{0.05, 9}$=looking at Table A.5=1.833
+
+\vspace{2mm}
+
+\hl{Answer:} With that, since 1.833 $<$ 8.6962 we can reject the null hypothesis and thus  we have sufficient evidence to conclude that $\mu$ is greater than 48. 
+				
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%  48(a and b), 8.74Use R to do Ex 23
+\newpage
+\textbf{48a)} 51 homes found and 41/51 had problems. Suppose 51 were randomly sampled from the population of all homes having Chinese drywall. Does the data provide strong evidence for concluding that more than 50\% of all homes with Chinese drywall have electrical/environmental problems? Carry out a test of hypotheses using a $\alpha= .01$.
+
+\vspace{2mm}
+
+$H_{0}: \mu=50\%=0.50$
+
+\vspace{2mm}
+
+$H_{a}: \mu>50\%=0.50$
+
+\vspace{2mm}
+
+We need to solve for the sample proportion: $\hat{p}=\frac{x}{n}$
+
+$$\hat{p}=\frac{41}{51}$$
+$$=0.804$$
+
+Now using the test statistics: $Z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}$
+
+\vspace{2mm}
+
+p=0.50
+
+\vspace{2mm}
+
+$\hat{p}=0.804$
+
+\vspace{2mm}
+
+$$=\frac{0.804-0.50}{\sqrt{\frac{0.50(1-0.50)}{51}}}$$
+$$\frac{0.304}{0.070}$$
+$$Z=4.34$$
+
+Now we input 3.49 instead of 4.34 because 3.34 is not in the table:
+
+\vspace{2mm}
+
+$1-\phi(4.34)<1-\phi(3.49)=0.0003$
+
+\vspace{2mm}
+
+\hl{Answer:} Since $0.0003 < .01$, then $H_{0}$ can be rejected and thus this does give strong evidence for concluding that more than 50\% of all homes with Chinese drywall have electrical/environmental problems.
+
+
+
+%%%%%%%%%%%%%%
+\vspace{5mm}
+
+\textbf{48b)} Calculate a lower confidence bound using a confidence level of 99\% for the percentage of all such homes that have electrical/environmental problems.
+
+The lower confidence bound formula: $\hat{p}-Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+\vspace{2mm}
+
+To find $Z_{\frac{\alpha}{2}}$: 99\% CI
+
+\vspace{2mm}
+
+1-0.99=0.01
+
+\vspace{2mm}
+
+$\frac{0.01}{2}=0.005$
+
+\vspace{2mm}
+
+Looking at the table we get 2.33.
+
+\vspace{2mm}
+
+$$=0.804-2.33\sqrt{\frac{0.804(1-0.804)}{51}}$$
+$$=0.804-2.33(0.056)$$
+$$=0.804-0.13048$$
+$$=0.67$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.67
+
+
+
+%%%%%%%%%%%%%%
+
+\vspace{5mm}
+
+\textbf{48c)} If it is actually the case that 80\% of all such homes have problems, how likely is it that the test of (a) would not conclude that more than 50\% do?
+
+\vspace{2mm}
+
+We have to use this formula: 
+
+$$\beta(p^{'})=\phi[\frac{p_{0}-p^{'}+z_{\alpha}\sqrt{\frac{p_{0}(1-p_{0})}{n}}}{\sqrt{\frac{p^{'}(1-p^{'})}{n}}}]$$
+
+Let $p_{0}=p=0.50$, $p^{'}=0.80$, $z_{\alpha}=2.33$, and n=51 then
+
+$$\beta(p^{'})=\phi[\frac{p_{0}-p^{'}+z_{\alpha}\sqrt{\frac{p_{0}(1-p_{0})}{n}}}{\sqrt{\frac{p^{'}(1-p^{'})}{n}}}]$$
+
+$$=\phi[\frac{0.50-0.80+2.33\sqrt{\frac{0.50(1-0.50)}{51}}}{\sqrt{\frac{0.80(1-0.80)}{51}}}]$$
+$$=\phi[\frac{-0.30+2.33(0.070)}{0.056}]$$
+
+$$=\phi[\frac{-0.30+.1631}{0.056}]$$
+
+$$=\phi[\frac{1.369}{0.056}]$$
+
+$$=\phi[-2.44]$$
+
+Using r: pnorm(-2.44)
+$$=0.007343631$$
+$$0.0073$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\beta=0.0073$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%  8.74Use R to do Ex 23
+\newpage
+\textbf{Chp 8-23)} A measure of accuracy of the automatic region is the average linear displacement (ALD). The paper gave the following ALD observations for a sample of 49 kidneys (units of pixels dimension)
+
+\vspace{5mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-05 at 11.58.48 AM.png}
+
+\vspace{5mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-05 at 11.48.34 AM.png}
+
+\vspace{3mm}
+
+\newpage
+
+\textbf{Chp 8-23a)} This data is left skewed, and thus it is asymmetric. I used R to find some information about the data:
+
+\vspace{2mm}
+
+Mean: 0.7497959
+
+Var: 0.09148537
+
+sd: 0.3024655
+
+N: 49
+
+Min: 0.34
+
+1st Quartile: 0.52
+
+Median: 0.64
+
+3rd Quartile:  1 
+
+Max: 1.44
+
+95\% Confidence interval for $\mu$: t.test(ALD)
+  
+(0.6629177,  0.8366742)
+
+\vspace{3mm}
+
+
+\textbf{Chpt 8-23b)} It is not plausible that ALD is normally distributed since the data is skewed to the left. Normality does not need to be assumed prior to calculating the CI for true average ALD because when we have a large sample size, like this, z-tests are easily modified to yield valid test procedures.
+
+\vspace{3mm}
+
+\textbf{Chpt 8-23c)} ALD is better than or of the order of 1.0. Does the data in fact provide strong evidence for concluding that true average ALD under these circumstances is less than 1.0? Carry out an appropriate test of hypotheses.
+
+\vspace{2mm}
+
+$\mu$=true average ALD value
+
+\vspace{2mm}
+
+$H_{0}$: $\mu=1.0$
+
+\vspace{2mm}
+
+$H_{a}: \mu \ne 1.0$ (will reject $H_{0}$)
+
+\vspace{2mm}
+
+$\alpha=1-0.95=0.05$, so looking at table A.3 for a significance level of 0.05 $=>$ -1.64. With this, we reject $H_{0}$ when z $\le$ -1.64 or when z $\ge$ 1.64.
+
+\vspace{3mm}
+
+%P(Z \ge z)= \alpha
+
+$$z=\frac{\overline{x}-\mu}{\frac{S}{\sqrt{n}}}$$
+$$=\frac{ 0.7497959-1.0}{\frac{0.3024655}{\sqrt{49}}}$$
+$$=\frac{-0.2502041}{.0432093571}$$
+$$=-5.790507$$
+\vspace{3mm}
+
+\hl{Answer:} As you can see -5.790507 is $\le$ -1.64, so we can reject the $H_{0}$ and therefore we can conclude that the data provides strong evidence that true average ALD under these circumstances is less than 1.0.
+
+\vspace{3mm}
+
+\textbf{Chpt 8-23d)} Calculate an upper confidence bound for true average ALD using a confidence of of 95\% and interpret this bound.
+
+\vspace{2mm}
+
+Since we are just \textbf{calculating the upper confidence level}, we use this formula: 
+
+\vspace{2mm}
+
+$\overline{x}+z_\alpha(\frac{s}{\sqrt{n}}$
+
+\vspace{2mm}
+
+$$=0.7497959+1.64(\frac{0.3024655}{\sqrt{49}})$$
+$$=0.7497959+0.07086335$$
+$$=0.8206592$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.8206592
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
