@@ -1,0 +1,1298 @@
+ \documentclass{article}
+\usepackage{ amsmath, amssymb, soul, color, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{soul, color}
+\usepackage{ulem}
+\usepackage[linguistics]{forest}
+
+ \usepackage{graphicx}
+  \usepackage{tikz, calc}
+
+\title{STAT 461\_Hw 2}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle 
+%%%%%%%%%%%%%%%%%%%%% 2.1-8, 2.1-12, 2.2-2, 2.2-8, 2.2-10, 2.3-6, 2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\textbf{2.1-8a)} Let a random experiment consist of rolling a pair of fair dice, each having 6 faces and let the random variable X denote the sum of the dice. Determine pmf (f) of X. Find the probability of each possible outcomes of X namely, x=2,3,4...12. 
+
+\vspace{2mm}
+
+First I want to write out the sample space to figure out the sum of x:
+
+\vspace{2mm}
+
+S=\{
+
+$\begin{matrix}
+1+1 & 2+1 & 3+1 & 4+1 & 5+1 & 6+1 \\
+1+2 & 2+2 & 3+2 & 4+2 & 5+2 & 6+2 \\
+1+3 & 2+3 & 3+3 & 4+3 & 5+3 & 6+3 \\
+1+4 & 2+4 & 3+4 & 4+4 & 5+4 & 6+4 \\
+1+5 & 2+5 & 3+5 & 4+5 & 5+5 & 6+5 \\
+1+6 & 2+6 & 3+6 & 4+6 & 5+6 & 6+6 
+\end{matrix}$
+
+\}
+
+
+Now that we have our sample space, we can look for what we want:
+
+Pmf of x can be written as: f(x)=P(X=x).
+
+\vspace{2mm}
+
+P(x=2)=1/36
+
+\vspace{2mm}
+
+P(x=3)=2/36
+
+\vspace{2mm}
+
+p(x=4)=\{(2,3) , (3,1) , (1,3)\}=3/36
+
+\vspace{2mm}
+
+p=5 =\{(1,4) , (4,1), (3,2) , (2,3)\} = 4/36
+
+\vspace{2mm}
+
+p=6 = 5/36
+
+\vspace{2mm}
+
+p=7=6/36
+
+\vspace{2mm}
+
+p=8=5/36
+
+\vspace{2mm}
+
+p=9=4/36
+
+\vspace{2mm}
+
+p=10=3/36
+
+\vspace{2mm}
+
+p=11=2/36
+
+\vspace{2mm}
+
+p=12=1/36
+
+
+%%%%%%%%%%%
+
+
+\newpage
+\textbf{2.1-8b)} Draw a probability histogram of f (x).
+
+\vspace{4mm}
+
+%\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-03 at 11.08.03 PM.png} 
+
+
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.1-12, 2.2-2, 2.2-8, 2.2-10, 2.3-6, 2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+
+\newpage
+\textbf{2.1-12)} 144 ping-pong balls. Orange balls> 1/2 and rest are painted blue. Two balls are drawn at random \textbf{w/o replacement}. The probability of drawing 2 balls of the same color is the same as the probability of drawing 2 balls of different colors. How many balls are in the bag.
+
+\vspace{2mm}
+
+So since P( 2 balls are same colors)=P(2 balls are different colors), then we have to use combinations without order and w/o replacement. 1/2=72 balls. So,
+
+\vspace{2mm}
+
+Orange balls $>$ 1/2
+
+\vspace{2mm}
+
+x=0,1,2
+
+\vspace{2mm}
+
+N=144
+\vspace{2mm}
+
+n=\# of draws=2
+\vspace{2mm}
+
+
+For this problem we have to use the \textbf{Hyper geometric prob.} formula: $P(X=x)=\frac{(^{N_{1}}_{x})(^{N}_{n}-^{N_{1}}_{x})}{(^{N}_{n})}$
+
+\vspace{2mm}
+
+For x=0:
+$$P(X=0)=\frac{(^{N_{1}}_{0})(^{144}_{2}-^{N_{1}}_{0})}{(^{144}_{12})}$$
+$$=\frac{\frac{(144-N_{1})(143-N_{1})}{2}}{(^{144}_{2})}$$
+
+For x=1:
+$$P(X=1)=\frac{(^{N_{1}}_{1})(^{144}_{2}-^{N_{1}}_{1})}{(^{144}_{2})}$$
+$$=\frac{N_{1}(144-N_{1})}{(^{144}_{2})}$$
+
+For x=2:
+
+$$P(X=2)=\frac{(^{N_{1}}_{2})(^{144}_{2}-^{N_{1}}_{2})}{(^{144}_{2})}$$
+$$=\frac{\frac{N_{1}(N_{1}-1)}{2}}{(^{144}_{2})}$$
+
+
+Now that we have those figured out, we need to use the addition rule--$P(A \cup B)=P(A or B)=P(A)+P(B)$-- to find P(2 same colors) and P(2 different colors):
+
+\vspace{2mm}
+
+For P(2 same colors):
+
+$$P(\text{2 same colors})=P(X=0)+P(X=2)$$
+$$=\frac{\frac{(144-N_{1})(143-N_{1})}{2}}{(^{144}_{2})}+\frac{\frac{N_{1}(N_{1}-1)}{2}}{(^{144}_{2})}$$
+$$=\frac{\frac{(144-N_{1})(143-N_{1})+N_{1}(N_{1}-1)}{2}}{(^{144}_{2})}$$
+
+\vspace{3mm}
+
+For P(2 different colors):
+
+$$P(2 \text{different colors})=P(X=1)=\frac{N_{1}(144-N_{1})}{(^{144}_{2})}$$
+
+Now we can set these two probabilities to find out how many orange balls are in the bag:
+
+$$P(\text{2 same colors})=P(2 \text{different colors})$$
+$$\frac{\frac{(144-N_{1})(143-N_{1})+N_{1}(N_{1}-1)}{2}}{(^{144}_{2})}=\frac{N_{1}(144-N_{1})}{(^{144}_{2})}$$
+We can cancel out $(^{144}_{2})$ by mult.
+$$\frac{(144-N_{1})(143-N_{1})+N_{1}(N_{1}-1)}{2}=N_{1}(144-N_{1})$$
+Mult. by 2 to cancel out the denominator
+$$(144-N_{1})(143-N_{1})+N_{1}(N_{1}-1)=2N_{1}(144-N_{1})$$
+$$20592-143N_{1}-144N_{1}+(N_{1})^{2}+(N_{1})^{2}-N_{1}=288N_{1}-2N_{1}^{2}$$
+Combine together
+$$20592-288N_{1}+2N_{1}^{2}=288N_{1}-2N_{1}^{2}$$
+Equal it to 0
+$$20592-576N_{1}+4N_{1}^{2}=0$$
+We can use the quadralic formula:
+$$N_{1}=\frac{576+\sqrt{576^{2}-4(4)(20592)}}{2(4)}=66$$
+$$N_{1}=\frac{576-\sqrt{576^{2}-4(4)(20592)}}{2(4)}=78$$
+
+\hl{Answer:} With all this work, 78 orange balls in the bag.
+
+
+\vspace{3mm}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.2-2, 2.2-8, 2.2-10, 2.3-6, 2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+
+\newpage
+\textbf{2.2-2)} Let X the random variable X have the pmf
+
+
+$$f(x)=\frac{(|x|+1)^2}{9}$$
+
+for x=-1, 0, 1
+
+\vspace{2mm}
+
+Compute $E(X), E(X^{2}), \text{and} E(3X^{2}-2X+4)$:
+
+\vspace{2mm}
+
+For $E(X)= \sum^{1}_{x=-1}xf(x)$:
+
+$$=(-1)(\frac{(|-1|+1)^2}{9} + (0)(\frac{(|0|+1)^2}{9} + (1)(\frac{(|1|+1)^2}{9}$$
+
+$$=(-1)(\frac{(2)^2}{9} + (0)(\frac{(1)^2}{9} + (1)(\frac{(2)^2}{9}$$
+
+$$=(-1)(\frac{(2)^2}{9} + 0 + (1)(\frac{(2)^2}{9}$$
+
+$$=(-\frac{4}{9}) + 0 +(\frac{4}{9}) $$
+
+$$=0$$
+
+\hl{Answer:} 0
+
+\vspace{2mm}
+
+For $E(X^{2})= \sum^{1}_{x=-1} x^{2} f(x)$:
+
+
+$$=(-1)^{2}\frac{(|-1|+1)^2}{9} + (0)^{2}(\frac{(|0|+1)^2}{9} + (1)^{2}(\frac{(|1|+1)^2}{9}$$
+
+$$=(-1)^{2}(\frac{(2)^2}{9} + (0)^{2}(\frac{(1)^2}{9} + (1)^{2}(\frac{(2)^2}{9}$$
+
+$$=(-1)^{2}(\frac{(2)^2}{9} + 0 + (1)^{2}(\frac{(2)^2}{9}$$
+
+$$=(\frac{4}{9}) + 0 +(\frac{4}{9}) $$
+
+$$=\frac{8}{9}$$
+
+\hl{Answer:} $\frac{8}{9}$
+
+\vspace{2mm}
+
+For $E(3X^{2}-2X+4)= 3(\sum^{1}_{x=-1} x^{2} f(x))-2(\sum^{1}_{x=-1}xf(x))+4$:
+
+$$3(\frac{8}{9})-2(0)+4$$
+
+$$=6.67$$
+
+\hl{Answer:} 6.67
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2.2-8, 2.2-10, 2.3-6, 2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.2-8)} Let X be a random variable with support \{1,2,3,5,15,25,50\}, each point of which has the same prob. $\frac{1}{7}$. Argue that c=5 is the value that minimizes $h(c)=E(|X-c|)$. Compare c and b that minimizes $g(c)=E[(X-b)^{2}]$.
+
+We are given that P(X=1)+P(X=2)+P(X=3)+P(X=5)+P(X=15)+P(X=25)+P(X=50)=$\frac{1}{7}$
+
+For arguing that c=5, I have to use this formula: $h(c)=E(|X-c|)=\sum |X-c| P(X=x)$ 
+
+$$h(c)=E(|X-c|)=\sum |X-c| P(X=x)$$
+$$=|1-c|(\frac{1}{7})+|2-c|(\frac{1}{7})+|3-c|(\frac{1}{7})+|5-c|(\frac{1}{7})+|15-c|(\frac{1}{7})+|25-c|(\frac{1}{7})+|50-c|(\frac{1}{7})$$
+$$=\frac{1}{7}(|1-c|+|2-c|+|3-c|+|5-c|+....+|50-c|$$
+$$=\frac{1}{7}((50-1)+(25-2)+(15-3)+|5-c|)$$
+$$=\frac{1}{7}(84+|5-c|)$$
+$$=12(\frac{|5-c|}{7})$$
+
+\hl{Answer:} As you can see, |5-c| is minimized when c=5 and therefor c=5 holds.
+
+\vspace{2mm}
+
+To compare it with value b, we have to use this formula:
+\vspace{2mm}
+
+ $g(b)=E[(X-b)^{2}]$
+ 
+ \vspace{2mm}
+ 
+ $=E[X^{2}-2bX+b^{2}]$
+ 
+ \vspace{2mm}
+ 
+ $=E(X)^{2}-2bE(X)+b^{2}$
+ 
+ \vspace{2mm}
+ 
+  So using the formula:
+ $$=E(X)^{2}-2bE(X)+b^{2}$$
+ $$=-2b(1^{2}(\frac{1}{7})+2^{2}(\frac{1}{7})+3^{2}(\frac{1}{7})+....+50^{2}(\frac{1}{7})$$
+ $$=\frac{3389}{7}-2b(\frac{101}{7})+b^{2}$$
+ $$\frac{3389}{7}-\frac{202}{7}b+b^{2}$$
+ 
+ Now we have that, we can take the derivative of g(b) to find the minimum: $g^{'}(b)=-2E(X)+2b=0 => b=E(X)$
+ 
+$$g^{'}(b)=-2E(X)+2b=0 => b=E(X)$$
+$$-\frac{202}{7}+2b=0$$
+$$2b=\frac{202}{7}$$
+$$14b=202$$
+$$b=14.43$$
+
+\vspace{2mm}
+
+\hl{Answer:} Since our $b=14.43$ and our $c=5$, b value is much greater than the c value.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.2-10, 2.3-6, 2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.2-10)} High-low: 3 possible bets. Assume \$1 is the size of the bet. 2 fair 6-sided dice are rolled and their sum is calculated. Bet \textbf{below}, win \$1 if sum of dice is \{2,3,4,5,6\}. Bet \textbf{high}, win \$1 if sum of dice is \{8,9,10,11,12\}. If you bet [7], win \$4 if sum of 7 is rolled. Other wise you lose on each 3 bets. Find the \textbf{expected value} of the fame to the better for each of these 3 bets.
+
+\vspace{2mm}
+
+First, I want to make a table to find the prob. of sums of x. Th table is shown above the problem for some reason.
+
+
+\begin{table}
+\begin{tabular}{l c l c l c l c l c l c | c |}
+&1 & 2 & 3 & 4 & 5 & 6\\
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+2 & 3 & 4 & 5 & 6 & 7 & 8\\
+3 & 4 & 5 & 6 & 7 & 8 & 9\\
+4 & 5 & 6 & 7 & 8 & 9 & 10\\
+5 & 6 & 7 & 8 & 9 & 10 & 11\\
+6 & 7 & 8 & 9 & 10 & 11 & 12
+\end{tabular}
+\end{table}
+
+For low bet:
+
+\vspace{2mm}
+
+As you can see int he table it shows that $\frac{15}{36}$ are the sum of 2,3,4,5,6. The prob. of sum of 7,8,9,10,11,12 is $\frac{21}{36}$. So,
+
+\vspace{2mm}
+
+P(wining)=$P(X=1)=\frac{15}{36}$
+
+\vspace{2mm}
+
+P(Losing)=$P(X=-1)=\frac{21}{36}$
+
+\vspace{2mm}
+
+
+The expected value:
+
+$$E(x)=\sum xP(X=x)$$
+$$=(1)(\frac{15}{36}) + (-1)(\frac{21}{36})$$
+$$=-1/6$$
+
+\vspace{2mm}
+
+\hl{Answer:} $-\frac{1}{6} \approx \$-0.167$
+
+\vspace{2mm}
+
+For High Bet:
+
+\vspace{2mm}
+
+As you can see int he table it shows that $\frac{21}{36}$ are the sum of 8,9,10,11,12. The prob. of sum of 2,3,4,5,6,7 is $\frac{15}{36}$. So,
+
+\vspace{2mm}
+
+P(wining)=$P(X=1)=\frac{15}{36}$
+
+\vspace{2mm}
+
+P(Losing)=$P(X=-1)=\frac{21}{36}$
+
+\vspace{2mm}
+
+The expected value:
+
+$$E(x)=\sum xP(X=x)$$
+$$=(1)(\frac{15}{36}) + (-1)(\frac{21}{36})$$
+$$=-1/6$$
+
+\vspace{2mm}
+
+\hl{Answer:} $-\frac{1}{6} \approx \$-0.167$
+
+\vspace{2mm}
+
+For the sum of 7, wining \$4:
+
+\vspace{2mm}
+
+P(wining)=$P(X=4)=\frac{6}{36}=\frac{1}{6}$
+
+\vspace{2mm}
+
+P(losing)=$P(X=-1)=\frac{30}{36}$
+
+\vspace{2mm}
+
+$$E(x)=\sum xP(X=x)$$
+$$=(4)(\frac{1}{6}) + (-1)(\frac{30}{36})$$
+$$=-1/6$$
+
+\vspace{2mm}
+
+\hl{Answer:} $-\frac{1}{6} \approx \$-0.167$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.3-6, 2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.3-6)} 8 chips in a bowl: 3 have \#1, 2 have \#3, 3 have \#3. Space of X is S=\{1,2,3\} (X equal to the number on the chip that is selected. 1/8 of being drawn at random. Make reasonable prob. assignments to each of these outcomes and compute the mean $\mu$ and variance $\sigma^{2}$ of prob. distribution. 
+
+\vspace{2mm}
+
+n=8
+\vspace{2mm}
+
+P(X=x):
+\vspace{2mm}
+
+P(X=1)=3/8
+
+\vspace{2mm}
+
+P(X=2)=2/8
+
+\vspace{2mm}
+
+P(X=3)=3/8
+
+\vspace{2mm}
+
+Compute the mean $\mu$=E(x)= $\sum x p(x) $, x=1,2,3 where P(1)=3/8, P(2)=2/8, and P(3)=3/8
+
+$$=(1)(\frac{3}{8}) + (2)(\frac{2}{8}) +  (3)(\frac{3}{8})$$
+$$=2$$
+
+\vspace{2mm}
+
+\hl{Answer:} 2
+
+
+Compute the variance $\sigma^{2}$ = $(\sum x^{2} p(x)) - (E(x))^{2} $
+
+\vspace{2mm}
+
+We need to find a couple of things:
+
+$(\sum x^{2} p(x))$:
+
+$$=(1)^{2}(\frac{3}{8}) + (2)^{2}(\frac{2}{8}) +  (3)^{2}(\frac{3}{8})$$
+$$=4.75$$
+
+
+$(E(x))^{2} = \mu^{2}$
+
+\vspace{2mm}
+
+$E(x)=2$
+
+\vspace{2mm}
+
+$E(x)^{2}=2^{2}=4$
+
+\vspace{2mm}
+
+Variance $\sigma^{2}$ = $(\sum x^{2} p(x)) - (E(x))^{2} $:
+
+$$4.75-4$$
+$$=0.75$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.75
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.3-12, 2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.3-12a)} X= the number of people selected at random that you must ask in order to find someone with the same birthday as yours. Assume that each day of the year is equally likely and ignore Feb. 29. What is the \textbf{pmf of X}?
+
+\vspace{2mm}
+
+For this problem we have to use the \textbf{Geometric Prob.}:
+
+$$P(X=k)=q^{k-1}P=(1-P)^{k-1}P, \text{where k=1,2,3,.....k}$$
+
+So, $P=\frac{1}{365}$:
+
+\vspace{2mm}
+
+\hl{Answer:} $f(k)=P(X=k)=(1-\frac{1}{365}^{k-1}(\frac{1}{365}) = (\frac{364}{365})^{k-1}(\frac{1}{365})$
+
+
+
+%%%%%%%%%%%%
+\vspace{5mm}
+
+
+\textbf{2.3-12b)} Give the values of the mean $\mu$, variance $\sigma^{2}$ and standard  deviation $\sigma$.
+ 
+ First, mean $\mu=\sum_{k=1}^{\inf} k P(X=k)$:
+ 
+ $$=\sum_{k=1}^{\inf}k(\frac{364}{365})^{k-1}(\frac{1}{365})$$
+ 
+ $$=(\frac{1}{365})\sum_{k=1}^{\inf}k(\frac{364}{365})^{k-1}$$
+ 
+ $$=(\frac{1}{365})\frac{1}{(1- \frac{364}{365})^{2}}$$
+ 
+  
+ $$=(\frac{1}{365})(365)^{2}$$
+ 
+ $$=365$$
+ 
+ \vspace{2mm}
+ 
+ \hl{Answer:} 365
+ 
+ 
+ Second, for the variance $\sigma^{2}, we need  \sum_{k=1}^{\inf} k^{2} P(X=k)$:
+ 
+ $$=\sum_{k=1}^{\inf}k^{2}(\frac{364}{365})^{k-1}(\frac{1}{365})$$
+ 
+ $$=(\frac{1}{365})\sum_{k=1}^{\inf}k^{2}(\frac{364}{365})^{k-1}$$
+
+ 
+ $$=\frac{1}{365}(97,121,025)$$
+ 
+  $$=266,085$$
+  
+  \vspace{2mm}
+  
+  Now for $\sigma^{2}=E(X^{2})-\mu^{2}$
+  
+  $$=266,085-365^{2}$$
+  $$=132,860$$
+  
+ 
+ \hl{Answer:} 132,860
+ 
+  \vspace{2mm}
+  
+ Last, the standard  deviation $\sigma = \sqrt{\sigma^{2}}$
+ 
+$$=\sqrt{\sigma^{2}}$$
+$$=\sqrt{132,860}$$
+$$=364.4997$$ 
+
+ \vspace{2mm}
+ 
+ \hl{Answer:} $364.4997$
+ %%%%%%%%%%%%%%%%%%
+ 
+\vspace{5mm}
+ 
+ \textbf{2.3-12c)} Find $P(X > 400)$ and $P(X < 300)$.
+ 
+ For $P(X > 400)$, I have to use the \textbf{Complementary Rule:} 
+ 
+ \vspace{2mm}
+ 
+ $P(A^{C})=1-P(A)$
+ 
+  \vspace{2mm}
+ 
+So,
+$$P(X \le 400)= \sum^{400}_{k=1} P(X=k)$$
+$$= \sum^{400}_{k=1} (\frac{364}{365})^{k-1}(\frac{1}{365})$$
+$$=0.67$$
+
+Now,
+
+$$P(X > 400)=1-P(X \le 400)$$
+$$=1-0.67$$
+$$=0.33$$
+ 
+For $P(X < 300)$:
+
+$$P(X < 300)= \sum^{299}_{k=1} P(X=k)$$
+$$= \sum^{299}_{k=1} (\frac{364}{365})^{k-1}(\frac{1}{365})$$
+$$=0.56$$
+
+\hl{Answer:} $P(X > 400)=0.33$ and $P(X < 300)=0.56$
+
+
+
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.3-16, 2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.3-16a)} X= the number of flips of a fair coin that are required to observe the same face on consecutive flips. Find \textbf{pmf of X}.  
+
+ \vspace{2mm}
+ 
+
+Here I drew a tree diagram of the situation:
+
+
+\begin{forest}
+  [Coin
+    [H
+     [H
+     ]
+     [T
+     	[T
+	]
+       [H
+       	[H
+	]
+	[T
+	]
+       ]
+     ]
+    ]
+    [T
+      [H
+    	  [H
+	  	[H
+		]
+		[T
+		]
+	  ]
+	  	[T
+		]
+      ]
+      	[T
+	]
+        ]
+      ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+
+$P(X=1)=0$
+
+ \vspace{2mm}
+ 
+
+$P(X=2)=\frac{2}{4}=(\frac{1}{2})^{2-1}$
+
+ \vspace{2mm}
+ 
+
+$P(X=3)=(\frac{1}{2}(P(X \neq))=\frac{1}{2}P(X=2)=\frac{1}{2}\frac{1}{2}=\frac{1}{4}=(\frac{1/2})^{3-1}$
+
+ \vspace{2mm}
+ 
+
+$P(X=4) =(\frac{1}{2})^{4-1}$
+
+ \vspace{2mm}
+ 
+
+\hl{Answer:} So the pmf of x: $f(x) = (\frac{1}{2})^{x-1} \text{for} x=1,2,3.....$
+
+
+%%%%%%%%%%%%%%%%%%%
+\vspace{5mm}
+\textbf{2.3-16b)} Find the moment-generating function of X.
+
+The moment generating function is the expected value of $e^{tx}$, so
+
+$$M(t)=E(e^{tx}) f(x)$$
+
+$$=\sum_{x=2}^{\inf} e^{tx} f(x)$$
+
+$$=\sum_{x=2}^{\inf} e^{tx} f(x)$$
+
+$$=\sum_{x=2}^{\inf} e^{tx} (\frac{1}{2})^{x-1}$$
+
+$$=2 \sum_{x=2}^{\inf} e^{tx} (\frac{1}{2})^{x}$$
+
+$$=2 \sum_{x=2}^{\inf} (\frac{e^{t} }{2})^{x}$$
+
+$$=2 \sum_{x=2}^{\inf} (\frac{e^{t} }{2})^{x}-e^{t}$$
+
+Following the idea: $= \sum_{k=1}^{\inf} a^{k}=\frac{a}{1-a}$
+
+$$=2 (\frac{\frac{e^{t}}{2}}{\frac{2-e^{t}}{2}}-e^{t})$$
+
+$$=2 (\frac{\frac{e^{t}}{2}}{\frac{2-e^{t}}{2}}-e^{t})$$
+
+$$=2 (\frac{\frac{e^{t}}{2}}{\frac{2-e^{t}}{2}}-e^{t})$$
+
+$$=\frac{2e^{t}}{2-e^{t}}-\frac{2e^{t}-2^{2t}}{2-e^{t}}$$
+
+$$M(t)=\frac{e^{2t}}{2-e^{t}}$$
+
+\hl{Answer:} $M(t)=\frac{e^{2t}}{2-e^{t}}$
+
+ %%%%%%%%%%%%%%%
+ 
+ \vspace{5mm}
+
+
+\textbf{2.3-16c)} Use the mgf to find the value of (i) mean and (ii) variance of X.
+
+To find the mean, we have to take the derivative of mgf: 
+
+$$M(t)'= (\frac{d}{dt}(\frac{e^2{t}}{2-e^{t}}))'$$
+
+$$= \frac{4e^{2t}-e^{3t}}{(2-e^{t})}^{2}$$
+
+Now we can find the mean: $E(x)'= \mu^{'}(0)$
+
+$$\mu' (0)= \frac{4e^{2(0)}-e^{3(0)}}{(2-e^{(0)})}^{2}$$
+
+$$\mu' (0)= \frac{4(1)-1}{(2-1)}^{2}$$
+
+$$\mu' (0)=\frac{3}{1}^{2}$$
+
+$$\mu' (0)= 3$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\mu= 3$
+
+\newpage
+
+To find variance we have to take the derivative 2 times: M(t)''
+
+$$ M(t)'' = (\frac{d}{dt}(\frac{e^2{t}}{2-e^{t}})'' $$
+
+$$= \frac{-6e^{3t} + e^{4t} + 16e^{2t}}{(2-e^{t})^{3}} $$
+
+Now to find the variance: $Var(x) =E(x^{2})-(E(x))^{2}$
+
+\vspace{2mm}
+
+We got that $E(x^{2})=11$ and $E(x)=3$, then
+
+$$11-(3)^{2}$$
+
+$$=2$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\sigma^{2}= 2$
+
+
+ %%%%%%%%%%%%%%%
+ 
+ \vspace{5mm}
+
+
+\textbf{2.3-16d)} Find the values of $P(X \le 3)$, $P(X \ge 5)$, and $P(X=3)$.
+
+\vspace{2mm}
+
+For $P(X \le 3)$:
+
+$$P(X=1) + P(X=2) + P(X=3)$$
+
+$$\frac{1}{2} + \frac{1}{4} $$
+
+$$=\frac{3}{4}$$ 
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{3}{4}$
+
+\vspace{2mm}
+
+For $P(X \ge 5)$:
+
+$$1-P(X \le 4)=1-P(X=1) - P(X=2) - P(X=3) - P(X=4) $$
+
+$$=1 - 0 - \frac{1}{2} -\frac{1}{4} -\frac{1}{8}$$
+
+$$=\frac{1}{8}$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{1}{8}$
+
+\newpage
+
+
+For $P(X=3)$:
+
+$$P(X=3)=(\frac{1}{2})^{3-1}$$
+
+$$=(\frac{1}{2})^{2}$$
+
+$$=\frac{1}{4}$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{1}{4}$
+
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.4-6, 2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.4-6a)} It is believed that approx. 75\% of American youth now have insurance due to the health care law. Suppose this is true and let X equal the number of \# of private health insurance. \textbf{How is X distributed?}
+
+\vspace{2mm}
+
+\hl{Answer:} X is distributed by the Binomial Distribution because we have the \# of successes with a fixed \# of \textbf{independent} trials.
+
+\vspace{2mm}
+
+ 
+ 
+%%%%%%%%%%%%%%%%%%%
+\vspace{3mm}
+\textbf{2.4-6b)} Find $P(X \ge 10)$:
+
+\vspace{2mm}
+
+For this we can use the addition rule for mutually exclusive events:
+
+$$P(X \ge 10)= P(X=10)+P(X=11)+P(X+12)....+P(X=15)$$
+
+Now using the Binomial Prob. formula: $P(X=x)=P(^{n}_{x})(p)^{x}(1-p)^{n-x}$, where p=0.75 and 1-p=0.25
+
+$$=(^{15}_{10})(.75)^{10}(.25)^{15-10}+(^{15}_{11})(.75)^{11}(.25)^{15-11}+(^{15}_{12})(.75)^{12}(.25)^{15-12}+...+(^{15}_{15})(.75)^{15}(.25)^{15-15}$$
+$$=0.1651+0.2252+0.2252+0.1599+0.0668+.0134$$
+$$=0.8516$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.8516
+
+
+%%%%%%%%%%%%%%%%%%%
+\vspace{5mm}
+\textbf{2.4-6c)} $P(X \le 10)$:
+
+\vspace{2mm}
+
+We can use the complementary rule for this one: $1-P(X > 10)$
+
+\vspace{2mm}
+
+Finding $P(x > 10)$:
+
+$$P(X > 10)=P(X=11)+P(X=12)+P(X=13)+...+P(X=15)$$
+Again, using the Binomial distribution
+$$=0.2252+.2252+.1559+.0668+.0134$$
+$$=0.6865$$
+
+Now with $P(X \le 10)=1-P(X > 10)$:
+
+$$=1-0.6865$$
+$$=0.3135$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.3135
+
+
+%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{2.4-6d)} $P(X=10)$:
+
+$$P(X=10)=(^{15}_{10})(.75)^{10}(.25)^{15-10}$$
+$$=0.1651$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.1651
+
+%%%%%%%%%%%%%%%%%%%
+
+\vspace{3mm}
+\textbf{2.4-6e)} Find mean, var., and sd of X
+
+\vspace{2mm}
+
+\hl{Answer:} Mean: $\mu=np=(15)(0.75)=11.75$
+
+\vspace{2mm}
+
+\hl{Answer:} Var.: $\sigma^{2}=npq=np(1-p)=(15)(0.75)(0.25)=2.813$
+
+\vspace{2mm}
+
+\hl{Answer:} SD: $\sigma^{2}=\sqrt{npq}=\sqrt{2.8125}=1.677$
+
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.4-12, 2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.4-12a)} 3 fair six-sided dice. One possible bet is \$1 on fives and thee payoff is equal to \$1 for each five on that roll. The dollar bet is returned if at least one 5 is rolled. The dollar that was bet is lost only if no fives are rolled. Let X denote the payoff for this game. Then X=-1,1,2, or 3. \textbf{Determine the pmf f(x)}
+
+\vspace{2mm}
+
+\hl{Answer:}  We know that n=3 and $p=\frac{1}{6}$ because there is 1/6 chance of getting a 5 on a die. Using the \textbf{Binomial Distribution} ($P(X=k)=(^{n}_{k})p^{k}(1-p)^{n-k}$) we can determine our pmf for -1,1,2,3:
+
+\vspace{2mm}
+
+
+
+$$P(X=k)=(^{n}_{k})p^{k}(1-p)^{n-k}$$
+$$f(-1)=P(X=0)=(^{3}_{0})(\frac{1}{6}^{0}(1-\frac{1}{6})^{3-(0)}=125/216$$
+$$f(1)=P(X=1)=(^{3}_{1})(\frac{1}{6}^{1}(1-\frac{1}{6})^{3-(1)}=25/72$$
+$$f(2)=P(X=2)=(^{3}_{2})(\frac{1}{6}^{2}(1-\frac{1}{6})^{3-(2)}=5/72$$
+$$f(3)=P(X=3)=(^{3}_{3})(\frac{1}{6}^{3}(1-\frac{1}{6})^{3-(3)}=1/216$$
+
+\vspace{3mm}
+
+ %%%%%%%%%%%%%%%%%%%%%%
+\textbf{2.4-12b)} Calculate the mean ($\mu$), variance ($\sigma^{2}$), and standard deviation ($\sigma$)
+
+\vspace{2mm}
+
+To calculate mean I use $\mu=\sum xP(x)$:
+$$\mu=(-1)(\frac{125}{216})+(1)(\frac{25}{72})+(2)(\frac{5}{72})+(3)(\frac{1}{216})$$
+$$=-\frac{17}{216}$$
+
+\vspace{2mm}
+
+\hl{Answer:} $-\frac{17}{216} \approx -0.0787$
+
+\vspace{2mm}
+
+For $\sigma^{2}$we need $E(x^{2})$ and $\mu^{2}$:
+
+$$E(x^2)=(-1)^{1}(\frac{125}{216})+(1)^{2}(\frac{25}{72})+(2)^{2}(\frac{5}{72})+(3)^{2}(\frac{1}{216})$$
+
+$$=\frac{269}{216}$$
+
+
+\vspace{2mm}
+
+and 
+
+$$\mu^{2}=(-\frac{17}{216})^2=\frac{289}{46656}$$
+
+\newpage
+
+Now we can solve for $\sigma^{2}:E(x^2)-\mu^{2}$
+
+$$\sigma^{2}=(\frac{269}{216})-\frac{289}{46656}$$
+$$=\frac{57,815}{46,656}$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{57,815}{46,656} \approx 1.24$
+
+\vspace{2mm}
+
+Finally for $\sigma$ we can just square root our $\sigma^{2}$:
+
+$$\sigma^{2}=\sqrt{\frac{57,815}{46,656}}$$
+
+\vspace{2mm}
+
+\hl{Answer:} $\sqrt{\frac{57,815}{46,656}} \approx 1.11$
+
+
+\vspace{3mm}
+
+ %%%%%%%%%%%%%%%%%%%%%%
+\textbf{2.4-12c)} Depict the pmf in histogram.
+
+\vspace{4mm}
+
+
+%\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-03 at 11.07.35 PM.png}
+
+
+
+
+
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.4-20, 2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.4-20)} We have to solve for the following things:
+
+\vspace{2mm}
+
+1) Give the name of the distribution of X. 
+\vspace{2mm}
+2) find the values of $\mu$ and $\sigma^{2}$. 
+\vspace{2mm}
+3) Calculate the $P(1 \le X \le 2)$ when the moment-generating function of X is given
+\vspace{5mm}
+
+\textbf{a)} We given $M(t)=(0.3+0.7e^t)^5$
+
+\vspace{2mm}
+
+\hl{Answer:}
+
+\vspace{2mm}
+1) Binomial Distribution, n=5, p=0.70
+
+\vspace{2mm}
+
+2) $\mu=np=5(0.70)=3.5$
+
+\vspace{2mm}
+
+$\sigma^{2}=npq=np(1-p)=(5)(0.70)(0.30)=1.05$
+
+\vspace{2mm}
+
+3) $P(1 \le X \le 2)$, we have to use this formula: $(^{n}_{x})(p)^{x}(1-p)^{n-x}$
+
+$$(^{n}_{x})(p)^{x}(1-p)^{n-x}$$
+$$=(^5_1)(.70)^{1}(.30)^{5-1}+(^5_2)(.70)^{2}(.30)^{5-2}$$
+$$=(.02835)+(.13230)$$
+$$=0.16065$$
+
+\vspace{5mm}
+\textbf{b)} $M(t)=\frac{.3e^{t}}{1-0.7e^{t}}, t< -ln(0.7)$ 
+
+\vspace{2mm}
+
+\hl{Answer:}
+
+\vspace{2mm}
+
+1) We would use Geometric Distribution for this problem with p=0.3.
+
+\vspace{2mm}
+
+2) $\mu=\frac{1}{p}=\frac{1}{0.30}$
+
+\vspace{2mm}
+
+$\sigma^{2}=\frac{1-p}{p^{2}}=\frac{70}{9}$
+
+\vspace{2mm}
+
+$3) (.30)+(0.70)^{1}(0.30)=0.51$
+
+\vspace{5mm}
+
+
+\textbf{c)} $M(t)=0.45+0.55e^{t}$
+
+\vspace{2mm}
+
+\hl{Answer:}
+
+\vspace{2mm}
+
+1) Bernoulli Distribution
+
+\vspace{2mm}
+
+2) $\mu=p=0.55$
+
+$\sigma^{2}=p(1-p)=(.55)(1-.55)=.2475$
+
+\vspace{2mm}
+
+3) 0.55+0=0.55
+
+\vspace{5mm}
+
+\newpage
+\textbf{d)} $M(t)=0.3e^{t}+.4e^{2t}+.2e^{3t}+.1e^{4t}$
+
+\vspace{2mm}
+
+\hl{Answer:}
+
+\vspace{2mm}
+
+1) No mane for this one
+
+\vspace{2mm}
+
+2) $\mu=(1)(.3)+2(.4)...+(4)(.1)=2.1$
+
+$\sigma^{2}=E(x^{2})-\mu^{2}$
+
+\vspace{2mm}
+
+$E(x^{2})=(1)^{2}(.3)+(2)^{2}(.4)...+(4)^{2}(.1)=5.3$
+
+\vspace{2mm}
+
+$\mu^{2}=(2.1)^{2}=4.41$
+
+
+\vspace{2mm}
+
+So, $\sigma^{2}=E(x^{2})-\mu^{2}=5.3-4.41=0.89$
+
+\vspace{2mm}
+
+3) 0.3+0.4=0.7
+
+\vspace{5mm}
+
+\textbf{e)} $M(t)=\sum^{10}_{x=1}(.1)e^{tx}$
+
+\vspace{2mm}
+
+\hl{Answer:}
+
+\vspace{2mm}
+
+1) This would be considered a discrete Uniform distribution with integer 1-10: f(1)=f(2)=f(3)=.....=f(10)=0.1
+
+\vspace{2mm}
+
+2) $\mu=\frac{10+1}{2}=5.5$
+
+$\sigma^{2}=\frac{10^{2}-1}{12}=8.25$
+
+\vspace{2mm}
+
+3) 0.1+0.1=0.2
+
+
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2.5-4, 2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.5-4)} Suppose there are 20 "1lb" packages of frozen ground turkey and 3 are underweight. A consumer group buys $\frac{5}{20}$ packages at random. What is the prob. that at least one of the five being underweight?
+
+We have to use the \textbf{Hypergeometric Prob} formula to solve this:
+
+$$P(X=x)\frac{(^{N_{1}} _{x})(^{N-N_{1}} _{n-x})}{(^{N}_{n}}$$
+
+N=population size=20
+
+n=\# of draws=5
+
+$N_{1}$=\# of observe successes=3
+
+Solve: $P(X \ge 1)$
+
+Let x=0:
+
+$$\hspace{5mm}P(X=x)\frac{(^{N_{1}} _{x})(^{N-N_{1}} _{n-x})}{(^{N}_{n}}$$
+$$\hspace{3mm}P(X=0)\frac{(^{3}_{0})(^{20-3}_{5-0})}{(^{20}_{5})}$$
+$$=\frac{91}{228}$$
+
+We have to use the complementary formula to solve $P(X \ge 1)$:
+
+$$P(X \ge 1)=1-P(X=0)=1-\frac{91}{228}=\frac{137}{228}=0.60$$
+
+\hl{Answer:} There is a 60\% chance that at least one of the five being under weight.
+
+ 
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   2.5-10, 2.6-8, 2.7-8
+\newpage
+\textbf{2.5-10a)} (Michigan Mathematics Prize Competition, 1992, Part II)From set \{1,2,3,....,n\}, k distinct integers are selected at random and arranged in numerical order (low to high). Let P(i,r,k,n) denote the prob. that integer i is in position r.  Compute P(2,1,6,10). 
+
+\vspace{2mm}
+
+Can use the combination formula:
+
+$$P(2,1,6,10)=\frac{(^{1}_{0})(^{1}_{1})(^{8}_{5})}{(^{10}_{6})}$$
+$$=\frac{4}{15}$$
+
+\hl{Answer:} $\frac{4}{15}$
+
+ %%%%%%%%%%%%%%%%%%%%
+ \vspace{3mm}
+ 
+\textbf{2.5-10a)} Find a general formula for P(i,r,k,n).
+
+\vspace{2mm}
+
+We are going to have to use the combinations formula:
+
+\vspace{2mm}
+
+P(i,r,k,n)=$\frac{\# \text{of favorable outcomes}}{\# \text{ of possible outcomes}}$
+
+\vspace{2mm}
+
+\hspace{0.55in}=$\frac{_{i-1}C_{r} (_{n-i}C_{k-r})}{^{n}C_{k}}$
+
+\hl{Answer:} $\frac{_{i-1}C_{r} (_{n-i}C_{k-r})}{^{n}C_{k}}$
+
+
+
+
+
+
+
+
+
+
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   2.6-8, 2.7-8
+\newpage
+\textbf{2.6-8)}  The prob. that a company's workforce has no accidents in a given month is 0.7. The \# of accidents from month to month are \textbf{independent}. What is the prob. that the 3rd month in a year is the first month that \textbf{at least one} accident occurs?
+\vspace{2mm}
+
+For this problem we have to use the geometric prob. formula: 
+$$P(X=k)=q^{k-1}p=(1-p)^{k-1}p$$
+
+\vspace{2mm}
+
+Given: P(no accident)= 0.7
+
+\vspace{2mm}
+
+Solve: P(X=3)
+
+\vspace{2mm}
+
+To find p:
+
+\vspace{2mm}
+
+Using the complementary formula
+
+$$p=P(\text{at least 1 accident})=1-p(\text{no accident})=1-0.7=0.3$$
+
+Now using the geometric prob.
+$$P(X=k)=(1-p)^{k-1}p$$
+$$P(X=3)=(1-0.3)^{3-1}(.3)$$
+$$=0.147$$
+
+\hl{Answer:} 0.147
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   2.7-8
+\newpage
+\textbf{2.7-8a)} Suppose the prob. of suffering a side effect from a certain flu vaccine is 0.005. If 1000 persons are inoculated, approximate the prob. that \textbf{At most one person suffers}.
+
+\vspace{2mm}
+
+Poisson Prob.: $p(X=k)=\frac{\lambda e^{-\lambda}}{k!}$
+
+\vspace{2mm}
+
+n=1000
+
+\vspace{2mm}
+
+p=0.005
+
+\vspace{2mm}
+
+$\lambda=\mu=np=1000(.005)=5$
+
+
+
+Solve: $P(X \le 1)$
+
+k=0,1
+
+$$P(X=0)=\frac{5^{0}e^{-5}}{0!}=e^-{5} \approx 0.0067$$
+$$P(X=1)=\frac{5^{1}e^{-5}}{1!}=5e^{-5} \approx 0.0337$$
+
+To solve for $P(X\le1)$, we have use the complementary rule:
+
+$$P(X\le1)=P(X=0)+P(X=1)$$
+$$=0.0067+0.0337$$
+$$=0.0404$$
+
+\vspace{2mm}
+\hl{Answer:} 0.0404
+ 
+\vspace{5mm}
+
+ %%%%%%%%%%%%%%%%%
+\textbf{2.7-8b)} 4, 5, or 6 persons suffer. 
+
+\vspace{2mm}
+
+So k=4,5,6
+
+\vspace{2mm}
+
+Solve: $P(4 \le X \le 6)$
+
+\vspace{2mm}
+
+Using the Poisson formula:
+
+$$\hspace{5mm}P(X=4)=\frac{5^{4}e^{-5}}{4!}=\frac{625}{24}e^{-5} \approx 0.1755$$
+$$P(X=5)=\frac{5^{6}e^{-5}}{6!}=\frac{625}{24} \approx 0.1755$$
+$$\hspace{9mm}P(X=6)=\frac{5^{6}e^{-5}}{6!}=\frac{3125}{144}e^-{5} \approx 0.1462$$
+
+We can use the addition rule:
+
+$$P(4 \le X \le 6)=P(X=4)+P(X=5)+P(X=6)$$
+$$\hspace{0.2in}=0.1755+0.1755+0.1462$$
+$$=0.4972$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.4972
+
+
+
+
+
+
+
+
+\end{document}
