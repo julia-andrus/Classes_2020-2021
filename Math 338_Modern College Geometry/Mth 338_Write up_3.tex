@@ -1,0 +1,388 @@
+\documentclass{article}
+\usepackage{amssymb, amsmath, graphicx}
+\usepackage{pgfplots}
+ \usepackage{tikz, calc}
+ \usepackage{pst-plot}
+ \usetikzlibrary{calc,patterns,angles,quotes}
+ \usepackage{kpfonts}
+\usepackage{stackengine}
+\usepackage{calc}
+\newlength\shlength
+ \usepackage{kpfonts}
+ \usepackage[utf8]{inputenc}
+ \usepackage{graphicx}
+ 
+ \usepackage{stackengine}
+\title{Math 338\:Write up\_3}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{3.7)} Transitivity of Paralleleness Theorem: Suppose that ray AB,  ray CD , and ray EF  are lines such that t ray  AB  $||$ray CD and ray CD  $||$ ray EF.  Then ray AB and ray EF are parallel (or they are coincident)
+
+\vspace{2mm}
+
+
+
+We are given that ray AB $||$ ray CD:
+
+\vspace{2mm}
+
+ray AB $||$ ray CD$=>$ Given
+
+\vspace{2mm}
+
+Let ray AC be transversal $=>$ Euclid's Fifth Postulates
+
+\vspace{2mm}
+
+B and D lie on same sides of ray AC $=>$ Theorem (3.2)
+
+\vspace{2mm}
+
+$\angle{BAC} \displaystyle \cong \angle {DCA}$ are supplementary $ =>$ (3.2)
+
+\vspace{5mm}
+
+This same process goes with ray CD $||$ ray EF:
+
+\vspace{2mm}
+
+
+ray CD $||$ ray EF $=>$ Given
+
+\vspace{2mm}
+
+Let ray CE be transversal $=>$ Euclid's Fifth Postulates
+
+\vspace{2mm}
+
+D and F lie on same sides of ray CE  $=>$ Theorem (3.2)
+
+\vspace{2mm}
+
+$\angle{DCE} \displaystyle \cong \angle {FEC}$ are supplementary. $=>$ (3.2)
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-26 at 12.29.33 PM.png} 
+
+
+
+We can do the same process with ray AB $||$ ray EF  with transversal ray AE existing. If ray AB $ || $ ray CD and ray CD $|| $ ray EF, then ray  AB $|| $ ray EF is true with the proof and the drawing.
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{3.13)} Isosceles Triangle theorem: Let $\Delta$ ABC be a triangle. Then the following statements are equivalent: 
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-28 at 1.20.35 PM.png} 
+
+\vspace{2mm}
+
+1) AB =AC
+
+2) $\angle{ABC} = \angle{ACB}$
+
+\vspace{2mm}
+\vspace{2mm}
+
+	\textbf{1)} Assume that $AB=AC$, prove that $\angle ABC$ congruent to $\angle ACB$.
+
+\vspace{2mm}
+
+$AB=AC => $Given
+
+\vspace{2mm}
+
+$\angle A + \angle B + \angle C$ = 180 degrees $=>$ Interior angles of the triangle (3.6)
+
+\vspace{2mm}
+
+$\angle{C} + \angle{\alpha } =180^{\circ}$ $= > $ Supplementary angle sum is same as the straight angle.
+
+\vspace{2mm}
+
+$\angle{x} \displaystyle \cong \angle{B}  = > $ By the Vertical Angle Theorem (3.1). This would be the same for $\angle{A}$ and $\angle{C}$.
+
+\vspace{2mm}
+
+$\angle{ABC} \displaystyle \cong \angle{ACB} =>$ By SAS Congruence Theorem.
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{2)} Assume that $\angle ABC$ congruent to $\angle ACB$, prove AB=AC.
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-28 at 1.20.35 PM.png} 
+
+\vspace{2mm}
+
+
+$\angle ABC$ congruent to $\angle ACB =>$ Given 
+
+\vspace{2mm}
+
+$\angle A + \angle B + \angle C$ = 180 degrees $=>$ Interior angles of the triangle (3.6).
+
+\vspace{2mm}
+
+$AB=AC = >$ Because since $\angle{ABC}$ congruent to $\angle ACB$, then the opposite side equal to each other.
+
+\vspace{2mm}
+
+$AB = AC = >$ by ASA Congruence Theorem.
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{3.18)} Using the definitions given, create a hierarchy of set inclusions for the types of quadrilaterals. How would this hierarchy change if trapezoids were defined as having exactly one pair of parallel sides?
+
+\vspace{3mm}
+
+Reviewing the definition of quadrilaterals: A polygon with 4 sides. 
+
+\vspace{3mm}
+
+
+\includegraphics[width=0.7\columnwidth]{../3.18.png}
+
+From the tree diagram that I drew, it shows that parallelogram is the power house of the other quadrilaterals. As we go down, we have the rhombus and rectangle and both are a square. The words "at least" means that there could be more than more one pair of sides that are parallel. There is the idea of the rules being a little flexible. So if the trapezoid is "at \textbf{least} one pair of the sides of the ABCD are parallel," then the trapezoid would connect with the parallelogram. 
+
+\vspace{3mm}
+
+
+Assume that the trapezoid only has one and only one pair of parallel sides. There is the idea of the rules being fixed. If that is the case, then it can't be part of the parallelogram anymore because now it has only one pair of parallelogram. This would then make the trapezoid on the bottom of the latter. Or it has its' own category in the tree diagram.
+\vspace{3mm}
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{3.20)} Rectangle Diagonals Theorem: Let ABCD be a parallelogram. Then ABCD is a rectangle if and only if the diagonals $\overline{AC}$ and $\overline{BD}$ are congruent.
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-28 at 1.34.56 PM.png}
+
+
+
+For iff problems we have to prove this in two directions:
+
+\vspace{3mm}
+
+	\textbf{1)}  If ABCD is a rectangle , then the diagonals  $\overline{AC}$ and $\overline{BD}$ are congruent.
+
+\vspace{3mm}
+
+ABCD is a parallelogram $=>$ Given
+
+\vspace{3mm}
+
+ABCD is a rectangle $ =>$ Given
+
+\vspace{3mm}
+
+
+$\overline{BC} \displaystyle \cong \overline{BC}$ $=>$ Reflexive property
+of Congruence 
+
+\vspace{3mm}
+
+
+$\overline{AB} \displaystyle \cong  \overline{DC}$ and $\overline{AD} \displaystyle \cong  \overline{BC}$  $=>$ Since ABCD is a parallelogram, then the oppisite sides of a parallelogram are congruent. 
+
+\vspace{3mm}
+
+AB $||$ DC and AD $||$ BC $=>$ Since ABCD is a parallelogram (3.19).
+
+\vspace{3mm}
+
+
+$\angle{D} \displaystyle \cong \angle{C}$ form a right triangle $=>$ From the definition of rectangle, interior angle of ABCD is a right angle.
+
+\vspace{3mm}
+
+
+$\triangle ADC \displaystyle \cong \triangle BCD$ $ = >$ Using the SAS Congruence theorem. 
+
+\vspace{2mm}
+
+$\overline{AC}$ and $\overline{BD} =>$ CPCTC
+
+\vspace{3mm}
+
+
+
+
+\vspace{3mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+	\textbf{2)}  If $\overline{AC}$ and $\overline{BD}$ are congruent, then ABCD is a rectangle.
+	
+	\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-28 at 1.34.56 PM.png}
+
+
+ABCD is parallelogram  $ => $ Given
+
+\vspace{2mm}
+
+$\overline{AC}$ and $\overline{BD}$ $=>$ Given
+
+\vspace{2mm}
+
+$AB \displaystyle \cong  DC =>$ oppisite sides of a parallelogram is congruent.
+
+\vspace{2mm}
+
+CD=CD $=>$ Reflexive property
+
+\vspace{2mm}
+
+$\triangle$ ABD = $\triangle$ BDC $=>$ SSS congruence Theorem
+
+\vspace{2mm}
+
+$\angle{D} \displaystyle \cong \angle{C} =>$ CPCTC
+
+\vspace{2mm}
+
+$\angle{D}$and $\angle{C}$ $ = >$ Supplementary angles being congruent, then it is true that both of these angles are 90 degrees. 
+
+\vspace{2mm}
+
+$\angle{A} + \angle{B}$ $ = >$ Supplementary with $\angle{D}$+ $\angle{C}$
+
+\vspace{2mm}
+
+ABCD is a rectangle $= >$ Given with the previous statements.
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{3.21)}. Rhombus Diagonals Theorem: Let ABCD be a parallelogram. ThenABCD s a rhombus if and only if the diagonals $\overline{AC}$ and $\overline{BD}$ are perpendicular.
+\vspace{2mm}
+
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-28 at 1.43.10 PM.png}
+
+For iff problems, we can do this in two ways:
+
+\vspace{2mm}
+
+	\textbf{1)} If ABCD is a Rhombus, then diagonal AC and BD are perpendicular.
+	\vspace{2mm}
+
+ABCD is a Rhombus  $=> $Given 
+\vspace{2mm}
+
+ABCD is a parallelogram  $=> $Given 
+
+\vspace{2mm}
+
+$AB=BC=CD=DA =>$ Definition of a Rhombus
+
+\vspace{2mm}
+
+AD $||$ BC \text{and} DC $||$ AB $= >$ Since a ABCD is a parallelogram, then the opposites are parallel. (3.19)
+
+\vspace{2mm}
+
+
+The interior of $\angle{A} \displaystyle \cong \angle{\beta} = > $ By the Vertical Angle Theorem (3.1)
+
+\vspace{2mm}
+
+
+$\angle{A} \displaystyle \cong \angle{C}$ and $\angle{D} \displaystyle \cong \angle{B} => $ With the alternate angles, the opposite angles are congruent. 
+
+\vspace{2mm}
+
+
+$\angle{AMD}= 90 $degrees $= >$ by the right angle definition.
+
+\vspace{2mm}
+
+
+$\angle{A} + \angle{D} + \angle{m}=180$ degrees $=>$ supplementary angle 
+
+\vspace{2mm}
+
+
+
+$\triangle{AMD} \displaystyle \cong \triangle{AMB}$ and $\triangle{CMD} \displaystyle \cong \triangle{CMB} = > $ By the reflexive property of congruence. 
+
+\vspace{2mm}
+
+
+ $\triangle{DAB} \displaystyle \cong \triangle{DCB}$ and $\triangle{ABC} \displaystyle \cong \triangle{ADC}$ $= >$ By the reflexive property of congruence. 
+ 
+ \vspace{2mm}
+
+ 
+ $AC \perp BD$
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+
+	\textbf{2)} If diagonal AC and BD are perpendicular, then ABCD is a Rhombus.
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-28 at 1.43.10 PM.png}
+
+AC $\perp$  BD $=>$ Given
+
+\vspace{2mm}
+
+ABCD is a parallelogram $=>$Given
+
+\vspace{2mm}
+
+AD $||$ BD \text{and} DC $||$ AB $= >$ ABCD is a parallelogram, then there is 2 pairs of parallel sides. 
+
+\vspace{2mm}
+
+$\angle{A}  \displaystyle \cong \angle{C}$ \text{and} $\angle{D}  \displaystyle \cong \angle{B} =>$ With the alternate interior angles theorem, oppisite angles are congruent. 
+
+\vspace{2mm}
+
+$AB=BC=CD=DA =>$ Because our angles being congruent to each other.
+
+\vspace{2mm}
+
+ABCD is a Rhombus $= >$ Given with the statements provided.
+
+
+
+
+
+
+\end{document}
