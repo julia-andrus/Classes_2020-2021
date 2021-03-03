@@ -1,0 +1,586 @@
+ \documentclass{article}
+\usepackage{ amsmath, amssymb, soul, color, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{soul, color}
+\usepackage{ulem}
+\usepackage[linguistics]{forest}
+
+\title{STAT 452\_Hw 7}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+%%%%%%%%%%%%%%%%Chapter 9: Ex 65, Chapter 10: 4, 6, 16, 18, 37, 42
+
+\textbf{9.65)} Obtain a 90\% CI for the ratio of variances by first using the method suggested in the text to obtain a general confidence interval formula.
+
+\vspace{2mm}
+
+Formula: $P(F_{1-\alpha/2, m-1, n-1} \le \frac{S^{2}_{1}/\sigma^{2}_{1}}{S^{2}_{2}/\sigma^{2}_{2}})=1-\alpha$
+
+\vspace{2mm}
+
+We can sub $s_{1} and s_{2}$ out and get 
+
+\vspace{2mm}
+
+$\frac{S^{2}_{2}}{S^{2}_{1}}F_{1-\alpha/2, m-1, n-1} \le \frac{\sigma^{2}_{2}}{\sigma^{2}_{1}} \le \frac{S^{2}_{2}}{S^{2}_{1}}F_{1-\alpha/2, m-1, n-1}$
+
+\vspace{2mm}
+
+Using that formula: 90\%, $\alpha=0.01$, m=n=4
+
+\vspace{2mm}
+
+Now that we have that, we need to use the sample standard deviation: $s=\sqrt{\frac{1}{n-1}}(S_{xx})$
+
+\vspace{2mm}
+
+Putting this into my calculator: for $s_{1}=0.16, s_{2}=0.074$
+
+\vspace{2mm}
+
+Now using the formula: ($\frac{S^{2}_{2}}{S^{2}_{1}}F_{1-\alpha/2, m-1, n-1} \le \frac{\sigma^{2}_{2}}{\sigma^{2}_{1}} \le \frac{S^{2}_{2}}{S^{2}_{1}}F_{1-\alpha/2, m-1, n-1}$)
+
+\vspace{2mm}
+
+$=(\frac{0.074^{2}}{0.16^{2}}(1.08), \frac{0.074^{2}}{0.16^{2}}(9.28)$
+
+\vspace{2mm}
+
+$=(0.23, 1.99)$
+
+
+\newpage
+\textbf{10.4)} Does it appear that true average foam density is not the same for all these manufacturers? Carry out an appropriate test of hypotheses by obtaining as much P-value information as possible, and summarize your analysis in an ANOVA table.
+
+\vspace{2mm}
+
+1: 30.4, 29.2 
+2: 27.7, 27.1
+3: 27.1, 24.8 
+4: 25.5, 28.8
+
+$\overline{x_{1}}=29.8$
+
+$\overline{x_{2}}=27.4$
+
+$\overline{x_{3}}=25.95$
+
+$\overline{x_{4}}=27.15$
+
+
+\vspace{2mm}
+
+We can easily do this in R:
+
+\vspace{2mm}
+
+\includegraphics[width=.9\columnwidth]{../Screen Shot 2021-02-26 at 2.20.18 PM.png} 
+
+
+
+
+
+
+\newpage
+\textbf{10.6)} Carry out an analysis of variance F test at significance level .01, and summarize the results in an ANOVA table.
+
+\vspace{2mm}
+
+Shown in R:
+
+\vspace{2mm}
+
+\includegraphics[width=.9\columnwidth]{../Screen Shot 2021-02-26 at 2.39.21 PM.png} 
+
+\hl{Answer:} Since our p-value is smaller than 0.01, we can reject $H_{0}$.
+
+
+
+
+\newpage
+\textbf{10.16a)} Is it plausible that the variances of the five axial stiff- ness index distributions are identical?
+
+\vspace{2mm}
+
+At level 10 we have the sd=44.51 which is the greatest sd. At level 8 we have sd=20.83, which is the lowest sd. Since 44.51 $>$ 20.83 by twice as much, we can say that the variances are equal.
+
+\vspace{5mm}
+
+
+\textbf{10.16b)} Use the output (without reference to our F table) to test the relevant hypotheses.
+
+\vspace{2mm}
+
+$H_{0}=\mu_{i}=\mu_{j}$
+
+\vspace{2mm}
+
+$H_{a}$:  at least two $\mu$'s are different
+
+\vspace{2mm}
+
+F=10.48, then the p-value is under the F curve with: $P(F>f)=0$. Looking at the back of the book (Table A.10) we get that our df=4 and 30. With that value, we can reject $H_{0}$ because there is difference in the axial stiffness for different plate lengths.
+
+\vspace{5mm}
+
+
+
+\textbf{10.16c)} Use the Tukey intervals given in the output to determine which means differ, and construct the corresponding underscoring pattern.
+
+\vspace{2mm}
+
+I=5, J=7, $\alpha=0.05$, 
+
+\vspace{2mm}
+
+$w=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})$
+
+\vspace{2mm}
+
+$Q_{\alpha, I, I(J-1)}=Q_{0.05, 5, 5(7-1)} =Q_{0.05, 5, 30}=4.1$
+
+\vspace{2mm}
+
+$(\sqrt{\frac{MSE}{J}})=(\sqrt{\frac{1049}{7}})=12.2416$
+
+\vspace{2mm}
+
+$w=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})=(4.1)(12.2416)=50.1906$
+
+\vspace{2mm}
+
+Since the difference is given to us, we can draw out the pattern
+
+\vspace{2mm}
+
+\includegraphics[width=.9\columnwidth]{../Screen Shot 2021-02-26 at 11.02.40 PM.png}
+
+
+\textbf{10.18a)} Perform an F test at level $\alpha=$.05.
+
+\vspace{2mm}
+
+1: 13, 17, 7, 14
+
+\vspace{2mm}
+
+2: 21, 13, 20, 17
+
+\vspace{2mm}
+
+3: 18, 15, 20, 17
+
+\vspace{2mm}
+
+4: 7, 11, 18, 10
+
+\vspace{2mm}
+
+5: 6, 11, 15, 8
+
+\vspace{2mm}
+
+I=5, J=4, n=20
+
+\vspace{2mm}
+
+$\overline{x_{1}}=12.75$
+$x_{1}=51$
+
+\vspace{2mm}
+
+
+$\overline{x_{2}}=17.75$
+$x_{2}=71$
+
+\vspace{2mm}
+
+$\overline{x_{3}}=17.5$
+$x_{3}=70$
+
+\vspace{2mm}
+
+$\overline{x_{4}}=11.5$
+$x_{4}=46$
+
+\vspace{2mm}
+
+$x_{..}=238$
+
+\vspace{2mm}
+
+$F=\frac{MSTr}{MSE}$
+
+\vspace{2mm}
+
+Formula: SST=SStr+SSE
+
+\vspace{2mm}
+
+SST=$\sum^{I}_{i=1} \sum^{J}_{j} x^{2}_{ij} -\frac{1}{IJ}x^{2}$
+
+$=((13)^{2}+(17)^{2}+.....+(8)^{2}-\frac{(238)^{2}}{20}=4280-2832.2=1447.8$
+
+\vspace{2mm}
+
+$SStr=\frac{1}{J}(\sum x_{i}^{2}-\frac{1}{IJ}x^{2}:$
+
+$=\frac{1}{4}(51)^{2}+(71)^{2}+(70)^{2}+(46)^{2}-\frac{(238)^{2}}{20}=\frac{1}{4}(14658)-2832.2$
+$=3664.5-2832.2=832.3$
+
+\vspace{2mm}
+
+Formula: SST=SStr+SSE
+
+\vspace{2mm}
+
+SSE=$1447.8-832.3=615.5$
+
+
+$MSTr=\frac{SStr}{I-1}=\frac{832.3}{5-1}=\frac{832.3}{4}=208.06$
+
+\vspace{2mm}
+
+$MSE=\frac{SSE}{I(J-1)}=\frac{615.5}{5(4-1)}=\frac{615.5}{15}=41.03333$
+
+\vspace{2mm}
+
+Decided do use R, since it is a shortcut:
+
+\vspace{2mm}
+
+\includegraphics[width=.9\columnwidth]{../Screen Shot 2021-02-26 at 3.38.22 PM.png}
+
+\vspace{2mm}
+
+\hl{Answer:} I have done everything in R. Since our p-value is 0.03 and $\alpha=0.05$, then we can reject $H_{0}$ because p-value $< \alpha$
+
+
+\vspace{5mm}
+
+\textbf{10.18b)} What happens when Tukey’s procedure is applied?
+
+\vspace{2mm}
+
+Using the equation: $w=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})$
+
+\vspace{2mm}
+
+I=5, J=4, n-1=20-1=19
+
+\vspace{2mm}
+
+$Q_{\alpha, I, I(J-1)}=Q_{0.05, 5, 15}=>$ Table A.10 =4.37
+
+\vspace{2mm}
+
+$(\sqrt{\frac{MSE}{J}})=(\sqrt{\frac{14.37}{4}})=1.89539$
+
+\vspace{2mm}
+
+$w=(4.37)(1.89539)=8.28285$
+
+\vspace{2mm}
+
+\hl{Answer:} Finding the differences of mean in R, we can say there is no significance differences since all of results are less than w=8.28285:
+
+\vspace{2mm}
+
+
+\includegraphics[width=.9\columnwidth]{../Screen Shot 2021-02-26 at 4.06.21 PM.png}
+
+
+
+
+\vspace{2mm}
+
+
+
+
+\newpage
+\textbf{10.37)} State and test the relevant hypotheses at significance level .05, and then carry out a multiple comparisons analysis if appropriate.
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-26 at 6.02.33 PM.png}
+
+\vspace{2mm}
+
+Since our p-value is 0.000187 $<$ 0.05=$\alpha$, then we can reject $H_{0}$ concluding that there is sufficient evidence to support the claim that population means are different.
+
+\vspace{2mm}
+
+\vspace{2mm}
+
+For the Multiple comparisons analysis:
+
+\vspace{2mm}
+
+$T=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})$
+
+\vspace{2mm}
+
+I=5, J=6, n=30, n-I=25, $\alpha=0.05$
+
+\vspace{2mm}
+
+$Q_{\alpha, I, I(J-1)}=Q_{0.05, 5, 5(6-1)}=Q_{0.05, 5, 25} =>$ Table A.10 $=4.15$
+
+\vspace{2mm}
+
+MSE=0.914
+
+Now with the formula $w=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})$
+
+\vspace{2mm}
+
+$=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})=4.15(\sqrt{\frac{4.15}{6}})=1.61974$
+
+\vspace{2mm}
+
+For the 95\% confidence simultaneous region: 
+
+\vspace{2mm}
+
+$(\mu_{2}-\mu_{1}, \mu_{3}-\mu_{1}, \mu_{4}-\mu_{1}, \mu_{5}-\mu_{1},$
+
+\vspace{2mm}
+
+$\mu_{3}-\mu_{2}, \mu_{4}-\mu_{2}, \mu_{5}-\mu_{2},$
+
+\vspace{2mm}
+
+$\mu_{4}-\mu_{3}, \mu_{5}-\mu_{3},$
+
+\vspace{2mm}
+
+$\mu_{5}-\mu_{4})$
+
+\vspace{2mm}
+
+=
+
+\vspace{2mm}
+
+$[(15.95-13.68)-1.6194, (15.95-13.68)+1.6194$
+
+(13.67-13.68)-1.6194, (13.67-13.68)+1.6194
+
+
+.
+
+.
+
+.
+
+.
+
+.
+
+$]$
+
+=
+
+\vspace{2mm}
+
+$[(0.6506, 3.8894)$
+
+$(-1.6294,1.6094)$
+
+.
+
+.
+
+.
+
+.
+
+.
+
+$]$
+
+\vspace{2mm}
+
+Now finding the differences of the means:
+
+\vspace{2mm}
+
+$\overline{x_{2}}-\overline{x_{1}}$
+
+$\overline{x_{3}}-\overline{x_{1}}$
+
+$\overline{x_{4}}-\overline{x_{1}}$
+
+.
+
+.
+
+$\overline{x_{3}}-\overline{x_{2}}$
+
+.
+
+.
+
+
+$\overline{x_{4}}-\overline{x_{3}}$
+
+.
+
+.
+
+\vspace{2mm}
+
+If the results of the differences of the means is $<$ then w=1.6194, then that the means the means belong in the same group.
+
+\vspace{2mm}
+
+Did this in R:
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-26 at 7.17.59 PM.png}
+
+
+
+\newpage
+\textbf{10.42a)} State and test the relevant hypotheses at significance level .05. 
+
+\vspace{2mm}
+
+
+$H_{0}: \mu_{1}=\mu_{2}=\mu_{3}$
+
+\vspace{2mm}
+
+$H_{a}$: at least two of the $\mu$'s are different.
+
+
+\vspace{2mm}
+
+We are hinted that: $\sum \sum x^{2}_{ij}=13,659.67$ and CF=13,598.36
+
+\vspace{2mm}
+
+So 
+
+\vspace{2mm}
+
+SST=13,659.67-13,598.36=61.31
+
+\vspace{2mm}
+
+$SSTr=\frac{(204.7)^{2}}{8}+\frac{(134.6)^{2}}{5}+\frac{(169.0)^{2}}{6}-13598=13621.4-13598=22.999=23$
+
+\vspace{2mm}
+
+SSE=61.31-23=38.31
+
+\vspace{2mm}
+
+$F_{.05,I-1,n-I}=F_{0.05, 3-1, 19-1}=F_{0.05, 2, 18} =>$ Table A.10 $=>2.97$ 
+
+\vspace{2mm}
+
+f=$\frac{MSTr}{MSE}$
+
+\vspace{2mm}
+
+$MSTr=\frac{J}{I-1}[(\overline{X}_{1}-\overline{X}_{...})^{2}+(\overline{X}_{2}-\overline{X}_{..})^{2}+....\overline{X}_{I}-\overline{X}_{..})^{2}]$
+
+\vspace{2mm}
+
+But since we already have MSTr, then $MSTr=\frac{SStr}{I-1}=\frac{23}{3-1}=11.5$
+
+\vspace{2mm}
+
+$MSE=\frac{SSE}{n-I}=\frac{38.31}{22-3}=2.01632$
+
+\vspace{2mm}
+
+
+$f=\frac{MSTr}{MSE}=\frac{11.5}{2.01632}=5.70346$
+
+\vspace{2mm}
+
+\hl{Answer:} Since $F_{0.05, 2, 18}=2.97 < f=5.70346$, then $H_{0}$ is rejected.
+
+
+
+\vspace{5mm}
+ 
+ 
+ 
+\textbf{10.42b)} Investigate differences between iris colors with respect to mean cff.
+
+\vspace{2mm}
+
+To invesitgate the differences we have to find w:
+
+\vspace{2mm}
+
+$w=Q_{\alpha, I, n-1} (\sqrt{\frac{MSE}{2}(\frac{1}{J_{i}}+\frac{1}{J_{j}}})$
+
+\vspace{2mm}
+
+Finding sample sizes closest to each other for $J_{1},J_{2}...J_{I}$. Sample sizes for green and blue 
+are closer together therefore $J_{i}=5, J_{j}=6$
+
+\vspace{2mm}
+
+$=Q_{0.05, 3, 19-1} (\sqrt{\frac{2.01632}{2}(\frac{1}{5}+\frac{1}{6}})$
+
+\vspace{2mm}
+
+$=Q_{0.05, 3, 18}(\sqrt{.369659})$
+
+\vspace{2mm}
+
+Table A.10
+
+\vspace{2mm}
+
+$=3.61(.607996)$
+
+\vspace{2mm}
+
+$w=2.19$
+
+\vspace{2mm}
+
+Now for the difference of means:
+
+\vspace{2mm}
+
+$\overline{x}_{2}-\overline{x}_{1}=26.92-25.59=1.33<2.19$
+
+\vspace{2mm}
+
+$\overline{x}_{3}-\overline{x}_{1}=28.17-25.59=2.58>2.19$
+
+\vspace{2mm}
+
+$\overline{x}_{3}-\overline{x}_{2}=28.17-26.92=1.25<2.19$
+
+\vspace{2mm}
+
+\hl{Answer:} As you can see, $\mu_{3}$ (Blue) and $\mu_{1}$(Green) appear to be significantly different.
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

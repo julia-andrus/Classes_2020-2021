@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{ graphicx, tikz}
+\usetikzlibrary{calc}
+\usepackage{soul, color}
+\usepackage{ulem} %stricking text
+\title{Hw\_5} 
+\author{Julia Andrus}
+\date{}
+ 
+ \begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%  Ex 8.48(a and b), 8.74, 9.6, 9.12, 9.28
+\textbf{48a)} 51 homes found and 41/51 had problems. Suppose 51 were randomly sampled from the population of all homes having Chinese drywall. Does the data provide strong evidence for concluding that more than 50\% of all homes with Chinese drywall have electrical/environmental problems? Carry out a test of hypotheses using a $\alpha= .01$.
+
+\vspace{2mm}
+
+$H_{0}: \mu=50\%=0.50$
+
+\vspace{2mm}
+
+$H_{a}: \mu>50\%=0.50$
+
+\vspace{2mm}
+
+We need to solve for the sample proportion: $\hat{p}=\frac{x}{n}$
+
+$$\hat{p}=\frac{41}{51}$$
+$$=0.804$$
+
+Now using the test statistics: $Z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}$
+
+\vspace{2mm}
+
+p=0.50
+
+\vspace{2mm}
+
+$\hat{p}=0.804$
+
+\vspace{2mm}
+
+$$=\frac{0.804-0.50}{\sqrt{\frac{0.50(1-0.50)}{51}}}$$
+$$\frac{0.304}{0.070}$$
+$$Z=4.34$$
+
+Now we input 3.49 instead of 4.34 because 3.34 is not in the table:
+
+\vspace{2mm}
+
+$1-\phi(4.34)<1-\phi(3.49)=0.0003$
+
+\vspace{2mm}
+
+\hl{Answer:} Since $0.0003 < .01$, then $H_{0}$ can be rejected and thus this does give strong evidence for concluding that more than 50\% of all homes with Chinese drywall have electrical/environmental problems.
+
+
+
+%%%%%%%%%%%%%%
+\vspace{5mm}
+
+\textbf{48b)} Calculate a lower confidence bound using a confidence level of 99\% for the percentage of all such homes that have electrical/environmental problems.
+
+The lower confidence bound formula: $\hat{p}-Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+\vspace{2mm}
+
+To find $Z_{\frac{\alpha}{2}}$: 99\% CI
+
+\vspace{2mm}
+
+1-0.99=0.01
+
+\vspace{2mm}
+
+$\frac{0.01}{2}=0.005$
+
+\vspace{2mm}
+
+Looking at the table we get 2.33.
+
+\vspace{2mm}
+
+$$=0.804-2.33\sqrt{\frac{0.804(1-0.804)}{51}}$$
+$$=0.804-2.33(0.056)$$
+$$=0.804-0.13048$$
+$$=0.67$$
+
+\vspace{2mm}
+
+\hl{Answer:} 0.67
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%% 8.74, 9.6, 9.12, 9.28
+\textbf{8.74)}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%% 9.6, 9.12, 9.28
+\textbf{9.6a)} Assuming that $\sigma_{1}=1.6$ and $\sigma_{2}=1.4$, test $H_{0}: \mu_{1}-\mu_{2}=0$ and $H_{a}: \mu_{1}-\mu_{2}$ at level .01.
+
+Given: 
+
+$\overline{X}=18.12, m=40, \sigma_{1}=1.6$ 
+
+
+$\overline{Y}=16.87, n=32, \sigma_{1}=1.4, \sigma_{2}=1.4$ 
+
+$H_{0}: \mu_{1}-\mu_{2}=0$ and $H_{a}: \mu_{1}-\mu_{2}$ 
+
+Since sigma is known, use z-test:
+
+$$Z=\frac{\overline{X}-\overline{Y}-(\mu_{1}-\mu_{2})}{\sqrt{\frac{\sigma^{2}_{1}}{m}+\frac{\sigma^{2}_{2}}{n}}}$$
+
+ $\mu_{1}-\mu_{2}=0$
+
+$$=\frac{18.12-16.87-0}{\sqrt{\frac{1.6^{2}}{40}+\frac{1.4^{2}}{32}}}$$
+$$=\frac{1.25}{\sqrt{0.064+0.06125}}$$
+$$=\frac{1.25}{0.289}$$
+$$=3.53$$
+
+P-value:
+ $1-\theta(3.53)=1-0.999742$ (I used R)
+ 
+ $=0.0002158$
+ 
+ Since p-value=$0.0002158<0.01=\alpha$, then $H_{0}$ is rejected at significance level of 0.01.
+ 
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%
+ \vspace{3mm}
+ \textbf{9.6b)} 
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%  48(a and b)
+\textbf{8.74)}
+
+\textbf{9.25a)}
+
+
+\newpage
+\textbf{9.25a)}
+
+\textbf{9.25b)} Construct boxplot and compare.
+
+In $\le 89$ box plot, it shows that the data is right skewed. In $ \ge 93$ boxplot, it shows that the data is left skewed. The one wine with rating 93 or higher costs more than the wine with ratings of 89. 
+
+
+\end{document}

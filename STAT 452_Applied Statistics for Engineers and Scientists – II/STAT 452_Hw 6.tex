@@ -1,0 +1,475 @@
+ \documentclass{article}
+\usepackage{ amsmath, amssymb, soul, color, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{soul, color}
+\usepackage{ulem}
+\usepackage[linguistics]{forest}
+
+\title{STAT 452\_Hw 6}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+\textbf{9.32a)} Calculate and interpret a 99\% CL for the true average stance duration among elderly individuals.
+
+\vspace{3mm}
+
+Given: 
+
+$\overline{x}=801, m=28, SD=117$
+
+$\overline{y}=780, n=16, SD=72$
+
+\vspace{3mm}
+
+To calculate a 99\%, we need to use the t-interval because $m and< 40$ sample size:
+
+$$\overline{x} \pm t_{\frac{\alpha}{2}},v(\frac{S_{1}}{\sqrt{n}}$$ 
+
+$\alpha=1-.99=.01/2=0.005$
+
+$v=n-1=28-1=27$
+
+$t_{0.005,27}=> Table.A.5 => 2.771$
+
+\vspace{3mm}
+
+So
+
+$$=\overline{801} \pm 2.771(\frac{117}{\sqrt{28}}$$
+$$(739.74, 862.62)$$
+
+\vspace{2mm}
+
+
+\hl{Answer:} (739.74, 862.62)
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\textbf{9.32b)} Carry a hypotheses test at $\alpha=0.05$ to decide whether the true average larger among elderly people than the young people.
+
+\vspace{3mm}
+
+Given:
+
+ $\alpha=0.05$
+ 
+ $H_{0}: \mu_{1}=\mu_{2}$
+ 
+ $H_{a}: \mu_{1}>\mu_{2}$
+ 
+ Then,
+ 
+ $$t=\frac{\overline{x}-\overline{y}}{\sqrt{\frac{S^{2}_{1}}{m}+{\frac{S^{2}_{2}}{n}}}}$$
+ $$=\frac{801-780}{\sqrt{\frac{117^{2}}{28}+{\frac{72^{2}}{16}}}}$$
+ $$=0.73658$$
+ 
+ Find v:
+ 
+ $$v=\frac{(\frac{S^{2}_{1}}{m}+\frac{S^{2}_{2}}{n})^{2}}{\frac({S^{2}_{1}}{m})^{2}+\frac({S^{2}_{2}}{n})^{2}}$$
+ $$=42$$
+ 
+ Now,
+ 
+ $\alpha=0.05, v=42$, then $t_{0.05, 42} =>$ Table A.5 $=> 1.682$
+ 
+\vspace{2mm}
+
+
+\hl{Answer:}  Since  $0.73658 < 1.682$, then we fail to reject $H_{0}$.
+ 
+ 
+ 
+\newpage
+\textbf{9.38a)} Construct a comparative box-plot of times for the 2 types of retrieval and comment on interesting things.
+
+\vspace{3mm}
+
+Done in R:
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-19 at 1.42.11 PM.png} 
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\textbf{9.38b)} Estimate the difference between true average times for the two types of retrieval. Does it appear plausible that the true average times for the two types of retrieval are identical? Why or why not?
+
+\vspace{3mm}
+t-test: 
+
+$t=\frac{\overline{d}-0}{\frac{S_{D}}{\sqrt{n}}}=\frac{\overline{d}}{\frac{S_{D}}{\sqrt{n}}}$
+
+\vspace{3mm}
+
+Shown in R: 
+
+\vspace{2mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-19 at 5.32.31 PM.png}
+
+\vspace{2mm}
+
+Seems that the average for time of Slide seems to be higher than the average of time for Digital.
+
+\vspace{3mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-19 at 5.33.39 PM.png}
+
+P-value=4.654e-05=0.031358
+
+\vspace{2mm}
+
+Our interval is (13.30957, 27.76736)
+
+\vspace{2mm}
+
+
+If our significance level was 0.05, then we can reject $H_{0}$. If our significance level was 0.01, then we would not reject $H_{0}$. So this does not seem plausible.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{9.52)} 395 elementary school teachers and 266 high school teachers. Of the elementary school teachers, 224 said they were very satisfied with their jobs, whereas 126 of the high school teachers were very satisfied with their work. Estimate the difference between the proportion of all elementary school teachers who are very satisfied and all high school teachers who are very satisfied by calculating and interpreting a CI.
+
+\vspace{3mm}
+
+Given: 395 elementary teachers, 224/395 satisfied. 266 high school teachers, 126/226 satisfied
+
+\vspace{3mm}
+Test:
+
+$$H_{0}: \hat{p}_{1}-\hat{p}_{2}=0$$
+
+$$H_{a}: \hat{p}_{1}-\hat{p}_{2} \ne 0$$
+
+%\vspace{3mm}
+
+%2) z-test because large sample size:
+
+%$$z=\frac{\hat{p}_{1}-\hat{p}_{2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{m}+\frac{1}{n})}}$$
+
+%\vspace{3mm}
+
+Cl=$(\hat{p}_{1}-\hat{p}_{2} \pm z_{\frac{\alpha}{2}}{\sqrt{\frac{\hat{p_{1}}(1-\hat{p_{2}})}{m}+\frac{\hat{p}_{2}(1-\hat{p}_{2})}{n}}}$
+
+
+
+ Collecting info:
+ 
+  \vspace{2mm}
+
+ $$\hat{p}_{1}=\frac{x}{n}=\frac{224}{395}=0.567$$
+ $$\hat{p}_{2}=\frac{x}{n}=\frac{126}{266}=0.474$$
+ 
+ $$\hat{p}=\frac{(224+126)}{(395+266)}=0.53$$
+ 
+ $$ \hat{q_{1}}=1-\hat{p_{1}}=1-0.567=0.433$$
+ $$ \hat{q_{2}}=1-\hat{p_{2}}=1-0.474=0.526$$
+ 
+  \vspace{2mm}
+ 
+Assuming significance level=0.05, then $z_{0.025}=1.96$
+
+ \vspace{2mm}
+ 
+ So
+ 
+ \vspace{2mm}
+ 
+ Cl=$(0.567-0.474 \pm 1.96){\sqrt{\frac{0.53(0.433)}{395}+\frac{0.474(0.526)}{266}}}$
+ 
+ $=(0.093 \pm 1.96(\sqrt{0.000581+0.000937})$
+ 
+ $=(0.093 \pm 1.96(0.038965)$
+ 
+ $=(0.093 \pm 0.076372)$
+ 
+ $=(0.016628, 0.169372)$
+ 
+ \vspace{2mm}
+
+
+\hl{Answer:} (0.016628, 0.169372)
+ 
+ 
+ %\vspace{3mm}
+ 
+% 4) apply z-test
+ 
+%$$z=\frac{\hat{p}_{1}-\hat{p}_{2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{m}+\frac{1}{n})}}$$
+ 
+%$$=\frac{0.57-0.47}{\sqrt{(0.53)(0.47)(\frac{1}{395}+\frac{1}{266})}}$$
+ 
+%$$=2.524$$
+ 
+% \vspace{3mm}
+ 
+ %5) P-value: Since $H_{a}: \hat{p}_{1}-\hat{p}_{2} \ne 0$, then 
+ 
+% \vspace{3mm}
+ 
+%$2\times\theta(z)=2\times\theta(2.5)=2(0.00621)=0.012$
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{9.56a)} We wish to test the hypothesis that the true proportion of supporters (S) after the speech has not increased against the alternative that it has increased. State the two hypotheses of interest in terms of p1, p2, p3, and p4. 
+
+\vspace{3mm}
+
+Given:
+
+$x_{1}+x_{2}+x_{3}+x_{4} =n$
+
+\vspace{3mm}
+ 
+$p_{1}, p_{2}, p_{3}, and p_{4}$ are the 4 cell probabilities so that $p_{1}$=P(S before and S after), etc. 
+
+\vspace{3mm}
+
+Looking at the table: the after success is $p_{1}+p_{3}$ and before success is $p_{1}+p_{2}$. They wish: the true proportion of supporters (S) after the speech has not increased against the alternative that it has increased. So 
+
+
+$$H_{0}: p_{3}=p_{2}$$
+
+and $p_{1}+p_{3} > p_{1}+p_{2}$
+
+$$H_{a}: p_{3} > p_{2}$$
+
+ \vspace{2mm}
+
+
+\hl{Answer:} $H_{0}: p_{3}=p_{2}$, $H_{a}: p_{3} > p_{2}$
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\textbf{9.56b)} Construct an estimator for the after/ before difference (-) in success probabilities.
+
+With the estimator for the difference, we can use the idea of $p_{1}-p_{2} => \frac{X}{m}-\frac{Y}{n}$ so,
+
+$$\frac{x_{3}-x_{2}}{n}$$
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\textbf{9.56c)}  When n is large, it can be shown that the rv $(x_{i}-x_{j})/n$ has approximately a normal distribution with variance given by $[p_{i} + p_{j} - (p_{i} - p_{j})^{2}]/n$. Use this to construct a test statistic with approximately a standard normal distribution when $H_{0}$ is true (the result is called McNemar’s test).
+
+\vspace{3mm}
+
+Since n is large we get $(X_{i}-X_{j})/n$ with variance=$[p_{i} + p_{j} - (p_{i} - p_{j})^{2}]/n$. We can simply use the difference and square it: $(x_{3}-x_{2})^2$ for the numerator.We can also do $x_{3}+x_{2}$ and square root it for the denominator.
+
+\vspace{3mm}
+
+When $H_{0}$ is true: $H_{0}: p_{3}=p_{2}$, then 
+
+$$\frac{(x_{3}-x_{2})}{\sqrt{x_{2}+x_{3}}}$$
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{9.56d)} If $x_{1}=350$, $x_{2}=150$, $x_{3}=200$, and $x_{4}=300$, what do you conclude?
+
+\vspace{3mm}
+
+First we can do the z test: $\frac{(x_{3}-x_{2})}{\sqrt{x_{3}+x_{2}}}$
+
+$$\frac{(x_{3}-x_{2})}{\sqrt{x_{3}+x_{2}}}$$
+$$=\frac{(200-150)}{\sqrt{150+200}}$$
+$$=\frac{50}{\sqrt{350}}$$
+$$=2.67$$
+
+Since $H_{a}: p_{3} > p_{2}$, which is equivalent to the idea of $H_{a}: p_{1}-p_{2} > 0$ therefore we can determine the p-value with area of the standard normal curve to the right of z:
+
+\vspace{3mm}
+
+$\phi{(2.67)} => R => 0.003792562$
+
+\vspace{3mm}
+
+
+\hl{Answer:} If the significance level was at 0.05, then we can reject $H_{0}$. If significance level is at 0.10, then we can not reject $H_{0}$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{9.64)} Does the data suggest that the variance of the Energizer population distribution differs from that of the Ultracell population distribution? 
+
+\vspace{3mm}
+
+We have Energizer and Ultracell and the population distribution are assumed normal. We are trying to figure out if the \textbf{variance of the Energizer population distribution differs from that of the Ultracell population distribution}:
+
+\vspace{3mm}
+
+1) Stating out test hypotheses:
+
+\vspace{3mm}
+
+$H_{0}: \sigma^{2}_{1}=\sigma^{2}_{2}$
+
+\vspace{3mm}
+
+$H_{a}: \sigma^{2}_{1} \ne \sigma^{2}_{2}$
+
+\vspace{3mm}
+
+We are given that the significance: $\alpha=0.05$
+
+\vspace{3mm}
+
+Since $H_{a}: \sigma^{2}_{1} \ne \sigma^{2}_{2}$, then to determine P-value: $2\times min(A_{R},A_{L}$
+
+\vspace{3mm}
+
+I can find the following in R:
+
+\vspace{3mm}
+
+Mean
+
+$$\overline{x_{1}}=\frac{x_{1}+.....+x_{n}}{n}=8.727778$$
+
+
+
+$$\overline{x_{2}}=\frac{x_{1}+.....+x_{n}}{n}=8.742222$$
+
+\vspace{3mm}
+
+Variance
+
+$$S_{1}^{2}=\frac{\sum(x_{1}-(\overline{x_{1}})^{2})}{(n_{1}-1}$$
+
+$$S_{2}^{2}=\frac{\sum(x_{2}-(\overline{x_{1}})^{2})}{(n_{2}-1}$$
+
+\vspace{3mm}
+
+F-test
+
+$$F_{calculated}=F-test=\frac{S^{2}_{1}}{S_{2}^{2}}=\frac{0.01611944^{2}_{1}}{ 0.003544444_{2}^{2}}=4.547806$$
+
+\vspace{3mm}
+
+v=df for both samples
+
+$$v=df=n-1=9-1=8$$ 
+
+For left critical value:
+
+$$F_{l}=F_{\frac{1-\alpha}{2}, v_{1}, v_{2}}=F_{\frac{1-0.05}{2}, 8, 8}=F_{0.975, 8, 8}=0.2255676$$
+
+\vspace{3mm}
+
+For right critical value:
+
+$$F_{r}=F_{\frac{\alpha}{2}, v_{1}, v_{2}}=F_{\frac{0.05}{2}, 8, 8}=F_{0.025,8,8}=4.43326$$
+
+Now, we can reject $H_{0}$ if: $F_{calculated} \ge F_{r}$ or $F_{calculated} \le F_{l}$
+
+\vspace{3mm}
+
+
+
+\vspace{3mm}
+
+
+
+\hl{Answer:} Since $F_{calculated} \ge F_{r}= 4.547806 \ge 4.43326$, then $H_{0}$ is rejected thus the variance of the Energizer population distribution differs from the Ultracell population distribution. We are given that the two-sample t test for equality of population means gives a P-value= .763. Since $.763 > 0.05$ (Energizer is more expensive then Ultracell batteries) and there is a difference between the two kinds of batteries, then I would not pay extra money. 
+
+
+\vspace{3mm}
+
+
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-19 at 10.46.52 AM.png} 
+
+
+
+ \newpage
+
+\textbf{9.46)} Calculate and interpret an upper confidence bound for the true average difference between 1-minute modulus and 4-week modulus; first check the plausibility of any necessary assumptions.
+
+\vspace{2mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-19 at 4.22.33 PM.png} 
+
+
+\vspace{3mm}
+
+a)	 Draw the Normal Probability Plots for the two data sets
+
+\vspace{2mm}
+
+
+qqnorm(Min);qqline(Min)
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-19 at 4.27.01 PM.png}
+
+
+\vspace{4mm}
+
+\newpage
+
+qqnorm(weeks);qqline(weeks)
+
+\vspace{2mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-19 at 4.28.19 PM.png}
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%%%%
+
+b)	Tests for the equality of the average lifetimes of the two brands of the batteries.
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-19 at 4.29.32 PM.png}
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-19 at 4.30.13 PM.png}
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%%%%
+
+\newpage
+c)	Tests for the equality of the variances of  lifetimes of the two brands of the batteries.
+
+\vspace{3mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-19 at 4.32.40 PM.png}
+
+\vspace{3mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-19 at 4.33.49 PM.png}
+
+
+
+
+
+
+
+
+
+
+\end{document}
