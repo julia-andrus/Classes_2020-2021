@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{amssymb, amsmath, graphicx}
+\usepackage{pgfplots}
+ \usepackage{tikz, calc}
+ \usepackage{pst-plot}
+ \usetikzlibrary{calc,patterns,angles,quotes}
+ \usepackage{kpfonts}
+\usepackage{stackengine}
+\usepackage{calc}
+\newlength\shlength
+ \usepackage{kpfonts}
+ \usepackage[utf8]{inputenc}
+ \usepackage{graphicx}
+ 
+ \usepackage{stackengine}
+\title{Math 338\:Write up\_5}
+\author{Julia Andrus}
+\date{}
+
+
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{7.5)} Rotations can be defined as the composition of reflections over two lines. What must be true about these lines? Given two lines with the required characteristics, how can you determine the angle and center of the rotation?
+
+\vspace{2mm}
+
+A hint was given in class that the two lines are not parallel, then two lines must be intersecting. 
+
+\vspace{2mm}
+
+I drew out this idea:
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-25 at 12.38.15 PM.png} 
+
+\vspace{2mm}
+
+What I drew out the x-axis and y-axis line intersecting each other (two lines intersecting each other). We can determine the center of the rotation by looking at the intersection of the two lines. We can determine the angle of the rotation by going around the center: we can pick a point on the original figure and rotate it around the center to the point of the figure that is rotated.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+\textbf{7.6)} Under what conditions is the composition of two rotations a rotation?
+
+\vspace{2mm} 
+
+Referring back to the class notes, we defined a rotation is a rigid motion with a figure going about the center of angle $\theta$. The two rotations have to be from the same center, with the center being a fixed point. After drawing this out, I found out that we have two rotations is a rotation with angle of one rotation=sum of the two angles of the two rotations. 
+
+\vspace{2mm} 
+
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-25 at 8.57.13 AM.png} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{Prove Theorem 7.7)} Theorem: Isometries map lines to lines
+If F is an isometry, and C is on line $\overleftrightarrow{AB}$, then F(C) is on line $\overleftrightarrow{(F(A)F(B))}$.
+
+\vspace{2mm}
+
+First, since C is on line $\overleftrightarrow{AB}$ and F is an isometry, then assume C is \textbf{between} A and B. Since we assume can C is between A and B, then ABC must be collinear. With that idea F(C) is on line $\overleftrightarrow{(F(A)F(B))}$.
+
+\vspace{2mm}
+
+Now, assume the contradiction: F is an isometry and C is on the line $\overleftrightarrow{AB}$, then F(C) is not on the line $\overleftrightarrow{(F(A)F(B))}$.
+
+\vspace{2mm}
+
+
+A, B, and C is collinear $=>$ Since C is on the line $\overleftrightarrow{AB}$, we  can assume C is \textbf{between} A and B.
+
+\vspace{2mm}
+
+This statement is false $=>$ Because of the Fixed Point I theorem: Since C is on the line $\overleftrightarrow{AB}$, then it is true that F(C) being on line$\overleftrightarrow{(F(A)F(B))}$.
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-25 at 8.59.39 AM.png} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{4)} Specify with precision the 8 symmetries of the square with vertices at (-1,-1), (-1, 1), (1, 1), and (1, -1). 
+
+\vspace{5mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-25 at 9.03.13 AM.png} 
+
+As you can see in the drawing we can have 4 reflections of symmetry of the square: vertical cut, horizontal cut, and the two diagonal cuts.
+
+\vspace{5mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-25 at 9.04.12 AM.png} 
+
+\vspace{2mm}
+
+As you can see in the drawing we can have 4 rotations: the image itself (identity), 90, rotation, 180  rotation, 270 rotation 
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{7.12)} A tessellation of the plane is a collection of polygonal regions (called tiles) whose union is the entire plane and whose interiors do not intersect. A tessellation whose tiles are all congruent regular polygons is called regular. What types of symmetries are possible for regular tessellations? 
+
+\vspace{2mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-25 at 9.30.08 AM.png} 
+
+\vspace{2mm}
+
+Since regular tessellations are an \textbf{infinite} figure patterns, then translation of symmetry exists. 
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-02-25 at 12.53.19 PM.png} 
+
+\vspace{2mm}
+
+Reflections of symmetry exists in regular tessellations. I have shown this in the drawing of why it works. For Gliding reflections, I think this exists in tessellations because to me each of these types of regular tessellations translate and reflect over. 
+
+\vspace{2mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-25 at 1.21.47 PM.png} 
+
+\vspace{2mm}
+
+I think rotations will exist in regular tessellations. In the drawing I drew in the symmetry lines and from that got the angle of rotation, making it a rotation of symmetry.
+
+
+
+
+
+
+
+
+\end{document}

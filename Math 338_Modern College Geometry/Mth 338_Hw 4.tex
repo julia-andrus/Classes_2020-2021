@@ -1,0 +1,370 @@
+\documentclass{article}
+\usepackage{amssymb, amsmath, graphicx}
+\usepackage{pgfplots}
+ \usepackage{tikz, calc}
+ \usepackage{pst-plot}
+ \usetikzlibrary{calc,patterns,angles,quotes}
+ \usepackage{kpfonts}
+\usepackage{stackengine}
+\usepackage{calc}
+\newlength\shlength
+ \usepackage{kpfonts}
+ \usepackage[utf8]{inputenc}
+ \usepackage{graphicx}
+ 
+ \usepackage{stackengine}
+\title{Math 338\:Write up\_4}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+%\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-26 at 12.29.33 PM.png} 
+
+\textbf{Note:} Hong Le and I worked together on some of these problems.
+
+\vspace{2mm}
+
+\textbf{1)} Explore Euclid’s proof of the Pythagorean Theorem using this geogebra sketch: https://ggbm.at/cabbzzja.  Justify each of the steps in the proof.
+
+\vspace{2mm}
+
+\textbf{1) Step: B,A,H are collinear and so are C, A, G}
+
+\vspace{2mm}
+
+When I had no power I wrote out my thoughts on many of these problems:
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-02-20 at 7.02.54 PM.png} 
+
+
+\vspace{2mm}
+
+Justification: Collinear is defined that one point lies on the lines that connects the other two points. 
+
+Photo from week 1 of class:
+
+\vspace{2mm}
+
+\includegraphics[width=0.9\columnwidth]{../Screen Shot 2021-02-20 at 9.38.50 PM.png} 
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%%%%%%
+\textbf{2) Step: $\triangle FBC \cong \triangle ABD$}
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-20 at 7.06.20 PM.png}
+
+\vspace{2mm}
+
+\newpage
+Justification: 
+
+\vspace{2mm}
+
+-$\angle FBC$ and $\angle DBC=90 degrees  =>$ interior angles of squares are 90 degrees
+
+\vspace{2mm}
+
+-They both share the same $\angle ABC$, so both $\angle FBC$ and $\angle DBC=90+\angle ABC =>$ both triangles intersecting each other creating same angles.
+
+\vspace{2mm}
+
+-FB=BA and DB=BC $=>$ squares have same lengths on all sides
+
+\vspace{2mm}
+
+-$\triangle FBC \cong \triangle ABD =>$ By SAS 
+
+\vspace{2mm}
+
+Another way to think of this is the property of rotation. 
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%%%%%%
+\textbf{3) Area of FBC is half of ABFG and Area of ABD is half of BDLI}
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-02-20 at 7.09.11 PM.png}
+
+\vspace{2mm}
+
+Justification: 
+
+\vspace{2mm}
+
+-$\triangle FBC \cong \triangle ABD$ => Previous step
+
+\vspace{2mm}
+
+-area FBC= $\frac{1}{2}(FB * BA)=\frac{1}{2} ABFG = > $ 4.2 (Area of triangle) and 4.4 (Area of Rhombus)
+
+\vspace{2mm}
+
+-area ABD=$\frac{1}{2}(BD * BI)=\frac{1}{2} BDLI = >$ 4.2 (Area of triangle) and 4.4 (Area of Rhombus)
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4) Step: Area of ABFG=area of BDLI...ABFG=BDLI=3.51}
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-20 at 7.14.05 PM.png}
+
+\vspace{2mm}
+
+Justification: 
+
+\vspace{2mm}
+
+Because the previous step is true, then
+
+\vspace{2mm}
+
+area $FBC=\frac{1}{2}(3.51)=1.755$ and area ABD=$\frac{1}{2}(3.51)=1.755$.
+
+\vspace{2mm}
+
+Since area of FBC=area of ABD, then it is true that Area of ABFG=area of BDLI. In class I remember we talked about the \textbf{transtivity of equality}; we can use this idea to the justification. 
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%
+\textbf{5) Step: Similiarity}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-20 at 7.18.04 PM.png}
+
+\vspace{2mm}
+
+Justification: 
+
+\vspace{2mm}
+
+Same idea with step 2: With $\angle BCK=\angle ACE=$90 degrees $\angle ACB$ and  $\frac{AH}{BD}=\frac{CK}{CE}$ (dilation), $\triangle ACE \sim \triangle BCK$ by 5.5 (SAS similarity theorem).
+
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{6) Step: Similarity}
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-20 at 7.24.23 PM.png}
+
+\vspace{2mm}
+
+Justification: 
+
+\vspace{2mm}
+
+Same as step 3: 
+
+\vspace{2mm}
+
+-area ACE=$\frac{1}{2}$(CE * CL)=$\frac{1}{2}$CILE
+
+\vspace{2mm}
+
+-area BCK=$\frac{1}{2}$(AC*CK)=$\frac{1}{2}$CAHK.
+
+\vspace{2mm}
+
+- area ACE=area BCK
+
+\vspace{2mm}
+
+$\frac{1}{2}(8.13)=\frac{1}{2}(8.13)$
+
+\vspace{2mm}
+
+4.065=4.065
+
+\vspace{2mm}
+
+CILE=CAHK.
+
+
+
+
+\newpage
+
+\textbf{4.9)}Assuming that the ratio of the circumference of a circle of radius 1 to its radius is 2$\pi$, create a convincing argument that the circumference of a circle of radius r is C=2$\pi$r.
+
+Thoughts:
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-21 at 5.35.01 PM.png}
+
+We are assuming that the circumference of a circle of radius is 1 to its radius of $2\pi$. With Archimedes' Method, we know that circumference of circle with radius 1 is between $\frac{22}{7}$ (aka: $\pi$) and $\frac{223}{71}$. With that idea:
+
+$C=2\pi r$
+
+\vspace{2mm}
+
+Rearranged the formula
+
+\vspace{2mm}
+
+$\pi=\frac{C}{2r}$
+
+\vspace{2mm}
+
+$\frac{1}{\pi}=\frac{2r}{C}$
+
+\vspace{2mm}
+
+Assumption
+
+\vspace{2mm}
+
+$\frac{r}{C}=\frac{1}{2\pi}$
+
+\vspace{2mm}
+
+Cross multiply
+
+\vspace{2mm}
+
+$C=2\pi r$
+
+
+%\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-01-26 at 12.29.33 PM.png}
+
+
+
+\newpage
+
+\textbf{5.6)} SSS Similarity Theorem: $\triangle$ ABC and $\triangle$ DEF be triangles such that $\frac{AB}{DE}=\frac{BC}{EF}=\frac{CA}{FD}$. Then $\triangle ABC \sim \triangle DEF$.
+
+\vspace{2mm}
+
+Thoughts on paper:
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../5.6.png.HEIC.pdf}
+
+\vspace{2mm}
+
+
+Proof:
+
+\vspace{2mm}
+
+-$\triangle$ ABC and $\triangle$ DEF be triangles $=>$ Given
+
+\vspace{2mm}
+
+-$\frac{AB}{DE}=\frac{BC}{EF}=\frac{CA}{FD} =>$ Given
+
+\vspace{2mm}
+
+-Let P and Q be points on $\overline{DE}$ and $\overline{DF}$  $=>$ Using idea from 5.1. Creates the dilation relationship between $\triangle$ ABC and $\triangle$ DEF.
+
+\vspace{2mm}
+
+-$\overline{DP}=AB =>$ Because of 5.1 and previous step
+
+\vspace{2mm}
+
+-$\angle DPQ=\angle DEF$ and  $\angle DQP=\angle DFE =>$ By corresponding angles theorem (3.4).
+
+\vspace{2mm}
+
+-$\triangle DPQ \sim \triangle DEF =>$ 5.4-AA triangle similarity theorem
+
+\vspace{2mm}
+
+-Since $\overline{DP}=AB$, then $\overline{PQ}=BC$ and $\overline{DQ}=AC$ $=>$ From 5.1
+
+\vspace{2mm}
+
+-$\triangle ABC \sim \triangle DEF$ $=>$ By SSS Similarity Theorem
+
+
+
+\newpage
+
+\textbf{6.7)} Power of a Point II Theorem: Let P be a point outside a given circle. Suppose we draw two rays from the point P: one ray intersects the circle at the points A and B (in that order), and the other intersects the circle at the points C and D (in that order). Then PA * PB = PC * PD.
+
+\vspace{2mm}
+
+Thoughts on paper:
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-02-20 at 7.35.38 PM.png}
+
+
+
+\vspace{2mm}
+
+-$\angle BAD=\angle DCB$ and $\angle ABC=\angle CDA$ $=>$ By 6.2-Corollary to the Inscribed Angles Theorem.
+
+\vspace{2mm}
+
+-$\triangle PAD \cong \triangle PCB => $ AA congruent theorem 
+
+\vspace{2mm}
+
+-PA * PB = PC * PD $=>$ $\frac{PA}{PC}=\frac{PD}{PB}$
+
+
+\newpage
+
+\textbf{6.10)} Equidistant Tangents Theorem: Let P be a point outside a given circle. Suppose we draw the two lines from P that are tangent to the circle at points Q and R. Then PQ= PR.
+
+\vspace{2mm}
+
+Thoughts on paper:
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-02-20 at 7.39.31 PM.png}
+
+\vspace{2mm}
+
+
+-PQ and PR are tangent line $=>$ Given
+
+\vspace{2mm}
+
+-$\angle PQT = \angle PRT =>$ Both have 90 degrees
+
+\vspace{2mm}
+
+-$\overline{RT}=\overline{QT} =>$ Same radius and 6.8-Tangent-Radius Theorem 
+
+\vspace{2mm}
+
+-$\triangle PQT$ and $\triangle PRT$ = 180 degrees $=>$ 3.6-Sum of triangles=180
+
+\vspace{2mm}
+
+-PT=PT $=>$ Reflexive property
+
+\vspace{2mm}
+
+-Then $\triangle PQT \cong \triangle PRT$ $=>$ Reflexive property
+
+\vspace{2mm}
+
+-PQ=PR $=>$ CPCT: 3 pairs of corresponding angles are cong. and 3 pairs of sides are cong. 
+
+
+
+
+
+
+
+\end{document}
