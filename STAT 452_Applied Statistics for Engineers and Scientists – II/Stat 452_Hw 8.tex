@@ -1,0 +1,1263 @@
+ \documentclass{article}
+\usepackage{ amsmath, amssymb, soul, color, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{soul, color}
+\usepackage{ulem}
+\usepackage[linguistics]{forest}
+
+\title{STAT 452\_Hw 8}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+%Chapter 10: 22, 25 and Use R to do Ex 10.37 and 10.42
+%Chapter 12 :    Ex 16, 20, 32, 34, 52, 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{10.22)} Use the F test at level a $\alpha=.05$ to test for any differences in true average yield due to the different salinity levels.
+
+
+\vspace{2mm}
+
+
+$x_{1}$=1.6 = 59.5, 53.3, 56.8, 63.1, 58.7;  n=5
+
+\vspace{2mm}
+
+$x_{2}$=3.8 = 55.2, 59.1, 52.8, 54.5;  n=4
+
+\vspace{2mm}
+
+$x_{3}$=6.0 = 51.7, 48.8, 53.9, 49.0;  n=4
+
+\vspace{2mm}
+
+$x_{4}$=10.2 = 44.6, 48.5, 41.0, 47.3, 46.1;  n=5
+
+\vspace{2mm}
+
+n=18
+
+\vspace{2mm}
+
+
+
+\vspace{4mm}
+
+means:
+
+$\overline{x}_{1}$=58.28
+
+$\overline{x}_{1}$=55.40
+
+$\overline{x}_{1}$=50.85
+
+$\overline{x}_{1}$=45.50
+
+\vspace{4mm}
+
+Sum of samples:
+
+$x_{1.}$=291.4
+
+$x_{2.}$=221.6
+
+$x_{3.}$=203.4
+
+$x_{4.}$=227.5
+
+$x_{..}$=943.9
+
+
+$\sum x^{2}_{1}=291.4^{2}=84914$
+
+$\sum x^{2}_{2}=221.6^{2}=49106.6$
+
+$\sum x^{2}_{3}=203.4^{2}=41371.6$
+
+$\sum x^{2}_{4}=227.5^{2}=51756.3$
+
+\vspace{4mm}
+
+
+Now,
+
+\vspace{2mm}
+
+SSTr=$\sum\frac{x^{2}_{ij}}{n_{i}}-\frac{x_{..}^{2}}{n}$
+
+\vspace{2mm}
+
+
+$$=\frac{291.4^{2}}{5}+\frac{221.6^{2}}{4}+\frac{203.4^{2}}{4}+\frac{227.5^{2}}{5}-\frac{943.9^{2}}{18}$$
+$$=\frac{84914}{5}+\frac{49106.6}{4}+\frac{41371.6}{4}+\frac{51756.3}{5}-49497.06722$$
+$$=49953.6-49497.06722$$
+$$456.543$$
+
+
+
+SST=$\sum \sum x^{2}_{ij}-\frac{x^{2}_{..}}{n}$
+
+$$=59.5^{2}+53.3^{2}.....+41.0^{2} + 47.3^{2}-\frac{943.9^{2}}{18}$$
+
+
+Squaring each of the 18 observations and adding it up
+
+$$=50078.07-49497.06722$$
+$$=581.003$$
+
+
+With the Fundamental identity: SST=SSTr + SSE, we can SSE=SST-SStr:
+
+$$581.003-456.543$$
+$$=124.46$$
+
+I=4, n=18
+
+Now $F=\frac{MSTr}{MSE}:$
+
+$MSTr=\frac{SSTr}{I-1}$
+$$=\frac{456.543}{4-1}$$
+$$=152.181$$
+
+MSE=$\frac{SSE}{n-I}$
+$$=\frac{124.46}{18-4}$$
+$$=8.89$$
+
+$F=\frac{MSTr}{MSE}:$
+$$\frac{152.181}{8.89}$$
+$$=17.1182$$
+
+\vspace{2mm}
+
+
+"Statistical theory says that the test statistic has an F distribution with numerator df I-1 and denominator df n-I when $H_{0}$ is true.As in the case of equal sample sizes, the larger the value of F, the stronger is the evidence against $H_{0}$. Therefore the test is upper-tailed; the P-value is the area under the $F_{I-1, n-}$ curve to the right of f."
+
+
+\vspace{2mm}
+
+$F_{0.05, I-1, n-I}=F_{0.05, 3, 14}=3.70$ Looked at Table A.10.
+
+\vspace{2mm}
+
+
+Since $F_{0.05, 3, 14}=3.70 < f=17.1182$, we can reject null; there is significant evidence for concluding that a true average the yield of tomatoes depend on the EC levels.
+
+\vspace{2mm}
+
+\newpage
+
+Done in R:
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-02-28 at 1.32.44 PM.png}
+
+
+
+
+\vspace{2mm}
+
+Tukey's Method in R:
+
+
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-03-09 at 12.44.39 PM.png}
+
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-03-09 at 12.44.08 PM.png}
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{10.25a)} What assumptions must be made about the four total polyunsaturated fat distributions before carrying out a single-factor ANOVA to decide whether there are any differences in true average fat content?
+
+\vspace{2mm}
+
+We need to first assume that the variances equal and that there is normality. 
+
+\vspace{2mm}
+
+
+\textbf{10.25b)} Carry out the test suggested in (a). What can we say about P-value. 
+
+
+\vspace{2mm}
+
+-Breast milk, n=8, $\overline{x_{1}}$=43.0, SD=1.5
+
+-CO , n=13, $\overline{x_{2}}$=42.4, SD=1.3
+
+-SO, n=17, $\overline{x_{3}}$=43.1, SD=1.2
+
+-SMO, n=14, $\overline{x_{4}}$= 43.5, SD=1.2
+
+\vspace{2mm}
+
+
+1) SSTr=$\sum\frac{x^{2}_{ij}}{n_{i}}-\frac{x_{..}^{2}}{n}$
+
+\vspace{2mm}
+
+
+-$\overline{x}=\frac{n_{1}(\overline{x_{1}})+n_{2}(\overline{x_{2}})....+n_{i}(\overline{x_{i}})}{n_{1}+n_{2}...n_{i}}$
+
+$$=\frac{(8)(43.0)+(13)(42.4)+(17)(43.1)+(14)( 43.5)}{8+13...+14}=\frac{2236.9}{52}=43.017$$
+
+
+\vspace{2mm}
+
+
+$$SSTr=\sum\frac{x^{2}_{ij}}{n_{i}}-\frac{x_{..}^{2}}{n}=$$
+
+$$8(43.0-43.017)^{2}+....+14(43.5-43.017)^{2}=8.33$$
+
+
+\vspace{4mm}
+
+
+2)$SSE=(n_{1}-1)S^{2}_{1}+...(n_{i}-1)S^{2}_{i}$
+
+$$=(8-1)(1.5)^{2}+(13-1)(1.3)^{2}+(17-1)(1.2)^{2}+(14-1)(1.2)^{2}=77.79$$
+
+
+\vspace{4mm}
+
+
+
+3) SST=SSTr+SSE=8.334428+ 77.79=86.124428
+
+
+\vspace{4mm}
+
+n=52, I=4
+
+\vspace{2mm}
+
+1) $MSTr=\frac{J}{I-1}[(\overline{X}_{1}-\overline{X}_{...})^{2}+(\overline{X}_{2}-\overline{X}_{..})^{2}+....\overline{X}_{I}-\overline{X}_{..})^{2}]$
+
+or $MSTr=\frac{SSTr}{I-1}=\frac{8.33}{3}=2.78$
+
+\vspace{4mm}
+
+
+2) $MSE=\frac{S^{2}_{1}+S^{2}_{1}+......+S^{2}_{I}}{I}$
+
+or $MSE=\frac{SSE}{n-I}={77.79}{48}=1.621$
+
+\vspace{2mm}
+
+\vspace{2mm}
+
+$F=f=\frac{MSTr}{MSE}=1.713$
+
+
+\vspace{2mm}
+
+
+$F_{I-1, n-I}=F_{3, 48} \approx 0.163$.
+
+\vspace{2mm}
+
+\hl{Answer:}  Looking at the book: $F_{0.1, 4, 48}=2.2$, where the area to right right of $F_{0.1, 4, 50}$ under the $F_{0.1,4,48}$ curve is 0.01. Since $f=1.713 \le 2.2 =F_{0.1, 4, 48}$, the we do not reject $H_{0}$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{10.37)} State and test the relevant hypotheses at significance level .05, and then carry out a multiple comparisons analysis if appropriate.
+
+\vspace{2mm}
+
+
+Boxplot in R: 
+
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-03-03 at 11.59.28 AM.png}
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-26 at 6.02.33 PM.png}
+
+\vspace{2mm}
+
+\hl{Answer:} Since our p-value is 0.000187 $<$ 0.05=$\alpha$, then we can reject $H_{0}$ concluding that there is sufficient evidence to support the claim that population means are different.
+
+ \vspace{2mm}
+
+
+Now with the formula $w=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})$
+
+\vspace{2mm}
+
+$=Q_{\alpha, I, I(J-1)} (\sqrt{\frac{MSE}{J}})=4.15(\sqrt{\frac{4.15}{6}})=1.61974$
+
+\vspace{2mm}
+
+Done in R:
+
+\includegraphics[width=.7\columnwidth]{../Screen Shot 2021-03-09 at 1.14.42 PM.png}
+
+\vspace{2mm}
+
+\includegraphics[width=.7\columnwidth]{../Screen Shot 2021-03-09 at 1.15.47 PM.png}
+
+\vspace{2mm}
+
+\hl{Answer:}  If the results of the differences of the means is $<$ then w=1.6194, then that the means the means belong in the same group.
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{10.42a)} State and test the relevant hypotheses at significance level .05. 
+
+\vspace{2mm}
+
+Unequal sample size in R:
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-02-28 at 11.54.11 AM.png}
+
+\vspace{5mm}
+
+\textbf{10.42b)} Investigate differences between iris colors with respect to mean cff.
+
+\vspace{2mm}
+
+Differences of mean in R:
+
+\vspace{2mm}
+
+
+\includegraphics[width=.7\columnwidth]{../Screen Shot 2021-03-09 at 1.17.56 PM.png}
+
+Difference of means done by hand:
+
+\vspace{2mm}
+
+$\overline{x}_{2}-\overline{x}_{1}=26.92-25.59=1.33<2.19$
+
+\vspace{2mm}
+
+$\overline{x}_{3}-\overline{x}_{1}=28.17-25.59=2.58>2.19$
+
+\vspace{2mm}
+
+$\overline{x}_{3}-\overline{x}_{2}=28.17-26.92=1.25<2.19$
+
+\vspace{2mm}
+
+
+
+\includegraphics[width=.7\columnwidth]{../Screen Shot 2021-03-03 at 11.50.28 AM.png}
+
+\vspace{2mm}
+
+\hl{Answer:} As you can see, $\mu_{3}$ (Blue) and $\mu_{1}$(Green) appear to be significantly different.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{12.16a)}  Does a scatterplot of the data support the use of the simple linear regression model?
+
+
+
+Data: 
+x: 5, 12, 14, 17, 23, 30, 40, 47, 55, 67, 72, 81, 96, 112, 127
+
+\vspace{2mm}
+
+y: 4, 10, 13, 15, 15, 25, 27, 46, 38, 46, 53, 70, 82, 99, 100
+
+\vspace{2mm}
+
+
+
+Done in R:
+
+\vspace{2mm}
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-03-08 at 4.13.39 PM.png}
+
+
+The scatter plot of data does support the use of the simple linear regression model.
+
+\vspace{5mm}
+
+\textbf{12.16b)} Calculate point estimates of the slope and intercept of the population regression line.
+
+\vspace{2mm}
+
+Point estimator of slope:
+
+$b_{1}=\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}$ 
+
+$$-1) S_{xy}=\sum (x_{i}y_{i})-\frac{(\sum x_{i})(\sum y_{i})}{n}$$
+$$=(5)(4)+(12)(10)+...+(127)(100)-\frac{(5+12+...127)(4+10+...100)}{15}$$
+$$=51232-(798)(643)$$
+$$=17024.4$$
+
+
+$$-2) S_{xx}= \sum x_{i}^{2}-\frac{(\sum x_{i})^{2}}{n}$$
+$$=(5^{2}+12^{2}...+127^{2})-\frac{(5+12+...+127)^{2}}{15}$$
+$$=63040-\frac{798^{2}}{15}$$
+$$20586.5$$
+
+
+\vspace{2mm}
+
+$\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}=\frac{17024.4}{20586.5}=0.826973$
+
+\vspace{2mm}
+
+\hl{Answer:} $\hat{\beta_{1}}=0.826973$
+
+
+\vspace{4mm}
+
+Point Estimator of Intercept:
+
+\vspace{2mm}
+
+$b_{0}=\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}$
+
+\vspace{2mm}
+
+$$\overline{y}-\hat{\beta_{1}}\overline{x}$$
+$$\frac{4+10...100}{15}-(0.826973)\frac{(5+12+...127}{15})$$
+$$=-1.1283$$
+
+
+\hl{Answer:} $\hat{\beta_{0}}=-1.1283$
+
+\vspace{2mm}
+
+
+With $\hat{\beta_{1}}=0.826973$ and $\hat{\beta_{0}}=-1.1283$, then $\hat{y}=-1.1283+0.826973x$.
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%
+\textbf{12.16c)} Calculate a point estimate of the true average runoff volume when rainfall volume is 50.
+
+\vspace{2mm}
+
+
+\hl{Answer:} $\hat{y}=-1.1283+0.826973x=-1.1283+0.826973(50)=40.22$
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%
+
+\textbf{12.16d)} Calculate a point estimate of the standard deviation $\sigma^{2}$.
+
+\vspace{2mm}
+
+$S^{2}=\frac{SSE}{n-2}$
+
+\vspace{2mm}
+
+1) $SSE=S_{yy}-\hat{\beta_{1}}S_{xy}=14435.73-(0.826973)17024.4=357.01086$
+
+\vspace{2mm}
+
+$$S_{yy}=\sum y_{i}^{2}-\frac{(\sum y_{i})^{2}}{n}=41999-\frac{(643)^{2}}{15}=14435.73$$
+
+\vspace{2mm}
+
+
+ $$ S_{xy}=\sum (x_{i}y_{i})-\frac{(\sum x_{i})(\sum y_{i})}{n}$$
+$$=(5)(4)+(12)(10)+...+(127)(100)-\frac{(5+12+...127)(4+10+...100)}{15}$$
+$$=51232-(798)(643)$$
+$$=17024.4$$
+
+
+$$S^{2}=\frac{SSE}{n-2}=\frac{357.01086}{15-2}=27.462$$
+
+$$\sqrt{27.462}=5.24$$
+
+
+\vspace{2mm}
+
+\hl{Answer:} S=5.24
+
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%
+
+\textbf{12.16e)}What \textbf{proportion of the observed variation} in runoff volume can be attributed to the simple linear regression relationship between runoff and rainfall?
+
+\vspace{2mm}
+
+$r^{2}=1-\frac{SSE}{SST}=1-\frac{SSE}{S_{yy}}=1-\frac{357.01086}{14435.73}=1-0.0247=0.975$
+
+\vspace{2mm}
+
+\hl{Answer:} 97.5\%
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{12.20a)} Does a scatterplot of the data support the use of the simple linear regression model?
+
+\vspace{2mm}
+
+Data:
+
+\vspace{2mm}
+
+x: 0, 0, 0, .1, .1, .1, .2, .2, .2, .3, .3, .3, .4, .4, .4, .5, .5, .5, .6, .6, .6
+
+\vspace{2mm}
+
+y: 0.123, 0.100, 0.101, 0.172, 0.133, 0.107, 0.217, 0.172, 0.151, 0.263, 0.227, 0.252, 0.310, 0.365, 0.239, 0.365, 0.319, 0.312, 0.394, 0.386, 0.320
+
+\vspace{2mm}
+
+
+\includegraphics[width=1.0\columnwidth]{../Screen Shot 2021-03-08 at 5.00.12 PM.png}
+
+\vspace{2mm}
+
+The scatter plot of data does support the use of the simple linear regression model.
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%
+\textbf{12.20b)} Use the accompanying Minitab output to give point estimates of the slope and intercept of the population regression line.
+
+\vspace{2mm}
+
+
+\hl{Answer:} $\hat{y}=\hat{\beta_{0}}+\hat{\beta_{1}}x+=0.10121+0.46071x$
+
+
+
+
+
+
+\vspace{5mm}
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%
+\textbf{12.20c)} Calculate a point estimate of the true average bond capacity when lateral pressure is $.45f_{cu}$.
+
+\vspace{2mm}
+
+
+ \hl{Answer:}  Estimate of the true ratio is $\hat{y}=0.10121+0.46071x=0.10121+0.46071(.45)=.3085$
+ 
+ \vspace{2mm}
+ 
+ As mentioned in the book: the ratio of bond strength (MPa) to $\sqrt{f_{cu}}$, so 
+ 
+ \vspace{2mm}
+  
+\hl{Answer:} Estimate of the true ratio is:
+
+$$\textbf{Bond strength}=estimate ratio \times \sqrt{f_{cu}}$$,
+ $$=.3085 \times \sqrt{.45}=0.2069$$
+
+  
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%
+\textbf{12.20d)} What is a point estimate of the error standard deviation $\sigma$, and how would you interpret it?
+
+\vspace{2mm}
+
+
+$S^{2}=\frac{SSE}{n-2}$
+
+\vspace{2mm}
+
+
+
+1) $SSE=S_{yy}-\hat{\beta_{1}}S_{xy}=0.199-0.46071(.387)=0.199-0.178=0.0207$
+
+\vspace{2mm}
+
+$$S_{yy}=\sum y_{i}^{2}-\frac{(\sum y_{i})^{2}}{n}=1.403136-\frac{(5.028)^{2}}{21}=1.403136-1.2038=0.199$$
+
+
+$$ S_{xy}=\sum (x_{i}y_{i})-\frac{(\sum x_{i})(\sum y_{i})}{n}$$
+$$=1.8954-\frac{(6.3)(5.028)}{21}=1.8954-1.5084=.387$$
+
+
+\vspace{2mm}
+
+
+$$S^{2}=\frac{SSE}{n-2}=\frac{0.021}{21-2}=0.0011$$
+$$S=\sqrt{0.0011}=.0332$$
+
+\hl{Answer:} .0332
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%
+    \textbf{12.20e)} What is the \textbf{value of total variation}, and what \textbf{proportion of it can be explained by the model relationship}?
+    
+
+\vspace{2mm} 
+
+
+    
+Total Variation: $SST=0.199$
+
+
+    
+\vspace{2mm}  
+    
+$r^{2}=1-\frac{SSE}{SST}=1-\frac{SSE}{S_{yy}}=1-\frac{0.021}{0.199}=1-.1055=.8945$
+
+\vspace{2mm}
+
+\hl{Answer:} 89.5\%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{12.32)} Use the accompanying Minitab output to decide whether there is a useful linear relationship between rainfall and runoff, and then calculate a confidence interval for the true average change in runoff volume associated with a $1 m^{3}$ increase in rainfall volume.
+
+\vspace{2mm}
+
+From Exercise 16:
+
+\vspace{2mm}
+
+\includegraphics[width=.8\columnwidth]{../Screen Shot 2021-03-08 at 4.13.39 PM.png}
+
+\vspace{2mm}
+
+
+CI inter for slope $\hat{\beta}_{1}$ of the true regression line is:
+
+\vspace{2mm}
+
+$\hat{\beta}_{1} \pm t_{\frac{\alpha}{2}, n-2}(S_{\hat{\beta}_{1}})$
+
+
+\vspace{2mm}
+
+1) $\hat{\beta}_{1}=0.827$
+
+\vspace{2mm}
+
+ $t_{\frac{\alpha}{2}, n-2}=1-0.95=\frac{0.05}{2}=0.025, 15-2=t_{0.025, 13}=> Table A.5=2.160$
+ 
+ \vspace{2mm}
+
+
+2) $(S_{\hat{\beta}_{1}})=\frac{S}{\sqrt{S_{xx}}}=\frac{5.24}{\sqrt{20586.5}}=0.03652$
+
+ \vspace{2mm}
+
+
+
+$\hat{\beta}_{1} \pm t_{\frac{\alpha}{2}, n-2}(S_{\hat{\beta}_{1}})=0.827 \pm 2.160(.03652)=(0.748,0.906)$
+
+ \vspace{2mm}
+
+
+\hl{Answer:} (0.748,0.906)
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{12.34a)} Obtain the equation of the least squares line and interpret its slope.
+
+
+\vspace{2mm}
+
+
+Point estimator of slope:
+
+\vspace{2mm}
+
+$b_{1}=\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}$ 
+
+\vspace{2mm}
+
+$$1) S_{xy}=\sum (x_{i}y_{i})-\frac{(\sum x_{i})(\sum y_{i})}{n}$$
+$$=472.8149-\frac{(107.35)(79.44)}{18}$$
+$$472.8149-473.77$$
+$$-0.95643$$
+
+
+
+$$2) S_{xx}= \sum x_{i}^{2}-\frac{(\sum x_{i})^{2}}{n}$$
+$$=(653.61313)-\frac{(107.35)^{2}}{18}$$
+$$=653.61313-640.223$$
+$$12.81$$
+
+
+$\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}=\frac{-0.95643}{12.81}=-0.07466$
+
+
+\vspace{2mm}
+
+\hl{Answer:} $\hat{\beta_{1}}=-0.07466$
+
+\vspace{2mm}
+
+
+Point Estimator of Intercept:
+
+\vspace{2mm}
+
+$b_{0}=\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}$
+
+\vspace{2mm}
+
+$$\overline{y}-\hat{\beta_{1}}\overline{x}$$
+$$4.41-(-0.07466)(5.96)$$
+$$=4.85$$
+
+\vspace{2mm}
+
+
+\hl{Answer:} $\hat{\beta_{0}}=4.85$
+
+\vspace{2mm}
+
+
+With $\hat{\beta_{1}}=-0.07466$ and $\hat{\beta_{0}}=4.85$, then $\hat{y}=4.85-0.07466x$.
+
+
+
+
+
+
+
+
+
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%%%%
+\textbf{12.34b)} What \textbf{proportion of observed variation in dielectric constant can be attributed to the approximate linear relationship} between dielectric constant and air void.
+
+\vspace{2mm}
+
+
+$r^{2}=1-\frac{SSE}{SST}=1-\frac{SSE}{S_{yy}}=1-\frac{357.01086}{14435.73}=1-0.0247=0.975$
+
+\vspace{2mm}
+
+
+1) $SSE=S_{yy}-\hat{\beta_{1}}S_{xy}$
+
+\vspace{2mm}
+
+$$S_{yy}=\sum y_{i}^{2}-\frac{(\sum y_{i})^{2}}{n}=350.6868-\frac{(79.44)^{2}}{18}=0.0916$$
+
+\vspace{2mm}
+
+
+$$S_{xy}=\sum (x_{i}y_{i})-\frac{(\sum x_{i})(\sum y_{i})}{n}=472.8149-\frac{(107.35)(79.44)}{18}=-0.9564433$$
+
+\vspace{2mm}
+
+$SSE=S_{yy}-\hat{\beta_{1}}S_{xy}=0.0916-(-0.07466)(-0.9564433)=0.0916-0.07140=0.0202$
+
+\vspace{2mm}
+
+$$r^{2}=1-\frac{SSE}{SST}=1-\frac{SSE}{S_{yy}}=1-\frac{0.0202}{0.0916}=0.779$$
+
+\vspace{2mm}
+
+\hl{Answer:} 77.9\%
+
+
+
+
+
+
+
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%%%%%
+\textbf{12.34c)}Does there appear to be a useful linear relationship between dielectric constant and air void? State and test the appropriate hypotheses.
+
+
+
+$H_{0}: \beta_{1}=0,  H_{a}:  \beta_{1} \ne 0$
+
+\vspace{2mm}
+
+$t=\frac{\hat{\beta}_{1}-\beta_{10}}{\frac{S}{\sqrt{S_{xx}}}}$
+
+\vspace{2mm}
+
+$$=\frac{-0.07466}{\frac{0.0335}{\sqrt{12.81}}}=\frac{-0.07466}{0.0099195}=-7.52657$$
+
+
+$$t=-7.52657$$
+
+\vspace{2mm}
+
+$t_{\frac{\alpha}{2},n-2}=t_{\frac{0.01}{2}, 18-2}= t_{.005, 16} => Table A.5 => 2.921$
+
+\vspace{2mm}
+
+
+\hl{Answer:}  Since $t=-7.52657 <  2.921=t_{.005, 16}$, we can reject $H_{0}$.  This concludes that there is a useful linear relationship between the variables. 
+
+
+
+
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%%%%%
+\textbf{12.34d)} Suppose it had previously been believed that when air void increased by 1 percent, the associated true average change in dielectric constant would be at least -.05. Does the sample data contradict this belief? Carry out a test of appropriate hypotheses using a significance level of .01.
+
+\vspace{2mm}
+
+
+$H_{0}: \beta_{1} = -0.05,  H_{a}:  \beta_{1} > -0.05$
+
+\vspace{2mm}
+
+
+$t=\frac{\hat{\beta}_{1}-\beta_{10}}{\frac{S}{\sqrt{S_{xx}}}}$
+
+\vspace{2mm}
+
+$$=\frac{-0.07466-(-.05)}{\frac{0.0335}{\sqrt{12.81}}}=\frac{-02466}{0.0099195}=-2.486$$
+
+Now for our p-value: $P(T>-2.49)=0.99$
+
+\vspace{2mm}
+
+\hl{Answer:}  Since $p-value=0.99 > 0.01=\alpha$, we can not reject $H_{0}$. 
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{12.52a)} Does the simple linear regression model specify a useful relationship between chlorine flow and etch rate?
+
+\vspace{2mm}
+
+
+The simple linear regression model does specify a useful relation between  chlorine flow and etch rate.
+\vspace{2mm}
+
+Data: 
+
+\vspace{2mm}
+
+x: 1.5, 1.5, 2.0, 2.5, 2.5, 3.0, 3.5, 3.5, 4.0
+
+\vspace{2mm}
+
+y: 23.0, 24.5, 25.0, 30.0, 33.5, 40.0, 40.5, 47.0, 49.0
+
+\vspace{2mm}
+
+
+The model utility test is $H_{0}: \beta_{1}=0, H_{a}: \beta_{1} \ne 0$ We can use the the model test: 
+
+\vspace{2mm}
+
+$t=\frac{\hat{\beta}_{1}-\beta_{0}}{S_{\hat{\beta}_{1}}}=$
+
+
+Couple things we need: 
+
+\vspace{2mm}
+
+$S_{\hat{\beta}_{1}}=\frac{S}{S_{\sqrt{S_xx}}}=\frac{2.5}{6.5}=0.9985$
+
+\vspace{2mm}
+
+$SSE=45.4$
+
+\vspace{2mm}
+
+$S=\sqrt{\frac{SSE}{n-2}}=\sqrt{\frac{45.4}{9-2}}=2.5$
+
+\vspace{2mm}
+
+$S_{xx}=6.5$
+
+\vspace{2mm}
+
+
+$\hat{\beta}_{1}=10.602564$
+
+\vspace{2mm}
+
+
+$t=\frac{\hat{\beta}_{1}-\beta_{0}}{S_{\hat{\beta}_{1}}}=\frac{10.602564-0}{0.9985}=10.6186$
+
+\vspace{2mm}
+
+P-value is $P=2P(T> |10.6186|)=0.00$, where v=n-2=7. Since $P=0.00 < 0.05=\alpha$, we can reject $H_{0}$
+
+
+
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%
+\textbf{12.52b)} Estimate the true average change in etch rate associated with a 1-SCCM increase in flow rate using a 95\% confidence interval, and interpret the interval.
+
+\vspace{2mm}
+
+$\hat{\beta}_{1} \pm t_{\frac{\alpha}{2},n-2}(S_{\hat{\beta}_{1}})$
+
+\vspace{2mm}
+
+
+$t_{\frac{\alpha}{2},n-2}(S_{\hat{\beta}_{1})=t_{0.025, 7}}=2.365$
+
+\vspace{2mm}
+
+$(S_{\hat{\beta}_{1}})=0.9985$
+
+
+Now,
+
+$$\hat{\beta}_{1} \pm t_{\frac{\alpha}{2},n-2}(S_{\hat{\beta}_{1}})$$
+
+$$10.602564 \pm 2.365(0.9985)=(8.24, 12.96)$$
+
+\vspace{2mm}
+
+\hl{Answer:} (8.24, 12.96)
+
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%
+\textbf{12.52c)} Calculate a 95\% CI for mY? 3.0, the true average etch rate when flow 5 3.0. Has this average been precisely estimated?
+
+\vspace{2mm}
+
+
+$x^{*}=3.0$
+
+\vspace{2mm}
+
+$\hat{y}=\hat{\beta}_{0}+\hat{\beta}_{1}x^{*}=6.448718+10.602564(3.0)=38.256$
+
+\vspace{2mm}
+
+$t_{\frac{\alpha}{2},n-2}(S_{\hat{\beta}_{1}})=t_{0.025, 7}=2.365$
+
+\vspace{2mm}
+
+An estimate of the standard deviation of $\hat{Y}$ is:
+
+\vspace{2mm}
+
+$S_{\hat{y}}=s\sqrt{\frac{1}{n}+\frac{(x^{*}-\overline{x})^{2}}{S_{xx}}}$
+
+\vspace{2mm}
+
+$S_{\hat{y}}=2.5456(\sqrt{\frac{1}{9}+\frac{(3.0-2.67)^{2}}{6.5}}$
+
+\vspace{2mm}
+
+$=0.35805$
+
+
+95\% CI:
+
+\vspace{2mm}
+
+$\hat{\beta}_{0}+\hat{\beta}_{1}x^{*} \pm t_{\frac{\alpha}{2},n-2}(S_{\hat{\beta}_{0})+\hat{\beta}_{1}x^{*}}=\hat{y} \pm t_{\frac{\alpha}{2},n-2}(S_{\hat{y}})$
+
+$=38.256 \pm 2.365(0.35805)$
+
+\vspace{2mm}
+
+\hl{Answer:}  $(36.10, 40.41)$
+
+
+
+
+
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%
+\textbf{12.52d)} Calculate a 95\% PI for a single future observation on etch rate to be made when flow  3.0. Is the prediction likely to be accurate?
+
+\vspace{2mm}
+
+$\hat{y} \pm t_{\frac{\alpha}{2},n-2}(\sqrt{S^{2}S^{2}_{\hat{Y}}})=38.256 \pm 2.365(\sqrt{2.5456^{2}+0.35805^{2}})$
+
+\vspace{2mm}
+
+\hl{Answer:}  $(31.859, 44.655)$
+
+\vspace{2mm}
+
+You can be 95\% confident that the future value of Y when x=3.0 is between the two values. Prediction is likely to be accurate. 
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%
+\textbf{12.52e)}Would the 95\% CI and PI when flow 5 2.5 be wider or narrower than the corresponding intervals of parts (c) and (d)? Answer without actually computing the intervals.
+
+\vspace{2mm}
+
+The confidence interval and prediction interval in (c) and (d) we be narrower when $x^{*}=2.5$ because it is closer to $\overline{x}$ than when $x^{*}=3.0$. 
+
+\vspace{2mm}
+
+$\overline{x}=2.667$
+
+\vspace{2mm}
+
+$x^{*}=2.5$
+
+%$V(\hat{Y})=\sigma^{2}(\frac{1}{n}+\frac{(x^{*}-\overline{x})}{S_{xx}})$
+
+\vspace{2mm}
+
+\hl{Answer:} narrower
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%
+\textbf{12.52f)}Would you recommend calculating a 95\% PI for a flow of 6.0? Explain.
+
+\vspace{2mm}
+
+The value x=6.0 is not in the range of observed values and therefore you should not calculate the prediction interval for such value. 
+
+  
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\textbf{12.68a)} Is it the case that truss height and sale price are “deterministically” related—i.e., that sale price is deter- mined completely and uniquely by truss height?
+
+\vspace{3mm}
+
+
+x: 12, 14, 14, 15, 15, 16, 18, 22, 22, 24,24, 26, 26, 27, 28, 30, 30, 33, 36
+
+\vspace{3mm}
+
+y: 35.53, 37.82, 36.90, 40.00, 38.00, 37.50, 41.00, 48.50, 47.00, 47.50, 46.20, 50.35, 49.13, 48.07, 50.90, 54.78, 54.32, 57.17, 57.45
+
+\vspace{3mm}
+
+
+\hl{Answer:} It is not the case that the sale price is not uniquely determined by height. If you look closely at the data, we should have same price if our heights are the same (ex: height 14). Since the two same values of heights gets us different prices, then sale price is not uniquely determined by height.
+
+
+
+
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%
+\textbf{12.68b)} Construct a scatterplot of the data. What does it suggest?
+
+Done in R:
+
+\vspace{2mm}
+
+\includegraphics[width=.8\columnwidth]{../Screen Shot 2021-03-09 at 12.38.39 AM.png}
+
+\vspace{2mm}
+
+\hl{Answer:} Looking at the scatterplot it seems that the relationship between height and sale price is strong/perfect correlation between them (points are close to the line) and liner. 
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%
+\textbf{12.68c)} Determine the equation of the least squares line.
+
+\vspace{2mm}
+
+
+I used R to do this problem: $\hat{y}=23.77+0.9872x$
+
+\vspace{2mm}
+
+\newpage
+
+R:
+
+\vspace{2mm}
+
+\includegraphics[width=.8\columnwidth]{../Screen Shot 2021-03-09 at 12.57.25 AM.png}
+
+
+\hl{Answer:}  $\hat{y}=23.77+0.9872x$
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%
+\textbf{12.68d)} Give a point prediction of price when truss height is 27 ft, and calculate the corresponding residual.
+
+\vspace{2mm}
+
+\hl{Answer:}  Point prediction of price when height is 27ft is: $\hat{y}=23.77+0.9872(27)=50.42$
+
+\vspace{2mm}
+
+Corresponding Residual: residual=$y-\hat{y}$
+
+\vspace{2mm}
+
+Where y=48.07, when height is 27ft from looking at the table.
+
+\vspace{2mm}
+
+$\hat{y}=50.42$
+
+
+
+\hl{Answer:} residual=$y-\hat{y}=48.07-50.42=-2.35$
+
+\vspace{2mm}
+
+As you can see the residual is negative and prediction is higher than the actual sale price at height of 27ft. %Perferable to have negative residual
+
+
+
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%
+\textbf{12.68e)}What percentage of observed variation in sale price can be attributed to the approximate linear relationship between truss height and price?
+
+\vspace{2mm}
+
+$r^{2}=1-\frac{SSE}{SST}=1-\frac{34.0814}{924.4364}=1-.036867=0.963132$
+
+
+
+I used R and got that percentage of variation in the observed vales of the sale price that is explained by regression is 96.31\%, which indicates that 96.31\% of the variability in the sale price is explained by variability in the height.  
+
+\vspace{2mm}
+
+\newpage
+Done in R:
+
+\vspace{2mm}
+
+\includegraphics[width=.8\columnwidth]{../Screen Shot 2021-03-09 at 12.57.25 AM.png}
+
+
+
+
+
+\end{document}
