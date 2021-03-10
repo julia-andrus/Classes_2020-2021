@@ -1,0 +1,1037 @@
+ \documentclass{article}
+\usepackage{ amsmath, amssymb, soul, color, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{soul, color}
+\usepackage{ulem}
+\usepackage[linguistics]{forest}
+
+ \usepackage{graphicx}
+  \usepackage{tikz, calc}
+
+\title{STAT 461\_Hw 4}
+\author{Julia Andrus}
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+%%%%%%%%%%%%%%%%%%Chapter 4: 4.1-2, 4.1-6, 4.2-2, 4.2-6, 4.3-4, 4.3-8, 4.4-4, 4.4-18, 4.5-6
+
+
+%%%%%%%%%%%%%
+\textbf{4.1-2a)} Show space of X and Y.
+
+\vspace{2mm}
+
+X can take on the values \{1,2,3,4\} and Y can take the values of \{2,3,4,5,6,7,8\}
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-03-07 at 5.20.41 PM.png}
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%
+\textbf{4.1-2b)} Define the joint pmf on the space.
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-03-07 at 5.20.57 PM.png}
+
+
+
+\hl{Answer:} $f(x,y)=\frac{1}{16}$, where x and y=1,2,3,4,
+
+%%%%%%%%%%%%
+\textbf{4.1-2c)} Give the marginal pmf of X in the margin.
+
+\vspace{2mm}
+
+X is the outcome of the red 4 sided die, each outcome has an equal chance of occurring:
+
+\vspace{2mm}
+
+
+\hl{Answer:} $P(X=1)=P(X=2)=P(X=3)=P(X=4)=\frac{1}{4}$. So $f_{X}(x)=\frac{1}{4}$, where x=1,2,3,4.
+
+
+
+
+
+%%%%%%%%%%%%
+\textbf{4.1-2d)} Give the marginal pmf of Y in the margin
+
+\vspace{2mm}
+
+Shown in table in part(a):
+
+\vspace{2mm}
+
+P(Y=2)=P(X=1, Z=1)=0.0625
+
+P(Y=3)=P(X=1, Z=2)+P(X=2, Z=1)=2(0.0625)=0.125
+
+
+P(Y=4)=P(X=1, Z=3)+P(X=2, Z=2)+P(X=3, Z=1)=3(0.0625)=0.1875
+
+P(Y=5)=P(X=1, Z=4)+P(X=2, Z=3)+P(X=3, Z=2)+P(X=4, Z=1)=4(0.0625)=0.25
+
+P(Y=6)=P(X=2, Z=4)+P(X=3, Z=3)=3(0.0625)=0.1875
+
+P(Y=7)=P(X=3, Z=4)+P(X=4, Z=3)=2(0.0625)=0.125
+
+P(Y=8)=P(X=4, Z=4)=0.0625
+
+\hl{Answer:} $P(Y=1)=P(Y=2)=P(Y=3)=P(Y=4)=\frac{1}{4}$. So $f_{Y}(y)=\frac{1}{4}$, where y=1,2,3,4.
+
+
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%
+\textbf{4.1-2e)} Are X and Y independent?
+
+\vspace{2mm}
+
+\hl{Answer:} X and Y are not independent because $P(X=x,Y=y) \ne P(X=x)P(Y=y)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4.1-6)} n=25, very high=30\%, high=40\%, average=20\%, and low=10\%. P of 7 very high, P of 8 high, P of 6 average, P of 4 low. 
+
+For this, we have to use the Trinomial to Quadnomial pmf:
+
+$f(x,y,z)=\frac{n!}{x!y!z!(n-x-y-z)}(P(X)^{x})(P(Y)^{y})(P(Z)^{z})(1-P(X)-P(Y)-P(Z)^{n-x-y-z}$
+
+
+$f(7,8,6)=\frac{25!}{7!8!6!(25-7-8-6)}(0.3^{7})(0.4^{8})(0.2^{6})(1-0.3-0.4-0.2)^{25-7-8-6}$
+
+$\approx 0.004052 => 0.4052\%$
+
+
+\vspace{2mm}
+
+\hl{Answer:} 0.4052\%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{ 4.2-2a)} X and Y have the joint pmf defined by f(0,0)=f(1,2)=0.2 and f(0,1)=f(1,1)=0.3. 
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-07 at 4.11.18 PM.png}
+
+
+
+\vspace{4mm}
+
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.2-2b)} Give the marginal pmfs in the margins.
+
+\vspace{2mm}
+
+\hl{Answer:} For x:
+
+$f_{x}(0)=f(0,0)+f(0,1)=0.2+0.3=0.5$
+
+\vspace{2mm}
+
+$f_{x}(1)=f(1,1)+f(1,2)=0.3+0.2=0.5$
+
+\vspace{4mm}
+
+\hl{Answer:} For y:
+
+\vspace{2mm}
+
+$f_{y}(0)=f(0,0)=0.2$
+
+\vspace{2mm}
+
+$f_{y}(1)=f(0,1)+f(1,1)=0.3+0.3=0.6$
+
+\vspace{2mm}
+
+$f_{y}(2)=f(1,2)=0.2$
+
+
+\vspace{5mm}
+
+%%%%%%%%%%%%%%%%
+
+\textbf{ 4.2-2c)} Compute $\mu_{X}, \mu_{Y}, \sigma^{2}_{X},  \sigma^{2}_{Y}$, COV(X,Y) and P.
+
+\vspace{2mm}
+
+1)  $\mu_{X}$ and $\mu_{Y}$
+
+\vspace{2mm}
+
+\hl{Answer:}  $\mu_{X}=E(X)=\sum x f(x)=0(0.5)+1(0.5)=\frac{1}{2}$
+
+\vspace{2mm}
+
+\hl{Answer:}  $\mu_{Y}=E(Y)=\sum y f(y)=0(0.2)+1(0.6)=1$
+
+\vspace{4mm}
+
+2) COV(X,Y)
+
+\vspace{2mm}
+
+$E(XY)= \sum xy f(x,y)=0(0)(0.2)+0(1)(0.3)+1(1)(0.3)+1(2)(0.2)=\frac{7}{10}$
+
+\hl{Answer:}  $COV(X,Y)=E(XY)-\mu_{X}\mu_{Y}=\frac{7}{10}-(\frac{1}{2})(1)=\frac{1}{5}$
+
+
+\vspace{4mm}
+
+3) $P=\frac{COV(X,Y)}{\sigma_{X}\sigma_{Y}}$
+
+\vspace{2mm}
+
+$\sigma_{X}^{2}= \sum (x-\mu_{X})^{2} f(x,y)=(0-.5)^{2}(0.2)+(0-.5)^{2}(0.3)+(1-.5)^{2}(0.3)+(1-.5)^{2}(0.3)=\frac{1}{4}$
+
+
+$\sigma_{Y}^{2}= \sum (y-\mu_{Y})^{2} f(x,y)=(0-1)^{2}(0.2)+(1-1)^{2}(0.3)+(1-1)^{2}(0.3)+(2-1)^{2}(0.2)=\frac{2}{5}$
+
+\vspace{4mm}
+
+Now, 
+
+\vspace{2mm}
+
+\hl{Answer:}  $P=\frac{COV(X,Y)}{\sigma_{X}\sigma_{Y}}=\frac{\frac{1}{5}}{\sqrt{\frac{1}{4}}\sqrt{\frac{2}{5}}}=\frac{\sqrt{10}}{5}$
+
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%
+\newpage
+\textbf{ 4.2-2d)} find the equation of the least squares regression line and draw on graph. Does the line make sense?
+
+\vspace{2mm}
+
+$y=\mu_{Y}+P(\frac{\sigma_{Y}}{\sigma_{X}})(x-\mu_{X}$
+
+\vspace{2mm}
+
+$y=1+\frac{\sqrt{10}}{5}(\frac{\frac{2}{5}}{\frac{1}{4}}(x-\frac{1}{2})$
+
+ $y=\frac{4}{5}+\frac{3}{5}$
+
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-03-07 at 4.12.50 PM.png}
+
+\vspace{2mm}
+
+\hl{Answer:}  Line does not make sense because none of the point lie on the least squares regression line. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{ 4.2-6a)} $f(x,y)=\frac{1}{6}, 0 \le x+y \le 2,$ where x and y are nonnegative integers. Sketch the support of X and Y.
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-07 at 3.34.21 PM.png}
+
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%
+\textbf{ 4.2-6b)} Marginal pmfs $f_{x}(x)$ and $f_{y}(y)$. 
+
+\vspace{2mm}
+
+Marginal distribution of X at x is the sum of the joint pmf at x overall possible y-values:
+
+\vspace{2mm}
+
+$f_{X}(0)=f(0,0)+f(0,1)+f(0,2)=\frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{1}{2}$
+
+\vspace{2mm}
+
+
+$f_{X}(1)=f(1,0)+f(1,1)=\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$
+
+\vspace{2mm}
+
+
+$f_{X}(2)=f(2,0)=\frac{1}{6}$
+
+
+
+\vspace{5mm}
+
+Marginal distribution of Y at y is the sum of the joint pmf at y overall possible x-values:
+
+
+$f_{Y}(0)=f(0,0)+f(1,0)+f(2,0)=\frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{1}{2}$
+
+\vspace{2mm}
+
+
+$f_{Y}(1)=f(0,1)+f(1,1)=\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$
+
+\vspace{2mm}
+
+
+$f_{Y}(2)=f(0,2)=\frac{1}{6}$
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%
+\textbf{ 4.2-6c)} Compute COV(X,Y)
+
+\vspace{2mm}
+
+
+1) $\mu_{x}=E(X)=\sum x f(x)=  0(\frac{1}{2})+1(\frac{1}{3})+2(\frac{1}{6})=\frac{2}{3}$
+
+
+ $\mu_{y}=E(Y)=\sum y f(y)=  0(\frac{1}{2})+1(\frac{1}{3})+2(\frac{1}{6})=\frac{2}{3}$
+
+
+\vspace{4mm}
+
+2) $E(XY)= \sum xy f(x,y)=0(0)(\frac{1}{6})+0(1)(\frac{1}{6})+1(1)(\frac{1}{6})+1(0)(\frac{1}{6})+2(0)(\frac{1}{2})+0(2)(\frac{1}{6})=\frac{1}{6}$
+
+
+$Cov(X,Y)=E(XY)-\mu_{x}\mu_{y}=\frac{1}{6}-(\frac{2}{3})(\frac{2}{3})=-\frac{5}{18} \approx -0.2778$
+
+\vspace{2mm}
+
+
+\hl{Answer:} $\approx -0.2778$
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%
+\textbf{ 4.2-6d)} Determine P, the correlation coefficient.
+
+\vspace{2mm}
+
+
+1) $\sigma^{2}_{X}=\sum(x-\mu_{x})^{2} f(x,y)=(0-\frac{2}{3})^{2}(\frac{1}{2})+(1-\frac{2}{3})^{2}(\frac{1}{3})+(2-\frac{2}{3})^{2}(\frac{1}{6})=\frac{5}{9}$
+
+\vspace{4mm}
+
+2) $\sigma^{2}_{Y}=\sum(x-\mu_{y})^{2} f(x,y)=(0-\frac{2}{3})^{2}(\frac{1}{2})+(1-\frac{2}{3})^{2}(\frac{1}{3})+(2-\frac{2}{3})^{2}(\frac{1}{6})=\frac{5}{9}$
+
+\vspace{4mm}
+
+$P=\frac{COV(X,Y)}{\sigma_{x}}\sigma_{y}=\frac{-\frac{5}{18}}{\sqrt{\frac{5}{9}}\sqrt{\frac{5}{9}}}=-\frac{1}{2}=-0.5$
+
+
+\hl{Answer:} -0.5
+
+
+\vspace{5mm}
+
+\textbf{ 4.2-6e)} Find the best fitting line and draw it.
+
+\vspace{2mm}
+
+\includegraphics[width=0.7\columnwidth]{../Screen Shot 2021-03-07 at 3.35.50 PM.png}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4.3-4a)} If the total number of offspring is n=400, how is X distributed?
+
+\vspace{2mm}
+
+Equally outcomes  (R,R)=(R,W)=(W,W)=(W,R)-$\frac{1}{4}$
+
+
+\vspace{2mm}
+
+The offspring has white outcomes: (R,W), (W,W), or (W,R). (R,W)=(W,W)=(W,R)=$\frac{3}{4}$=0.75.
+
+\vspace{2mm}
+
+X=number of successes, n=400, p=0.75, then the binomial distribution is $X \sim B(400, 0.75)$
+
+\vspace{2mm}
+
+
+
+\hl{Answer:} $X \sim B(400, 0.75)$
+
+\vspace{4mm}
+
+
+%%%%%%%%%%%%%%%
+\textbf{4.3-4b)} Give values of E(X) and Var(X).
+
+\vspace{2mm}
+
+\hl{Answer:}
+ E(X)=np=400(0.75)=300
+
+\vspace{2mm}
+
+\hl{Answer:}
+ Var(X)=npq=400(0.75)(1-0.75)=75
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%
+\textbf{4.3-4c)} Given X=300, how is Y distributed?
+
+\vspace{2mm}
+
+Y= number of red-eyed offspring: (R,W) or (W,R) genes with white eyes. With n=300, p=$\frac{2}{3}$, then $g(y | 300) \sim B(300, \frac{2}{3}$
+
+
+
+\hl{Answer:} $g(y | 300) \sim B(300, \frac{2}{3}$
+
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%
+\textbf{4.3-4d)} Give values of E(Y | X=300) and Var(Y | X=300).
+
+\vspace{2mm}
+
+\hl{Answer:} $E(Y | X=300)=E(g(y | 300))=300(\frac{2}{3})=200$
+
+\vspace{4mm}
+
+
+\hl{Answer:} $Var(Y | X=300)=npq=300(\frac{2}{3})(1-\frac{2}{3})=\frac{200}{3}=66.67$
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4.3-8a)} 6-sided  die, 30 times rolled independently $(6^{30})$. X= \# ones and Y= \# twos What is the joint pdf of X and Y.
+
+\vspace{2mm}
+
+f(x,y)=P(X=x, Y=y):
+
+\vspace{2mm}
+
+$(^{30}_{x}) ways =>$ ones falls/chosen  
+
+\vspace{2mm}
+
+$(^{30-x}_{y}) ways =>$ ones no falls/ not chosen, but twos falls/chosen  
+
+\vspace{2mm}
+
+$(6)^{30-x-y} ways =>$ where any other numbers other than two and one falls/chosen
+
+\vspace{2mm}
+
+$(^{30}_{x})(^{30-x}_{y})4^{30-x-y} =>$ total outcomes
+
+\vspace{2mm}
+
+Now,
+
+\vspace{2mm}
+
+$f(x,y)=P(X=x, Y=y)=\frac{(^{30}_{x})(^{30-x}_{y}) }{6^{30}}$
+
+\vspace{2mm}
+
+
+
+\hl{Answer:} $f(x,y)=P(X=x, Y=y)=\frac{(^{30}_{x})(^{30-x}_{y}) 4^{30-x-y} }{6^{30}}$
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%%%
+\textbf{4.3-8b)} Find the conditional pmf of X and Y.
+
+\vspace{2mm}
+
+Because $f(x,y)=P(X=x, Y=y)=\frac{(^{30}_{x})(^{30-x}_{y}) }{6^{30}}$, then $X,Y \sim B(30, \frac{1}{6})$
+
+\vspace{2mm}
+
+So,
+
+\vspace{2mm}
+
+$P(Y=y)=(^{30}_{y})(\frac{1}{6})^{y}(\frac{5}{6})^{30-y}=(^{30}_{y})\frac{5^{30-y}}{6^{30}}$
+
+\vspace{4mm}
+
+Now everything together:
+
+\vspace{2mm}
+
+$P(X=x, Y=y)=\frac{(^{30}_{x})(^{30-x}_{y})}{(^{30}_{y})} \frac{4^{30-x-y} }{5^{30-y}}$
+
+\vspace{2mm}
+
+$=\frac{\frac{30!}{(30-x)!x!} \frac{30-x}{30-x-y}}{\frac{30!}{(30-y)!y!}} (\frac{1}{5})^{x}(\frac{4}{5})^{30-x-y}$
+
+\vspace{2mm}
+
+
+$=\frac{(30-y)!}{x!(30-y-x)!} (\frac{1}{5}^{x}(\frac{4}{5})^{30-x-y}$
+
+\vspace{4mm}
+
+So X conditioned on Y=y is 
+
+\vspace{2mm}
+
+$B(30-y, \frac{1}{5})$ distribution
+
+\vspace{2mm}
+
+\hl{Answer:} $B(30-y, \frac{1}{5})$ distribution
+
+
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%%%
+\textbf{4.3-8c)} Compute $E(X^{2}-4XY+3Y^{2})$.
+
+\vspace{2mm}
+
+$E(X^{2})=E(Y^{2})=\sigma^{2}_{Y}+(E(Y))^{2}$
+
+\vspace{2mm}
+
+$\sigma^{2}_{Y}=30(\frac{1}{6})(\frac{5}{6})=\frac{25}{6}$
+
+\vspace{2mm}
+
+
+$(E(Y))^{2}=(\frac{30}{6})^{2}=25$
+
+\vspace{2mm}
+
+
+$\sigma^{2}_{Y}+(E(Y))^{2}=\frac{25}{6}+25=\frac{175}{6}$
+
+\vspace{2mm}
+
+Now $P\sigma_{X}\sigma_{Y}=COV(X,Y)= E(XY)-E(X)E(Y)=E(XY)-(E(X))^{2}$, where $\sigma_{X}\sigma_{Y}=\sigma_{Y}^{2}=\frac{25}{6}$ and $(E(X))^{2}=25$
+
+\vspace{2mm}
+
+So $E(XY)=\frac{25}{6}P+25$
+
+\vspace{2mm}
+
+
+
+Using the idea from the book:
+
+\vspace{2mm}
+
+$P=-\sqrt{\frac{\frac{1}{6} \frac{1}{6}}{\frac{5}{6}}}{\frac{5}{6}}=-\frac{1}{5}$
+
+\vspace{2mm}
+
+
+$E(XY)=\frac{25}{6}(-\frac{1}{5})+25=\frac{145}{6}$
+
+\vspace{2mm}
+
+Finally, with $E(X^{2})=E(Y^{2})=\frac{175}{6}$, $E(XY)=\frac{145}{6}$
+
+\vspace{2mm}
+
+
+$E(X^{2}-4XY+3Y^{2})=\frac{175}{6}-4(\frac{145}{6})+3(\frac{175}{6})=20$
+
+\vspace{2mm}
+
+\hl{Answer:} 20
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4.4-4a)} Let $f(x,y)=\frac{3}{2} ,X^{2} \le y \le 1, 0 \le x \le 1$ be the joint pdf of X and Y. Find $P(0 \le X \le \frac{1}{2})$ 
+
+\vspace{2mm}
+
+
+First we have to find our marginal of X and Y:
+
+
+\vspace{2mm}
+
+
+marginal of X:
+
+\vspace{2mm}
+$f(x)=\int_{-\infty}^{\infty} f(x,y)dy=\int_{x^{2}}^{1} \frac{3}{2}dy=\frac{3}{2}(1-x^{2}), 0 \le x \le 1.$
+
+\vspace{2mm}
+
+0, otherwise.
+
+\vspace{4mm}
+
+marginal of Y:
+
+\vspace{2mm}
+
+$f(Y)=\int_{-\infty}^{\infty} f(x,y)dx=\int_{0}^{\sqrt{y}} \frac{3}{2}dx=\frac{3}{2}(\sqrt{y}, 0 \le x \le 1.$
+
+\vspace{2mm}
+
+0, otherwise.
+
+\vspace{4mm}
+
+
+$P(0 \le X \le \frac{1}{2})= \int_{0}^{\frac{1}{2}} f(x) dx=\int_{0}^{\frac{1}{2}} \frac{3}{2}(1-x^{2})dx=\frac{11}{16}$
+
+\vspace{2mm}
+
+
+\hl{Answer:} $\frac{11}{16}$
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%
+\textbf{4.4-4b)} Find $P(\frac{1}{2} \le Y \le 1)$ 
+
+\vspace{2mm}
+
+$P(\frac{1}{2} \le Y \le 1)=\int_{\frac{1}{2}}^{1}f(y) dy=\int_{\frac{1}{2}}^{1} \frac{3}{2}(\sqrt{y})dy=1-(\frac{1}{2})^{\frac{3}{2}}$
+
+\vspace{2mm}
+
+\hl{Answer:} $1-(\frac{1}{2})^{\frac{3}{2}}$
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%
+\textbf{4.4-4c)} Find $(X \ge \frac{1}{2}, Y \ge \frac{1}{2})$
+
+\vspace{2mm}
+
+$(X \ge \frac{1}{2}, Y \ge \frac{1}{2})=\frac{5}{8}--(\frac{1}{2})^{\frac{3}{2}}$
+
+
+
+
+
+\vspace{4mm}
+
+
+%%%%%%%%%%%
+\textbf{4.4-4d)} Are X and Y independent? Why/why not?
+
+
+\vspace{2mm}
+
+\hl{Answer:} X and Y are not independent, because f(x,y)$\ne$ f(x)f(y). 
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{ 4.4-18a)} $f(x,y)=\frac{1}{8}, 0 \le y \le 4, y \le x \le y+2$ be the joint pdf of X and Y. Sketch the region for which $f(x,y) >$ 0.
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-07 at 12.15.42 PM.png}
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18b)} Find $f_{x}(x)$, the marginal pdf of X.
+
+\vspace{2mm}
+
+$f_{x}(x)= \int_{-\infty}^{\infty} f(x,y)dy=\int_{x-2}^{x} \frac{1}{8}dy=\frac{1}{4}$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{1}{4}$
+
+
+\vspace{4mm}
+
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18c)} Find $f_{y}(y)$, the marginal pdf of X
+
+\vspace{2mm}
+
+$f_{y}(y)= \int_{-\infty}^{\infty} f(x,y)dx=\int_{y}^{y+2} \frac{1}{8}dx=\frac{1}{4}$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{1}{4}$
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18d)} Determine $h(y | x)$, the conditional of pdf of Y, given that X=x.
+
+\vspace{2mm}
+
+
+$h(y | x)=\frac{f(x,y)}{f_{x}(x)}=\frac{\frac{1}{8}}{\frac{1}{4}}=\frac{1}{2}$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{1}{2}$
+
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18e)} Determine $g(y | x)$, the conditional of pdf of X, given that Y=y.
+
+\vspace{2mm}
+
+$g(y | x)=\frac{f(x,y)}{f_{y}(y)}=\frac{\frac{1}{8}}{\frac{1}{4}}=\frac{1}{2}$
+
+\vspace{2mm}
+
+\hl{Answer:} $\frac{1}{2}$
+
+\vspace{4mm}
+
+\textbf{ 4.4-18f)} Compute y=E(Y|x), the conditional mean of Y, given that X=x.
+
+\vspace{2mm}
+
+$y=E(Y|x)=\int_{x-2}^{x} y(h(y | x)) dy=\int_{x-2}^{x} y(\frac{1}{2})dy=x-1$
+
+\vspace{2mm}
+
+\hl{Answer:} $x-1$
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18f)} Compute x=E(X|y), the conditional mean of X, given that Y=y.
+
+\vspace{2mm}
+
+$x=E(X|y)=\int_{y}^{y+2} x(g(x | y)) dx=\int_{y}^{y+2} x(\frac{1}{2})dx=y+1$
+
+\vspace{2mm}
+
+\hl{Answer:} $y+1$
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18h)} Graph y=E(Y|x) on sketch in part (a). Is y=E(Y|x) linear?
+
+\vspace{2mm}
+
+\hl{Answer:}  y=E(Y|x) is linear.
+
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-07 at 12.15.57 PM.png}
+
+
+\vspace{4mm}
+
+
+%%%%%%%%%%%%%%%%
+\textbf{ 4.4-18i)} Graph x=E(X|y) on sketch in part (a). Is x=E(X|y) linear?
+
+\vspace{2mm}
+
+\hl{Answer:}  x=E(X|y) is linear. 
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-07 at 12.15.57 PM.png}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4.5-6a)} Find $P(19.0 < 26.9)$.
+
+\vspace{2mm}
+
+We are given $\mu_{X}=22.7, \sigma^{2}_{X}=17.64$ and $\mu_{Y}=22.7, \sigma^{2}_{Y}=12.25$ and p=0.78.
+
+\vspace{2mm}
+
+$z=\frac{x-\mu}{\sigma}=\frac{19.9-22.7}{\sqrt{12.25}}=-.8$
+
+\vspace{2mm}
+
+
+$z=\frac{x-\mu}{\sigma}=\frac{26.9-22.7}{\sqrt{12.25}}=1.2$
+
+\vspace{2mm}
+
+
+
+$P(19.0 < 26.9)=P(-.8 < Z < 1.2)=P(Z < 1.2)-P(Z <-.8)$
+
+\vspace{2mm}
+
+$=P(Z < 1.2) - P(Z > .8)=P(Z < 1.2) - (1-P(Z <.8))=0.8849-(1-.7881)=.673=67.3\%$
+
+\vspace{2mm}
+
+
+\hl{Answer:} 67.3\%
+
+
+\vspace{4mm}
+
+%%%%%%%%%%%%%%%%
+\textbf{4.5-6b)} Find E(Y | x).
+
+\vspace{2mm}
+
+$E(Y | x)=E(Y | X=x)=\mu_{y}+p(\frac{\sigma_{y}}{\sigma_{x}})(x-\mu_{x})$
+
+\vspace{2mm}
+
+ \hl{Answer:}  $=22.7+0.78(\frac{3.5}{4.2}(x-22.7)=22.7+.65(x-22.7)=22.7+0.65x-14.755=0.65x+7.945$
+
+ 
+
+ 
+ \vspace{4mm}
+ 
+
+%%%%%%%%%%%%%%%%
+\textbf{4.5-6c)} Find Var(Y|x).
+
+\vspace{2mm}
+
+$Var(Y|x)=Var(Y|X=x)=\sigma_{Y|x=x}^{2}=\sigma_{Y}^{2}-p^{2}(\sigma_{Y}^{2})$
+
+\vspace{2mm}
+
+$=12.25-0.78^{2}(12.25)=4.7971$
+
+\vspace{2mm}
+
+
+ \hl{Answer:} Var(Y|X=x)=4.7971
+ 
+ 
+ \vspace{4mm}
+%%%%%%%%%%%%%%%%
+\textbf{4.5-6d)} Find $P(19.9 < Y < 26.9 | X=23)$
+
+\vspace{2mm}
+
+Now x=23
+
+\vspace{2mm}
+
+$E(Y | X=x)=0.65x+7.945$
+
+\vspace{2mm}
+
+$Var(Y|X=x)=4.7971$
+
+
+\vspace{2mm}
+
+$z=\frac{x-\mu}{\sigma}=\frac{19.9-(7.945+(0.65(23))}{\sqrt{4.7971}} \approx-1.37$
+
+\vspace{2mm}
+
+
+$z=\frac{x-\mu}{\sigma}=\frac{26.9-(7.945+(0.65(23))}{\sqrt{4.7971}} \approx 1.83$
+
+\vspace{2mm}
+
+
+$P(19.9 < Y < 26.9 | X=23)=P(-1.37< Z < 1.83 )=P(Z < 1.83)-P(Z <-1.37)$
+
+\vspace{2mm}
+
+
+$=P(Z < 1.83)-P(Z > 1.37)= P(Z < 1.83)-(1-P(Z < 1.37))$
+
+\vspace{2mm}
+
+$=0.966-(1-.915)=0.881=88.1\%$
+
+\vspace{2mm}
+
+
+
+\hl{Answer:} 88.1\%
+
+
+\vspace{4mm}
+
+
+%%%%%%%%%%%%%%%%
+\textbf{4.5-6e)} Find $P(19.9 < Y < 26.9 | X=25)$
+
+\vspace{2mm}
+
+Now x=25
+
+\vspace{2mm}
+
+$E(Y | X=x)=0.65x+7.945$
+
+\vspace{2mm}
+
+$Var(Y|X=x)=4.7971$
+
+\vspace{2mm}
+
+
+$z=\frac{x-\mu}{\sigma}=\frac{19.9-(7.945+(0.65(25))}{\sqrt{4.7971}} \approx-1.96$
+
+\vspace{2mm}
+
+
+$z=\frac{x-\mu}{\sigma}=\frac{26.9-(7.945+(0.65(25))}{\sqrt{4.7971}} \approx 1.24$
+
+
+\vspace{2mm}
+
+$P(19.9 < Y < 26.9 | X=25)=P(-1.96< Z < 1.24 )=P(Z < 1.24)-P(Z <-1.96)$
+
+\vspace{2mm}
+
+$=P(Z < 1.24)-P(Z > 1.96)= P(Z < 1.24)-(1-P(Z < 1.96))$
+
+\vspace{2mm}
+
+$=0.8925123-(1-0.9750021)=.8675=86.75\%$
+
+\vspace{2mm}
+
+
+\hl{Answer:} 86.75\%
+
+\vspace{4mm}
+
+
+
+
+%%%%%%%%%%%%%%%%
+\textbf{4.5-6f)} For x=21, 23, and 25 draw a graph of z=h(y | x).
+
+\vspace{2mm}
+
+
+x=21:
+
+E(Y | X=21)=7.945 +0.65(21)= 21.595
+
+\vspace{2mm}
+
+
+x=23:
+
+E(Y | X=21)=7.945 +0.65(23)= 22.895
+
+
+\vspace{2mm}
+
+
+x=25:
+
+E(Y | X=21)=7.945 +0.65(25)= 24.195
+
+
+\vspace{2mm}
+
+Graph: 
+
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-07 at 1.57.14 PM.png}
+
+\end{document}
