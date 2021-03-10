@@ -1,0 +1,315 @@
+\documentclass{article}
+\usepackage{amssymb, amsmath, graphicx}
+\usepackage{pgfplots}
+ \usepackage{tikz, calc}
+ \usepackage{pst-plot}
+ \usetikzlibrary{calc,patterns,angles,quotes}
+ \usepackage{kpfonts}
+\usepackage{stackengine}
+\usepackage{calc}
+\newlength\shlength
+ \usepackage{kpfonts}
+ \usepackage[utf8]{inputenc}
+ \usepackage{graphicx}
+ 
+ \usepackage{stackengine}
+\title{Math 338\:Write up\_6}
+\author{Julia Andrus}
+\date{}
+
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{1)} Justify the ASA triangle congruence criterion in Euclidean Geometry using properties of translations, reflections, and rotations by proving that if a pair of triangles in the Euclidean plane satisfy the ASA congruence criterion, you can necessarily describe an isometry that superimposes one triangle onto the other triangle.  You may assume SSS and SAS have already been proven
+
+\vspace{2mm}
+
+If we have two pair of triangle that satisfy the ASA congruence, then the properties of  reflections, translations, and rotations exists:
+
+\vspace{2mm}
+
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-04 at 1.39.49 PM.png}
+
+\vspace{2mm}
+
+Reflection: This exits because we can reflect $\triangle ABC$ over the y-axis to get $\triangle A'B'C'$. With reflection, $\triangle A'B'C'$ is the opposite image of $\triangle ABC$.
+
+\vspace{2mm}
+
+Translation: This exits because we can translate $\triangle A'B'C'$ to get $\triangle A''B''C''$. With translation, this would preserve orientation; we have same orientation/image in $\triangle A''B''C''$ after translation. 
+
+\vspace{2mm}
+
+Rotation: This exits because we can rotate $\triangle ABC$ 180 degrees about the center to get $\triangle A''B''C''$. 
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{2)}  Prove that the taxicab distance formula satisfies the properties to be a metric on $\mathbb{R}^{2}$ (notice the three properties listed in the notes at the bottom of page where metric is introduced)
+
+\vspace{2mm}
+
+When proving that the taxicab distance formula satisfies the properties to be a metric on $\mathbb{R}^{2}$, then the following three statements are true:
+
+\vspace{2mm}
+
+(1) $d(A, B) \ge 0$, and $d(A, B)=0$ if and only if $A=B$
+
+\vspace{2mm}
+
+The distance formula for the taxicab geometry:
+
+\vspace{2mm}
+
+
+ $d_{T} (A,B)=|X_{A}-X_{B}| + |Y_{A}-Y_{B}|$, where $A=(X_{A},Y_{A})$ and $B=(X_{B},Y_{B})$
+ 
+ \vspace{2mm}
+ 
+ $=>$ Proof: If $d(A, B) \ge 0$ and $d(A, B)=0$, then A=B.
+ 
+ \vspace{2mm}
+ 
+ 
+$ |X_{A}-X_{B}| + |Y_{A}-Y_{B}| \ge 0$ $=>$ Given. This is true.
+
+\vspace{2mm}
+
+
+$|X_{A}-X_{B}| = |Y_{A}-Y_{B}|=0$ $=>$ Given: $d(A, B)=0$
+
+\vspace{2mm}
+
+
+$X_{A}-X_{B}=0 and Y_{A}-Y_{B}=0$ $=>$ Separate these two (X and Y) and equaling to zero.
+
+\vspace{2mm}
+
+
+$X_{A}=X_{B} and Y_{A}=Y_{B}$ $=>$ Making the variables equaling to each other.
+
+\vspace{2mm}
+
+ A=B $=>$Since $A=(X_{A},Y_{A})$ and $B=(X_{B},Y_{B})$, then $A=B. $
+ 
+ \vspace{5mm}
+ 
+$<=$
+
+\vspace{2mm}
+
+If A=B, then $d(A, B) \ge 0$ and $d(A, B)=0$.
+
+\vspace{2mm}
+
+A=B $=>$ Given 
+
+\vspace{2mm}
+
+$X_{A}=X_{B}$ and $Y_{A}=Y_{B} $ $=>$ Because $A=(X_{A},Y_{A})$ and $B=(X_{B},Y_{B})$
+
+\vspace{2mm}
+
+ 
+$ X_{A}-X_{B}=0 $ and $Y_{A}-Y_{B}=0$ $=>$ Working backwards
+
+\vspace{2mm}
+
+$ |X_{A}-X_{B}| + |Y_{A}-Y_{B}|=0$ $=>$ Distance formula and d(A,B)=0
+
+\vspace{2mm}
+
+$d(A, B) \ge 0$ $=>$ True because of distance the formula and the previous step is true. 
+
+
+
+\vspace{5mm}
+ 
+	
+(2) $d(A, B)=d(B, A)$
+
+\vspace{2mm}
+
+$d(A, B)=d(B, A)$
+
+\vspace{2mm}
+
+$|X_{A}-X_{B}| + |Y_{A}-Y_{B}|=|Y_{A}-Y_{B}|+|X_{A}-X_{B}|$
+
+\vspace{2mm}
+
+$|X_{A}-X_{B}|-|X_{A}-X_{B}|=|Y_{A}-Y_{B}|-|Y_{A}-Y_{B}|$
+
+\vspace{2mm}
+
+$0=0$
+
+\vspace{2mm}
+
+$d(A, B)=d(B, A)$ is commutative. Our operation is addition and because of the addition, for d(B, A) we can just switch the X and Y and our results will be the same as d(A, B).
+
+\vspace{5mm}
+
+\newpage
+	
+(3) $d(A, C) \le d(A, B)+d(B,C) $
+
+\vspace{2mm}
+
+$|X_{A}-X_{C}| + |Y_{A}-Y_{C}| \le (|X_{A}-X_{B}| + |Y_{A}-Y_{B}|) + (|X_{B}-X_{C}| + |Y_{B}-Y_{C}|)$
+
+\vspace{2mm}
+
+Thoughts on paper:
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-04 at 11.35.02 AM.png}
+
+As you can see in the drawing, it is visually clear that $d(A, C) \le d(A, B)+d(B,C) $ is true. The idea is that taxicab unit circle can be anywhere on the plane still making $d(A, C) \le d(A, B)+d(B,C)$ true, because we are adding two distances together (d(A, B)+d(B,C)), then result is greater or equal to the result of 1 distance (d(A, C)).
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{3)} Prove Theorem 8.2: $ d_{E}(A,B) \le d_{T} (A,B)$
+
+\vspace{2mm}
+
+From class notes we are given distance formula for Euclidean Geometry (1) and Taxicab Geometry (2):
+
+\vspace{2mm}
+
+(1) $  d_{E}(A,B)=\sqrt{(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B}^{2})}$
+
+\vspace{2mm}
+
+(2) $  d_{T} (A,B)=|X_{A}-X_{B}| + |Y_{A}-Y_{B}|$
+
+Proof:
+
+$ d_{E}(A,B) \le d_{T} (A,B)$
+
+\vspace{2mm}
+
+$\sqrt{(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B}^{2}} \le |X_{A}-X_{B}| + |Y_{A}-Y_{B}|$
+
+\vspace{2mm}
+
+$ (\sqrt{(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B}^{2})})^{2} \le (|X_{A}-X_{B}| + |Y_{A}-Y_{B}|)^{2}$
+
+\vspace{2mm}
+
+$(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B}^{2}) \le (|X_{A}-X_{B}| + |Y_{A}-Y_{B}|)(|X_{A}-X_{B}| + |Y_{A}-Y_{B}|)$
+
+\vspace{2mm}
+
+$(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B})^{2} \le (|X_{A}-X_{B}|)(|X_{A}-X_{B}|) + (|X_{A}-X_{B}|)(Y_{A}-Y_{B}|) + (|Y_{A}-Y_{B}|)(|X_{A}-X_{B}|) + (|Y_{A}-Y_{B}|)(Y_{A}-Y_{B}|)$
+
+\vspace{2mm}
+
+$(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B})^{2} \le (|X_{A}-X_{B}|)^{2} + (|X_{A}-X_{B}|)(Y_{A}-Y_{B}|) + + (|Y_{A}-Y_{B}|)(|X_{A}-X_{B}|) + (Y_{A}-Y_{B}|)^{2}$
+
+
+\vspace{2mm}
+
+
+$(X_{A}-X_{B})^{2} + (Y_{A}-Y_{B})^{2}-(|X_{A}-X_{B}|)^{2} - (|Y_{A}-Y_{B}|)^{2} \le (|X_{A}-X_{B}|)(Y_{A}-Y_{B}|) + (|Y_{A}-Y_{B}|)(|X_{A}-X_{B}|) $
+
+\vspace{2mm}
+
+$0 \le 2((|X_{A}-X_{B}|)(Y_{A}-Y_{B}|))$
+
+
+
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{4)} Which of the 8 symmetries of a unit square are symmetries of a taxicab circle (this will help you in Exercise 8.6)?
+
+\vspace{2mm}
+
+This question is similar to hw 5. Since rhombus are basically a square, then all 8 symmetries exists in  the taxicab circle is :
+
+\vspace{2mm}
+
+\includegraphics[width=0.8\columnwidth]{../Screen Shot 2021-03-03 at 10.03.40 PM.png}
+
+\vspace{2mm}
+
+
+As you can see in the drawing we can have 4 reflections of symmetry of the rhombus: vertical cut, horizontal cut, and the two diagonal cuts. For rotations we have 4 rotations of symmetries: the image itself (identity/trivial symmetry), 90, rotation, 180  rotation, 270 rotation.
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{5)} Complete Exercise 8.6. : Identify all the Taxicab isometries.
+
+Since we found that the 8 symmetries of a unit square are symmetries of a taxicab circle existing in reflections and rotations, then the two isometries exist:
+
+Reflection: 
+
+My thoughts:
+
+\vspace{2mm}
+
+\includegraphics[width=0.6\columnwidth]{../Screen Shot 2021-03-03 at 11.39.32 PM.png}
+
+\vspace{2mm}
+
+Reflection reserve orientation, meaning the figure have  the opposite image when reflecting. As you can see in my drawing and thoughts if we have a reflection of symmetry on the y-axis, then we have a mirror image of $d(A,B)+d(B,C)$ to $d(A,D)+d(D,C)$. Thus this shows that it reserves orientation. 
+
+
+\vspace{2mm}
+
+
+Rotation:
+
+\vspace{2mm}
+
+\includegraphics[width=0.6\columnwidth]{../Screen Shot 2021-03-03 at 11.40.25 PM.png}
+
+\vspace{2mm}
+
+
+Rotation preserve orientation, with a fixed point at the center. As you can see in the drawing if you rotate the figure 90 degrees, the figure preserve rotation meaning that we will end up with the same image if we keep rotating. Because the figure would preserve the orientation, our taxicab distances stays the same.
+ 
+
+
+
+\end{document}
